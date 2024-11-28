@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:c27ac46c-e2c4-4675-9c82-3a552c6976c9",
+  "serialNumber": "urn:uuid:d6f31c48-87be-4785-b7dd-ccbb5fcf1a3a",
   "version": 1,
   "metadata": {
-    "timestamp": "2024-11-28T15:56:18+00:00",
+    "timestamp": "2024-11-28T16:26:03+00:00",
     "tools": {
       "components": [
         {
@@ -17,7 +17,7 @@
       ]
     },
     "component": {
-      "bom-ref": "ef767f06-bb00-453d-8fd3-55fa44ea6cc3",
+      "bom-ref": "774d3d3e-990f-4b5f-b34f-47929951c0a3",
       "type": "application",
       "name": "app",
       "properties": [
@@ -30,7 +30,7 @@
   },
   "components": [
     {
-      "bom-ref": "42e8fd53-6d46-4693-b24e-d5de7d96fda4",
+      "bom-ref": "0aa98cf7-1da5-4365-baea-efac0a4e8588",
       "type": "application",
       "name": "go.mod",
       "properties": [
@@ -63,15 +63,15 @@
   ],
   "dependencies": [
     {
-      "ref": "42e8fd53-6d46-4693-b24e-d5de7d96fda4",
+      "ref": "0aa98cf7-1da5-4365-baea-efac0a4e8588",
       "dependsOn": [
         "pkg:golang/sca"
       ]
     },
     {
-      "ref": "ef767f06-bb00-453d-8fd3-55fa44ea6cc3",
+      "ref": "774d3d3e-990f-4b5f-b34f-47929951c0a3",
       "dependsOn": [
-        "42e8fd53-6d46-4693-b24e-d5de7d96fda4"
+        "0aa98cf7-1da5-4365-baea-efac0a4e8588"
       ]
     }
   ],

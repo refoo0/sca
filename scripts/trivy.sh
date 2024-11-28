@@ -7,6 +7,11 @@ OUTPUT_FILE=${1:-$DEFAULT_OUTPUT_FILE}
 DEFAULT_SCAN_FILE="app"
 SCAN_FILE=${2:-$DEFAULT_SCAN_FILE}
 
+# Create output directory if it doesn't exist
+OUTPUT_DIR=$(dirname "$OUTPUT_FILE")
+mkdir -p "$OUTPUT_DIR" || error_exit "Failed to create directory: $OUTPUT_DIR"
+
+
 # Execute the Trivy command
 echo "Executing Trivy scan..."
 trivy fs --scanners vuln --format json --output "$OUTPUT_FILE"  "$SCAN_FILE"
