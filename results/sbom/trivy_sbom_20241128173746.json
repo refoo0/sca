@@ -1,0 +1,79 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:fcec93a1-cf0c-4289-92ab-fe21346343fa",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2024-11-28T16:37:46+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.57.1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "0b579e56-5fa5-47a0-99b4-918e2112b9c5",
+      "type": "application",
+      "name": "app",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:SchemaVersion",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "b07c166d-431c-4cab-b0ea-2b186ab6e790",
+      "type": "application",
+      "name": "go.mod",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/sca",
+      "type": "library",
+      "name": "sca",
+      "purl": "pkg:golang/sca",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sca"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "0b579e56-5fa5-47a0-99b4-918e2112b9c5",
+      "dependsOn": [
+        "b07c166d-431c-4cab-b0ea-2b186ab6e790"
+      ]
+    },
+    {
+      "ref": "b07c166d-431c-4cab-b0ea-2b186ab6e790",
+      "dependsOn": [
+        "pkg:golang/sca"
+      ]
+    }
+  ],
+  "vulnerabilities": []
+}
