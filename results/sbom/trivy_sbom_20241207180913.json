@@ -1,0 +1,113 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:bc61ec59-54ac-46ff-aac6-2cdb8b7bfa7e",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2024-12-07T17:09:14+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.57.1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "78b6ef89-eb28-46b0-85f3-aabd16054b36",
+      "type": "application",
+      "name": "app/myapp",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:SchemaVersion",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "e4e35a57-b063-4741-a329-298393c23946",
+      "type": "application",
+      "name": "go.mod",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/kolide/launcher@v1.12.3",
+      "type": "library",
+      "name": "github.com/kolide/launcher",
+      "version": "v1.12.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:golang/github.com/kolide/launcher@v1.12.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/kolide/launcher@v1.12.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/sca",
+      "type": "library",
+      "name": "sca",
+      "purl": "pkg:golang/sca",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sca"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "78b6ef89-eb28-46b0-85f3-aabd16054b36",
+      "dependsOn": [
+        "e4e35a57-b063-4741-a329-298393c23946"
+      ]
+    },
+    {
+      "ref": "e4e35a57-b063-4741-a329-298393c23946",
+      "dependsOn": [
+        "pkg:golang/sca"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/kolide/launcher@v1.12.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/sca",
+      "dependsOn": [
+        "pkg:golang/github.com/kolide/launcher@v1.12.3"
+      ]
+    }
+  ],
+  "vulnerabilities": []
+}

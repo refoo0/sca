@@ -1,4 +1,4 @@
-module github.com/refoo0/sca/check
+module github.com/refoo0/sca
 
 go 1.23.2
 

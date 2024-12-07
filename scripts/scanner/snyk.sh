@@ -17,7 +17,7 @@ echo "Executing Snyk scan..."
  snyk test --json "$SCAN_FILE" > "$OUTPUT_FILE"  
 
 # Check if the command was successful
-if [ $? -eq 0 ]; then
+if [ $? -eq 0 ] || [ $? -eq 1 ]; then
     echo "Snyk scan completed successfully. Result saved in $OUTPUT_FILE"
 else
     echo "Snyk scan failed."

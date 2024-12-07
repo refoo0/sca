@@ -1,21 +1,23 @@
 #!/bin/bash
 
+SCAN_FILE="app/myapp"
+
 # Execute trivy sbom script
-./scripts/scanner/trivy.sh
+./scripts/scanner/trivy.sh "" $SCAN_FILE
 if [ $? -ne 0 ]; then
-  echo "trivy_sbom.sh failed!"
+  echo "trivy.sh failed!"
   exit 1
 fi
 
 # Execute snyk sbom script
-./scripts/scanner/snyk.sh
+./scripts/scanner/snyk.sh "" $SCAN_FILE
 if [ $? -ne 0 ]; then
-  echo "snyk_sbom.sh failed!"
+  echo "snyk.sh failed!"
   exit 1
 fi
 
 # Execute osv script
-./scripts/scanner/osv.sh
+./scripts/scanner/osv.sh "" $SCAN_FILE
 if [ $? -ne 0 ]; then
   echo "osv.sh failed!"
   exit 1
