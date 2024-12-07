@@ -1,0 +1,439 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "/Users/refaei/dev/sca/app/go.mod",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "github.com/cli/cli",
+            "version": "1.14.0",
+            "ecosystem": "Go"
+          },
+          "vulnerabilities": [
+            {
+              "modified": "2024-11-19T19:37:12Z",
+              "published": "2024-11-14T17:39:01Z",
+              "schema_version": "1.6.0",
+              "id": "GHSA-p2h2-3vg9-4p87",
+              "aliases": ["CVE-2024-52308", "GO-2024-3269"],
+              "related": ["CGA-9p6q-rr9m-xvc9"],
+              "summary": "Connecting to a malicious Codespaces via GH CLI could allow command execution on the user's computer",
+              "details": "### Summary\n\nA security vulnerability has been identified in GitHub CLI that could allow remote code execution (RCE) when users connect to a malicious Codespace SSH server and use the `gh codespace ssh` or `gh codespace logs` commands.\n\n### Details\n\nThe vulnerability stems from the way GitHub CLI handles SSH connection details when executing commands. When developers connect to remote Codespaces, they typically use a SSH server running within a devcontainer, often provided through the [default devcontainer image](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers#using-the-default-dev-container-configuration).  GitHub CLI [retrieves SSH connection details](https://github.com/cli/cli/blob/30066b0042d0c5928d959e288144300cb28196c9/internal/codespaces/rpc/invoker.go#L230-L244), such as remote username, which is used in [executing `ssh` commands](https://github.com/cli/cli/blob/e356c69a6f0125cfaac782c35acf77314f18908d/pkg/cmd/codespace/ssh.go#L263) for `gh codespace ssh` or `gh codespace logs` commands.\n\nThis exploit occurs when a malicious third-party devcontainer contains a modified SSH server that injects `ssh` arguments within the SSH connection details. `gh codespace ssh` and `gh codespace logs` commands could execute arbitrary code on the user's workstation if the remote username contains something like `-oProxyCommand=\"echo hacked\" #`.  The `-oProxyCommand` flag causes `ssh` to execute the provided command while `#` shell comment causes any other `ssh` arguments to be ignored.\n\nIn `2.62.0`, the remote username information is being validated before being used.\n\n### Impact\n\nSuccessful exploitation could lead to arbitrary code execution on the user's workstation, potentially compromising the user's data and system.\n\n### Remediation and Mitigation\n\n1. Upgrade `gh` to `2.62.0`\n2. Exercise caution when using custom devcontainer images, prefer default or pre-built devcontainers from trusted sources.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli/v2",
+                    "purl": "pkg:golang/github.com/cli/cli/v2"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "2.62.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "last_known_affected_version_range": "\u003c= 2.61.0",
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-p2h2-3vg9-4p87/GHSA-p2h2-3vg9-4p87.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli",
+                    "purl": "pkg:golang/github.com/cli/cli"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "2.62.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-p2h2-3vg9-4p87/GHSA-p2h2-3vg9-4p87.json"
+                  }
+                }
+              ],
+              "severity": [
+                {
+                  "type": "CVSS_V3",
+                  "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H"
+                }
+              ],
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/cli/cli/security/advisories/GHSA-p2h2-3vg9-4p87"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-52308"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/cli/cli"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://pkg.go.dev/vuln/GO-2024-3269"
+                }
+              ],
+              "database_specific": {
+                "cwe_ids": ["CWE-77"],
+                "github_reviewed": true,
+                "github_reviewed_at": "2024-11-14T17:39:01Z",
+                "nvd_published_at": "2024-11-14T23:15:05Z",
+                "severity": "HIGH"
+              }
+            },
+            {
+              "modified": "2024-11-19T17:42:37Z",
+              "published": "2024-11-19T17:20:31Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3269",
+              "aliases": ["CVE-2024-52308", "GHSA-p2h2-3vg9-4p87"],
+              "summary": "Connecting to a malicious Codespaces via GH CLI could allow command execution on the user's computer in github.com/cli/cli",
+              "details": "Connecting to a malicious Codespaces via GH CLI could allow command execution on the user's computer in github.com/cli/cli",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli",
+                    "purl": "pkg:golang/github.com/cli/cli"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3269.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli/v2",
+                    "purl": "pkg:golang/github.com/cli/cli/v2"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "2.62.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3269.json"
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "ADVISORY",
+                  "url": "https://github.com/cli/cli/security/advisories/GHSA-p2h2-3vg9-4p87"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-52308"
+                }
+              ],
+              "database_specific": {
+                "review_status": "UNREVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3269"
+              }
+            },
+            {
+              "modified": "2024-12-02T20:29:42Z",
+              "published": "2024-12-02T20:06:38Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3296",
+              "aliases": ["CVE-2024-53858", "GHSA-jwcm-9g39-pmcw"],
+              "summary": "Recursive repository cloning can leak authentication tokens to non-GitHub submodule hosts in github.com/cli/cli",
+              "details": "Recursive repository cloning can leak authentication tokens to non-GitHub submodule hosts in github.com/cli/cli",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli",
+                    "purl": "pkg:golang/github.com/cli/cli"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3296.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli/v2",
+                    "purl": "pkg:golang/github.com/cli/cli/v2"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "2.63.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3296.json"
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "ADVISORY",
+                  "url": "https://github.com/cli/cli/security/advisories/GHSA-jwcm-9g39-pmcw"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-53858"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://git-scm.com/docs/gitcredentials"
+                }
+              ],
+              "database_specific": {
+                "review_status": "UNREVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3296"
+              }
+            },
+            {
+              "modified": "2024-12-04T22:17:12Z",
+              "published": "2024-12-04T15:32:45Z",
+              "schema_version": "1.6.0",
+              "id": "GHSA-2m9h-r57g-45pj",
+              "aliases": ["CVE-2024-54132", "GO-2024-3310"],
+              "summary": "Downloading malicious GitHub Actions workflow artifact results in path traversal vulnerability",
+              "details": "### Summary\n\nA security vulnerability has been identified in GitHub CLI that could create or overwrite files in unintended directories when users download a malicious GitHub Actions workflow artifact through `gh run download`. \n\n### Details\n\nThis vulnerability stems from a GitHub Actions workflow artifact named `..` when downloaded using `gh run download`.  The artifact name and `--dir` flag are used to determine the artifact’s download path.  When the artifact is named `..`, the resulting files within the artifact are extracted exactly 1 directory higher than the specified `--dir` flag value.\n\nIn `2.63.1`, `gh run download` will not download artifacts named `..` and `.` and instead exit with the following error message:\n\n```\nerror downloading ..: would result in path traversal\n```\n\n### Impact\n\nSuccessful exploitation heightens the risk of local path traversal attack vectors exactly 1 directory higher than intended.\n\n### Remediation and Mitigation\n\n1. Upgrade `gh` to `2.63.1`\n2. Implement additional validation to ensure artifact filenames do not contain potentially dangerous patterns, such as `..`, to prevent path traversal risks.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli/v2",
+                    "purl": "pkg:golang/github.com/cli/cli/v2"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "2.63.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-2m9h-r57g-45pj/GHSA-2m9h-r57g-45pj.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli",
+                    "purl": "pkg:golang/github.com/cli/cli"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-2m9h-r57g-45pj/GHSA-2m9h-r57g-45pj.json"
+                  }
+                }
+              ],
+              "severity": [
+                {
+                  "type": "CVSS_V4",
+                  "score": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/U:Green"
+                }
+              ],
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/cli/cli/security/advisories/GHSA-2m9h-r57g-45pj"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54132"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/cli/cli/commit/1136764c369aaf0cae4ec2ee09dc35d871076932"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/cli/cli"
+                }
+              ],
+              "database_specific": {
+                "cwe_ids": ["CWE-22"],
+                "github_reviewed": true,
+                "github_reviewed_at": "2024-12-04T15:32:45Z",
+                "nvd_published_at": "2024-12-04T16:15:26Z",
+                "severity": "MODERATE"
+              }
+            },
+            {
+              "modified": "2024-12-04T16:59:03Z",
+              "published": "2024-12-04T16:25:24Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3310",
+              "aliases": ["CVE-2024-54132", "GHSA-2m9h-r57g-45pj"],
+              "summary": "Downloading malicious GitHub Actions workflow artifact results in path traversal vulnerability in github.com/cli/cli",
+              "details": "Downloading malicious GitHub Actions workflow artifact results in path traversal vulnerability in github.com/cli/cli",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli",
+                    "purl": "pkg:golang/github.com/cli/cli"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3310.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "github.com/cli/cli/v2",
+                    "purl": "pkg:golang/github.com/cli/cli/v2"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "2.63.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3310.json"
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "ADVISORY",
+                  "url": "https://github.com/cli/cli/security/advisories/GHSA-2m9h-r57g-45pj"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://github.com/cli/cli/commit/1136764c369aaf0cae4ec2ee09dc35d871076932"
+                }
+              ],
+              "database_specific": {
+                "review_status": "UNREVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3310"
+              }
+            }
+          ],
+          "groups": [
+            {
+              "ids": ["GO-2024-3269", "GHSA-p2h2-3vg9-4p87"],
+              "aliases": [
+                "CVE-2024-52308",
+                "GHSA-p2h2-3vg9-4p87",
+                "GO-2024-3269"
+              ],
+              "max_severity": "8.0"
+            },
+            {
+              "ids": ["GO-2024-3296"],
+              "aliases": [
+                "CVE-2024-53858",
+                "GHSA-jwcm-9g39-pmcw",
+                "GO-2024-3296"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": ["GO-2024-3310", "GHSA-2m9h-r57g-45pj"],
+              "aliases": [
+                "CVE-2024-54132",
+                "GHSA-2m9h-r57g-45pj",
+                "GO-2024-3310"
+              ],
+              "max_severity": "6.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "experimental_config": {
+    "licenses": {
+      "summary": false,
+      "allowlist": null
+    }
+  }
+}

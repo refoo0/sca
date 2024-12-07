@@ -1,0 +1,28 @@
+{
+  "Vuln": [
+    {
+      "CVE-ID": "CVE-2024-53858",
+      "GHSA": "GHSA-jwcm-9g39-pmcw",
+      "GO-ID": "GO-2024-3296",
+      "OSV": true,
+      "Trivy": false,
+      "Snyk": false
+    },
+    {
+      "CVE-ID": "CVE-2024-54132",
+      "GHSA": "GHSA-2m9h-r57g-45pj",
+      "GO-ID": "GO-2024-3310",
+      "OSV": true,
+      "Trivy": true,
+      "Snyk": false
+    },
+    {
+      "CVE-ID": "CVE-2024-52308",
+      "GHSA": "GHSA-p2h2-3vg9-4p87",
+      "GO-ID": "GO-2024-3269",
+      "OSV": true,
+      "Trivy": true,
+      "Snyk": false
+    }
+  ]
+}

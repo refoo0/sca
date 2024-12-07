@@ -1,0 +1,35 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:49ef738d-7c32-4b35-b13d-723ac253d3e6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2024-12-07T08:59:19Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "author": "Snyk",
+          "name": "snyk-cli",
+          "version": "1.1294.2"
+        }
+      ],
+      "services": [
+        {
+          "provider": { "name": "Snyk" },
+          "name": "SBOM Export API",
+          "version": "v1.105.1-2-g08b976c"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "1-sca@0.0.0",
+      "type": "application",
+      "name": "sca",
+      "version": "0.0.0",
+      "purl": "pkg:golang/sca@0.0.0"
+    }
+  },
+  "dependencies": [{ "ref": "1-sca@0.0.0" }]
+}

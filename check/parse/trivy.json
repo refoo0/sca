@@ -1,0 +1,110 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2024-12-07T09:52:42.233238+01:00",
+  "ArtifactName": "app",
+  "ArtifactType": "filesystem",
+  "Metadata": {
+    "ImageConfig": {
+      "architecture": "",
+      "created": "0001-01-01T00:00:00Z",
+      "os": "",
+      "rootfs": {
+        "type": "",
+        "diff_ids": null
+      },
+      "config": {}
+    }
+  },
+  "Results": [
+    {
+      "Target": "go.mod",
+      "Class": "lang-pkgs",
+      "Type": "gomod",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2024-52308",
+          "PkgID": "github.com/cli/cli@v1.14.0",
+          "PkgName": "github.com/cli/cli",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/github.com/cli/cli@v1.14.0",
+            "UID": "f179abb06736de0a"
+          },
+          "InstalledVersion": "v1.14.0",
+          "FixedVersion": "2.62.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-52308",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "The GitHub CLI version 2.6.1 and earlier are vulnerable to remote code ...",
+          "Description": "The GitHub CLI version 2.6.1 and earlier are vulnerable to remote code execution through a malicious codespace SSH server when using `gh codespace ssh` or `gh codespace logs` commands. This has been patched in the cli v2.62.0.\n\nDevelopers connect to remote codespaces through an SSH server running within the devcontainer, which is generally provided through the [default devcontainer image]( https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-... https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers#using-the-default-dev-container-configuration) . GitHub CLI [retrieves SSH connection details]( https://github.com/cli/cli/blob/30066b0042d0c5928d959e288144300cb28196c9/internal/codespaces/rpc/inv... https://github.com/cli/cli/blob/30066b0042d0c5928d959e288144300cb28196c9/internal/codespaces/rpc/invoker.go#L230-L244 ), such as remote username, which is used in [executing `ssh` commands]( https://github.com/cli/cli/blob/e356c69a6f0125cfaac782c35acf77314f18908d/pkg/cmd/codespace/ssh.go#L2... https://github.com/cli/cli/blob/e356c69a6f0125cfaac782c35acf77314f18908d/pkg/cmd/codespace/ssh.go#L263 ) for `gh codespace ssh` or `gh codespace logs` commands.\n\nThis exploit occurs when a malicious third-party devcontainer contains a modified SSH server that injects `ssh` arguments within the SSH connection details. `gh codespace ssh` and `gh codespace logs` commands could execute arbitrary code on the user's workstation if the remote username contains something like `-oProxyCommand=\"echo hacked\" #`.  The `-oProxyCommand` flag causes `ssh` to execute the provided command while `#` shell comment causes any other `ssh` arguments to be ignored.\n\nIn `2.62.0`, the remote username information is being validated before being used.",
+          "Severity": "HIGH",
+          "CweIDs": ["CWE-77"],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 4,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H",
+              "V3Score": 8.1
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+              "V3Score": 9.6
+            }
+          },
+          "References": [
+            "https://github.com/cli/cli",
+            "https://github.com/cli/cli/security/advisories/GHSA-p2h2-3vg9-4p87",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-52308",
+            "https://pkg.go.dev/vuln/GO-2024-3269",
+            "https://ubuntu.com/security/notices/USN-7130-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-52308"
+          ],
+          "PublishedDate": "2024-11-14T23:15:05.727Z",
+          "LastModifiedDate": "2024-11-20T15:07:43.127Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-54132",
+          "PkgID": "github.com/cli/cli@v1.14.0",
+          "PkgName": "github.com/cli/cli",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/github.com/cli/cli@v1.14.0",
+            "UID": "f179abb06736de0a"
+          },
+          "InstalledVersion": "v1.14.0",
+          "Status": "affected",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-54132",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "The GitHub CLI is GitHub\\u2019s official command line tool. A security ...",
+          "Description": "The GitHub CLI is GitHub’s official command line tool. A security vulnerability has been identified in GitHub CLI that could create or overwrite files in unintended directories when users download a malicious GitHub Actions workflow artifact through gh run download. This vulnerability stems from a GitHub Actions workflow artifact named .. when downloaded using gh run download. The artifact name and --dir flag are used to determine the artifact’s download path. When the artifact is named .., the resulting files within the artifact are extracted exactly 1 directory higher than the specified --dir flag value. This vulnerability is fixed in 2.63.1.",
+          "Severity": "MEDIUM",
+          "CweIDs": ["CWE-22"],
+          "VendorSeverity": {
+            "ghsa": 2
+          },
+          "References": [
+            "https://github.com/cli/cli",
+            "https://github.com/cli/cli/commit/1136764c369aaf0cae4ec2ee09dc35d871076932",
+            "https://github.com/cli/cli/security/advisories/GHSA-2m9h-r57g-45pj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-54132"
+          ],
+          "PublishedDate": "2024-12-04T16:15:26.73Z",
+          "LastModifiedDate": "2024-12-04T16:15:26.73Z"
+        }
+      ]
+    }
+  ]
+}

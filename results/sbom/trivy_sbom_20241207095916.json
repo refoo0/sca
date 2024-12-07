@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:d6f31c48-87be-4785-b7dd-ccbb5fcf1a3a",
+  "serialNumber": "urn:uuid:08030410-42e8-4dc3-b63f-349dd3fd0fdb",
   "version": 1,
   "metadata": {
-    "timestamp": "2024-11-28T16:26:03+00:00",
+    "timestamp": "2024-12-07T08:59:16+00:00",
     "tools": {
       "components": [
         {
@@ -17,7 +17,7 @@
       ]
     },
     "component": {
-      "bom-ref": "774d3d3e-990f-4b5f-b34f-47929951c0a3",
+      "bom-ref": "e89004dd-207f-46db-ba34-df4b503ab2a0",
       "type": "application",
       "name": "app",
       "properties": [
@@ -30,7 +30,7 @@
   },
   "components": [
     {
-      "bom-ref": "0aa98cf7-1da5-4365-baea-efac0a4e8588",
+      "bom-ref": "fa210aac-75f2-4cd6-8189-9efbb20d6748",
       "type": "application",
       "name": "go.mod",
       "properties": [
@@ -40,6 +40,30 @@
         },
         {
           "name": "aquasecurity:trivy:Type",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/cli/cli@v1.14.0",
+      "type": "library",
+      "name": "github.com/cli/cli",
+      "version": "v1.14.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:golang/github.com/cli/cli@v1.14.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/cli/cli@v1.14.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
           "value": "gomod"
         }
       ]
@@ -63,15 +87,25 @@
   ],
   "dependencies": [
     {
-      "ref": "0aa98cf7-1da5-4365-baea-efac0a4e8588",
+      "ref": "e89004dd-207f-46db-ba34-df4b503ab2a0",
+      "dependsOn": [
+        "fa210aac-75f2-4cd6-8189-9efbb20d6748"
+      ]
+    },
+    {
+      "ref": "fa210aac-75f2-4cd6-8189-9efbb20d6748",
       "dependsOn": [
         "pkg:golang/sca"
       ]
     },
     {
-      "ref": "774d3d3e-990f-4b5f-b34f-47929951c0a3",
+      "ref": "pkg:golang/github.com/cli/cli@v1.14.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/sca",
       "dependsOn": [
-        "0aa98cf7-1da5-4365-baea-efac0a4e8588"
+        "pkg:golang/github.com/cli/cli@v1.14.0"
       ]
     }
   ],

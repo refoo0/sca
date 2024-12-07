@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set default values
-DEFAULT_OUTPUT_FILE="results/snyk.json"
+DEFAULT_OUTPUT_FILE="results/scanner/osv.json"
 OUTPUT_FILE=${1:-$DEFAULT_OUTPUT_FILE}
 
 DEFAULT_SCAN_FILE="app"
@@ -13,13 +13,14 @@ mkdir -p "$OUTPUT_DIR" || error_exit "Failed to create directory: $OUTPUT_DIR"
 
 
 # Execute the Trivy command
-echo "Executing Snyk scan..."
- snyk test --json "$SCAN_FILE" > "$OUTPUT_FILE"  
+echo "Executing OSV scan..."
+#disabling call analysis for go code    
+osv-scanner --no-call-analysis=go  --format json --output "$OUTPUT_FILE" -r "$SCAN_FILE"  
 
 # Check if the command was successful
-if [ $? -eq 0 ]; then
-    echo "Snyk scan completed successfully. Result saved in $OUTPUT_FILE"
+if [ $? -eq 0 ] || [ $? -eq 1 ]; then
+    echo "OSV scan completed successfully. Result saved in $OUTPUT_FILE"
 else
-    echo "Snyk scan failed."
+    echo "OSV scan failed."
     exit 1
 fi
