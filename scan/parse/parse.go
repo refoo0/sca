@@ -8,10 +8,11 @@ import (
 
 type VulnInfo struct {
 	Counts struct {
-		TotalEntries int `json:"TotalEntries"`
-		CountOSV     int `json:"CountOSV"`
-		CountTrivy   int `json:"CountTrivy"`
-		CountSnyk    int `json:"CountSnyk"`
+		Target       string `json:"Target"`
+		TotalEntries int    `json:"TotalEntries"`
+		CountOSV     int    `json:"CountOSV"`
+		CountTrivy   int    `json:"CountTrivy"`
+		CountSnyk    int    `json:"CountSnyk"`
 	} `json:"Counts"`
 	Vuln []struct {
 		CVEID string `json:"CVE-ID"`
@@ -23,12 +24,17 @@ type VulnInfo struct {
 	} `json:"Vuln"`
 }
 
-func Parse(osvPath string, trivyPath string, snykPath string) {
+func Parse(osvPath string, trivyPath string, snykPath string, target string) {
 	// Path to the input JSON file
 	//osvPath := "./parse/osv.json"
 	//trivyPath := "./parse/trivy.json"
 	// Path to the output JSON file
-	vulnInfos := "./vulnInfos.json"
+	var vulnInfos string
+	if target == "" {
+		vulnInfos = "./vulnInfos.json"
+	} else {
+		vulnInfos = target + ".json"
+	}
 
 	// Process the OSV JSON file
 	outputData, err := processOSVJSON(osvPath)
@@ -50,10 +56,10 @@ func Parse(osvPath string, trivyPath string, snykPath string) {
 	processSnykJSON(snykPath, vulnInfos)
 
 	// Calculate the counts of vulnerabilities
-	calculateCounts(vulnInfos)
+	calculateCounts(vulnInfos, target)
 }
 
-func calculateCounts(vulnInfo string) {
+func calculateCounts(vulnInfo string, target string) {
 	// Read the existing JSON file
 	existingData, err := os.ReadFile(vulnInfo)
 	if err != nil {
@@ -109,6 +115,7 @@ func calculateCounts(vulnInfo string) {
 		existingJson["Counts"] = make(map[string]interface{})
 	}
 	counts := existingJson["Counts"].(map[string]interface{})
+	counts["Target"] = target
 	counts["TotalEntries"] = totalEntries
 	counts["CountOSV"] = countOSV
 	counts["CountTrivy"] = countTrivy

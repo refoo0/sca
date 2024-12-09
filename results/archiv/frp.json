@@ -1,0 +1,107 @@
+{
+  "Counts": {
+    "CountOSV": 11,
+    "CountSnyk": 3,
+    "CountTrivy": 1,
+    "Target": "frp",
+    "TotalEntries": 12
+  },
+  "Vuln": [
+    {
+      "CVE-ID": "CVE-2024-4067",
+      "GHSA": "GHSA-952p-6rrq-rcjv",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-47068",
+      "GHSA": "GHSA-gcx4-mw62-g8wm",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-45812",
+      "GHSA": "GHSA-gprj-6m2f-j9hx",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-6783",
+      "GHSA": "GHSA-g3ch-rx76-35fx",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-45811",
+      "GHSA": "GHSA-9cwx-2883-4wfx",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-53259",
+      "GHSA": "GHSA-px8v-pp82-rcvr",
+      "GO-ID": "GO-2024-3302",
+      "OSV": true,
+      "Snyk": true,
+      "Trivy": true
+    },
+    {
+      "CVE-ID": "CVE-2024-4068",
+      "GHSA": "GHSA-grv7-fg5c-xmjg",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-21538",
+      "GHSA": "GHSA-3xgq-45jj-v275",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-55565",
+      "GHSA": "GHSA-mwcw-c2x4-8c55",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": true,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2022-25883",
+      "GHSA": "GHSA-c2qf-rxjj-qqgw",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-31207",
+      "GHSA": "GHSA-8jhw-289h-jh2g",
+      "GO-ID": "",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "",
+      "GHSA": "",
+      "GO-ID": "",
+      "OSV": false,
+      "Snyk": true,
+      "Trivy": false
+    }
+  ]
+}

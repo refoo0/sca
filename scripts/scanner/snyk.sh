@@ -4,7 +4,7 @@
 DEFAULT_OUTPUT_FILE="results/scanner/snyk.json"
 OUTPUT_FILE=${1:-$DEFAULT_OUTPUT_FILE}
 
-DEFAULT_SCAN_FILE="app"
+DEFAULT_SCAN_FILE="app/myapp"
 SCAN_FILE=${2:-$DEFAULT_SCAN_FILE}
 
 # Create output directory if it doesn't exist
@@ -14,7 +14,7 @@ mkdir -p "$OUTPUT_DIR" || error_exit "Failed to create directory: $OUTPUT_DIR"
 
 # Execute the Trivy command
 echo "Executing Snyk scan..."
- snyk test --json "$SCAN_FILE" > "$OUTPUT_FILE"  
+ snyk test --json --all-projects "$SCAN_FILE" > "$OUTPUT_FILE"  
 
 # Check if the command was successful
 if [ $? -eq 0 ] || [ $? -eq 1 ]; then

@@ -15,7 +15,9 @@ mkdir -p "$OUTPUT_DIR" || error_exit "Failed to create directory: $OUTPUT_DIR"
 # Execute the Trivy command
 echo "Executing OSV scan..."
 #disabling call analysis for go code    
-osv-scanner --no-call-analysis=go  --format json --output "$OUTPUT_FILE" -r "$SCAN_FILE"  
+osv-scanner --no-call-analysis=go  --format json --output "$OUTPUT_FILE" -r "$SCAN_FILE" 
+#osv-scanner --lockfile=app/go/src/go.mod --format json --output "$OUTPUT_FILE" 
+
 
 # Check if the command was successful
 if [ $? -eq 0 ] || [ $? -eq 1 ]; then

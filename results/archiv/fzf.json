@@ -1,0 +1,107 @@
+{
+  "Counts": {
+    "CountOSV": 12,
+    "CountSnyk": 0,
+    "CountTrivy": 0,
+    "Target": "fzf",
+    "TotalEntries": 12
+  },
+  "Vuln": [
+    {
+      "CVE-ID": "CVE-2024-34156",
+      "GHSA": "",
+      "GO-ID": "GO-2024-3106",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-24784",
+      "GHSA": "GHSA-fgq5-q76c-gx78",
+      "GO-ID": "GO-2024-2609",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2023-45288",
+      "GHSA": "GHSA-4v7x-pqxf-cx7m",
+      "GO-ID": "GO-2024-2687",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-24789",
+      "GHSA": "GHSA-236w-p7wf-5ph8",
+      "GO-ID": "GO-2024-2888",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-24791",
+      "GHSA": "",
+      "GO-ID": "GO-2024-2963",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-24790",
+      "GHSA": "GHSA-49gw-vxvf-fc2g",
+      "GO-ID": "GO-2024-2887",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-34155",
+      "GHSA": "",
+      "GO-ID": "GO-2024-3105",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-34158",
+      "GHSA": "",
+      "GO-ID": "GO-2024-3107",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-24783",
+      "GHSA": "GHSA-3q2c-pvp5-3cqp",
+      "GO-ID": "GO-2024-2598",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2023-45290",
+      "GHSA": "GHSA-rr6r-cfgf-gc6h",
+      "GO-ID": "GO-2024-2599",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2023-45289",
+      "GHSA": "GHSA-32ch-6x54-q4h9",
+      "GO-ID": "GO-2024-2600",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-24785",
+      "GHSA": "GHSA-j6m3-gc37-6r6q",
+      "GO-ID": "GO-2024-2610",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    }
+  ]
+}

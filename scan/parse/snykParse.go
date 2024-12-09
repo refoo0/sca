@@ -7,17 +7,7 @@ import (
 	"os"
 )
 
-// RawVulnerability beschreibt die Struktur der rohen JSON-Daten
-type RawVulnerability struct {
-	Vulnerabilities []struct {
-		Identifiers struct {
-			GO   []string `json:"GO"`
-			CVE  []string `json:"CVE"`
-			GHSA []string `json:"GHSA"`
-		} `json:"identifiers"`
-	} `json:"vulnerabilities"`
-}
-
+// VulnIDS beschreibt die Struktur von CVE, GHSA und GO IDs
 type VulnIDS struct {
 	CVEID string `json:"CVE-ID"`
 	GHSA  string `json:"GHSA"`
@@ -37,7 +27,7 @@ func processSnykJSON(snykPath string, vulnInfo string) {
 
 	// Read the second JSON file (contains Vuln entries)
 	var secondFile VulnInfo
-	err = readJSONFile(vulnInfo, &secondFile)
+	err = readJSONFileSnyk(vulnInfo, &secondFile)
 	if err != nil {
 		fmt.Println("Fehler beim Lesen der zweiten Datei:", err)
 		return
@@ -50,8 +40,8 @@ func processSnykJSON(snykPath string, vulnInfo string) {
 		return
 	}
 
-	// Rohe JSON-Daten in RawVulnerability-Struktur umwandeln
-	var rawData RawVulnerability
+	// Rohe JSON-Daten dynamisch parsen
+	var rawData interface{}
 	err = json.Unmarshal(byteValue, &rawData)
 	if err != nil {
 		fmt.Println("Fehler beim Unmarshaling der Rohdaten:", err)
@@ -60,34 +50,23 @@ func processSnykJSON(snykPath string, vulnInfo string) {
 
 	vulnSynk := []VulnIDS{}
 	uniqueEntries := make(map[string]bool)
-	// VulnInfo-Struktur basierend auf den rohen Daten erstellen
-	for _, vuln := range rawData.Vulnerabilities {
-		var cveID, ghsa, goID string
 
-		// Überprüfen, ob es mindestens einen Eintrag für jedes Feld gibt
-		if len(vuln.Identifiers.CVE) > 0 {
-			cveID = vuln.Identifiers.CVE[0]
+	// Überprüfen, ob rawData eine Liste oder ein einzelnes Objekt ist
+	switch data := rawData.(type) {
+	case []interface{}:
+		for _, item := range data {
+			if entry, ok := item.(map[string]interface{}); ok {
+				if vulnerabilities, exists := entry["vulnerabilities"]; exists {
+					extractVulnerabilities(vulnerabilities, &vulnSynk, uniqueEntries)
+				}
+			}
 		}
-		if len(vuln.Identifiers.GHSA) > 0 {
-			ghsa = vuln.Identifiers.GHSA[0]
+	case map[string]interface{}:
+		if vulnerabilities, exists := data["vulnerabilities"]; exists {
+			extractVulnerabilities(vulnerabilities, &vulnSynk, uniqueEntries)
 		}
-		if len(vuln.Identifiers.GO) > 0 {
-			goID = vuln.Identifiers.GO[0]
-		}
-
-		// Erstelle einen eindeutigen Schlüssel, der diese Felder kombiniert
-		uniqueKey := cveID + "|" + ghsa + "|" + goID
-
-		// Überprüfen, ob dieser Schlüssel bereits existiert
-		if _, exists := uniqueEntries[uniqueKey]; !exists {
-			// Füge den Eintrag zur Liste und der Map hinzu
-			vulnSynk = append(vulnSynk, VulnIDS{
-				CVEID: cveID,
-				GHSA:  ghsa,
-				GOID:  goID,
-			})
-			uniqueEntries[uniqueKey] = true
-		}
+	default:
+		fmt.Println("Unbekanntes JSON-Format für Vulnerabilities")
 	}
 
 	// Create a map to store the indexes of existing CVE-IDs in the second file
@@ -98,10 +77,8 @@ func processSnykJSON(snykPath string, vulnInfo string) {
 
 	for _, record := range vulnSynk {
 		if index, exists := existingVulnIndexMap[record.CVEID]; exists {
-			// If the vulnerability exists, set Snyk to true
 			secondFile.Vuln[index].Snyk = true
 		} else {
-			// If the vulnerability does not exist, add it to the second file
 			newVuln := struct {
 				CVEID string `json:"CVE-ID"`
 				GHSA  string `json:"GHSA"`
@@ -121,79 +98,74 @@ func processSnykJSON(snykPath string, vulnInfo string) {
 		}
 	}
 
-	//add the vulnerabilities that do not have a CVE-ID
-	vulnSynkGO := []VulnIDS{}
-	vulnSynkGHSA := []VulnIDS{}
-	for _, record := range vulnSynk {
-		if record.CVEID == "" {
-			if record.GOID != "" {
-				vulnSynkGO = append(vulnSynkGO, record)
-			} else {
-				vulnSynkGHSA = append(vulnSynkGHSA, record)
-			}
-		}
-	}
-
-	if len(vulnSynkGO) > 0 {
-		for _, record := range vulnSynkGO {
-			if index, exists := existingVulnIndexMap[record.GOID]; exists {
-				// If the vulnerability exists, set Snyk to true
-				secondFile.Vuln[index].Snyk = true
-			} else {
-				// If the vulnerability does not exist, add it to the second file
-				newVuln := struct {
-					CVEID string `json:"CVE-ID"`
-					GHSA  string `json:"GHSA"`
-					GOID  string `json:"GO-ID"`
-					OSV   bool   `json:"OSV"`
-					Trivy bool   `json:"Trivy"`
-					Snyk  bool   `json:"Snyk"`
-				}{
-					CVEID: "",
-					GHSA:  "",
-					GOID:  record.GOID,
-					OSV:   false,
-					Trivy: false,
-					Snyk:  true,
-				}
-				secondFile.Vuln = append(secondFile.Vuln, newVuln)
-			}
-		}
-	}
-
-	if len(vulnSynkGHSA) > 0 {
-		for _, record := range vulnSynkGHSA {
-			if index, exists := existingVulnIndexMap[record.GHSA]; exists {
-				// If the vulnerability exists, set Snyk to true
-				secondFile.Vuln[index].Snyk = true
-			} else {
-				// If the vulnerability does not exist, add it to the second file
-				newVuln := struct {
-					CVEID string `json:"CVE-ID"`
-					GHSA  string `json:"GHSA"`
-					GOID  string `json:"GO-ID"`
-					OSV   bool   `json:"OSV"`
-					Trivy bool   `json:"Trivy"`
-					Snyk  bool   `json:"Snyk"`
-				}{
-					CVEID: "",
-					GHSA:  record.GHSA,
-					GOID:  "",
-					OSV:   false,
-					Trivy: false,
-					Snyk:  true,
-				}
-				secondFile.Vuln = append(secondFile.Vuln, newVuln)
-			}
-		}
-	}
-
-	// Write the updated second file
-	err = writeJSONFile(vulnInfo, &secondFile)
+	err = writeJSONFileSnyk(vulnInfo, &secondFile)
 	if err != nil {
 		fmt.Println("Fehler beim Schreiben der aktualisierten Datei:", err)
 		return
 	}
 
 	fmt.Println("Datei erfolgreich aktualisiert")
+}
+
+// extractVulnerabilities extrahiert die Einträge aus dem "vulnerabilities"-Feld
+func extractVulnerabilities(vulnerabilities interface{}, vulnSynk *[]VulnIDS, uniqueEntries map[string]bool) {
+	switch vulnList := vulnerabilities.(type) {
+	case []interface{}:
+		for _, vuln := range vulnList {
+			if vulnMap, ok := vuln.(map[string]interface{}); ok {
+				var cveID, ghsa, goID string
+				if identifiers, ok := vulnMap["identifiers"].(map[string]interface{}); ok {
+					if cves, ok := identifiers["CVE"].([]interface{}); ok && len(cves) > 0 {
+						cveID = fmt.Sprintf("%v", cves[0])
+					}
+					if ghsas, ok := identifiers["GHSA"].([]interface{}); ok && len(ghsas) > 0 {
+						ghsa = fmt.Sprintf("%v", ghsas[0])
+					}
+					if gos, ok := identifiers["GO"].([]interface{}); ok && len(gos) > 0 {
+						goID = fmt.Sprintf("%v", gos[0])
+					}
+				}
+				uniqueKey := cveID + "|" + ghsa + "|" + goID
+				if _, exists := uniqueEntries[uniqueKey]; !exists {
+					*vulnSynk = append(*vulnSynk, VulnIDS{
+						CVEID: cveID,
+						GHSA:  ghsa,
+						GOID:  goID,
+					})
+					uniqueEntries[uniqueKey] = true
+				}
+			}
+		}
+	default:
+		fmt.Println("'vulnerabilities' hat ein unerwartetes Format")
+	}
+}
+
+// readJSONFileSnyk liest eine JSON-Datei in die angegebene Struktur
+func readJSONFileSnyk(path string, target interface{}) error {
+	file, err := os.Open(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	byteValue, err := io.ReadAll(file)
+	if err != nil {
+		return err
+	}
+
+	return json.Unmarshal(byteValue, target)
+}
+
+// writeJSONFileSnyk schreibt die JSON-Daten zurück in eine Datei
+func writeJSONFileSnyk(path string, data interface{}) error {
+	file, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	encoder := json.NewEncoder(file)
+	encoder.SetIndent("", "  ")
+	return encoder.Encode(data)
 }

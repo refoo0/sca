@@ -10,13 +10,14 @@ func NewAnalysisCommand() *cobra.Command {
 	analysisCmd := &cobra.Command{
 		Use:   "analysis",
 		Short: "analysis the results of sca tools",
-		Args:  cobra.ExactArgs(3),
+		Args:  cobra.ExactArgs(4),
 		Run: func(cmd *cobra.Command, args []string) {
 
 			//args[0] = osvPath
 			//args[1] = trivyPath
 			//args[2] = snykPath
-			parse.Parse(args[0], args[1], args[2])
+			//args[3] = target
+			parse.Parse(args[0], args[1], args[2], args[3])
 
 		},
 	}

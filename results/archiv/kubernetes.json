@@ -1,0 +1,83 @@
+{
+  "Counts": {
+    "CountOSV": 6,
+    "CountSnyk": 5,
+    "CountTrivy": 3,
+    "Target": "kubernetes",
+    "TotalEntries": 9
+  },
+  "Vuln": [
+    {
+      "CVE-ID": "CVE-2024-34158",
+      "GHSA": "",
+      "GO-ID": "GO-2024-3107",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-51744",
+      "GHSA": "GHSA-29wx-vh33-7x7r",
+      "GO-ID": "GO-2024-3250",
+      "OSV": true,
+      "Snyk": true,
+      "Trivy": true
+    },
+    {
+      "CVE-ID": "CVE-2023-45142",
+      "GHSA": "GHSA-rcjv-mgp8-qvmr",
+      "GO-ID": "GO-2023-2113",
+      "OSV": true,
+      "Snyk": true,
+      "Trivy": true
+    },
+    {
+      "CVE-ID": "CVE-2024-28180",
+      "GHSA": "GHSA-c5q2-7r4c-mv6g",
+      "GO-ID": "GO-2024-2631",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": true
+    },
+    {
+      "CVE-ID": "CVE-2024-34155",
+      "GHSA": "",
+      "GO-ID": "GO-2024-3105",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2024-34156",
+      "GHSA": "",
+      "GO-ID": "GO-2024-3106",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2023-44487",
+      "GHSA": "GHSA-2m7v-gc89-fjqf",
+      "GO-ID": "GO-2023-2153",
+      "OSV": false,
+      "Snyk": true,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2019-11250",
+      "GHSA": "",
+      "GO-ID": "GO-2021-0065",
+      "OSV": false,
+      "Snyk": true,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2020-8565",
+      "GHSA": "",
+      "GO-ID": "",
+      "OSV": false,
+      "Snyk": true,
+      "Trivy": false
+    }
+  ]
+}

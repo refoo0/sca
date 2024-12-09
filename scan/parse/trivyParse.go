@@ -77,6 +77,8 @@ func processTrivyJSON(trivy string, vulnInfo string) {
 		existingVulnIndexMap[vuln.CVEID] = i
 	}
 
+	fmt.Println("result length: ", len(firstFile.Results), "vuln length: ", len(secondFile.Vuln))
+
 	// Loop through each vulnerability from the first file
 	for _, result := range firstFile.Results {
 		for _, vuln := range result.Vulnerabilities {
@@ -94,13 +96,13 @@ func processTrivyJSON(trivy string, vulnInfo string) {
 					Snyk  bool   `json:"Snyk"`
 				}{
 					CVEID: vuln.VulnerabilityID,
-					GHSA:  "",    // Placeholder, as GHSA is not in the first file
-					GOID:  "",    // Placeholder, as GO-ID is not in the first file
-					OSV:   false, // Placeholder, as OSV is not in the first file
-					Trivy: true,  // Trivy is set to true as requested
-					Snyk:  false, // Placeholder, as Snyk is not in the first file
+					GHSA:  "",   // Placeholder, as GHSA is not in the first file
+					GOID:  "",   // Placeholder, as GO-ID is not in the first file
+					Trivy: true, // Trivy is set to true as requested
 				}
+				fmt.Println("New vulnerability found: ", newVuln.CVEID)
 				secondFile.Vuln = append(secondFile.Vuln, newVuln)
+				existingVulnIndexMap[vuln.VulnerabilityID] = len(secondFile.Vuln) - 1
 			}
 		}
 	}

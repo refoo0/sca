@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2024-12-07T18:13:12.99462+01:00",
-  "ArtifactName": "app/myapp",
+  "CreatedAt": "2024-12-10T00:35:20.164118+01:00",
+  "ArtifactName": "app/caddy",
   "ArtifactType": "filesystem",
   "Metadata": {
     "ImageConfig": {
@@ -19,147 +19,7 @@
     {
       "Target": "go.mod",
       "Class": "lang-pkgs",
-      "Type": "gomod",
-      "Vulnerabilities": [
-        {
-          "VulnerabilityID": "CVE-2024-53862",
-          "PkgID": "github.com/argoproj/argo-workflows/v3@v3.5.7",
-          "PkgName": "github.com/argoproj/argo-workflows/v3",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/github.com/argoproj/argo-workflows/v3@v3.5.7",
-            "UID": "1fccffb42af2ada5"
-          },
-          "InstalledVersion": "v3.5.7",
-          "FixedVersion": "3.5.13, 3.6.2",
-          "Status": "fixed",
-          "Layer": {},
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-53862",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory Go",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
-          },
-          "Title": "argo-workflows: Argo Workflows Allows Access to Archived Workflows with Fake Token in `client` mode",
-          "Description": "Argo Workflows is an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes. When using `--auth-mode=client`, Archived Workflows can be retrieved with a fake or spoofed token via the GET Workflow endpoint: `/api/v1/workflows/{namespace}/{name}` or when using `--auth-mode=sso`, all Archived Workflows can be retrieved with a valid token via the GET Workflow endpoint: `/api/v1/workflows/{namespace}/{name}`. No authentication is performed by the Server itself on `client` tokens. Authentication \u0026 authorization is instead delegated to the k8s API server. However, the Workflow Archive does not interact with k8s, and so any token that looks valid will be considered authenticated, even if it is not a k8s token or even if the token has no RBAC for Argo. To handle the lack of pass-through k8s authN/authZ, the Workflow Archive specifically does the equivalent of a `kubectl auth can-i` check for respective methods. In 3.5.7 and 3.5.8, the auth check was accidentally removed on the GET Workflow endpoint's fallback to archived workflows on these lines, allowing archived workflows to be retrieved with a fake token. This vulnerability is fixed in 3.6.2 and 3.5.13.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-200",
-            "CWE-290"
-          ],
-          "VendorSeverity": {
-            "ghsa": 2,
-            "redhat": 2
-          },
-          "CVSS": {
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-              "V3Score": 5.3
-            }
-          },
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2024-53862",
-            "https://github.com/argoproj/argo-workflows",
-            "https://github.com/argoproj/argo-workflows/pull/13021/files#diff-a5b255abaceddc9cc20bf6da6ae92c3a5d3605d94366af503ed754c079a1171aL668-R715",
-            "https://github.com/argoproj/argo-workflows/security/advisories/GHSA-h36c-m3rf-34h9",
-            "https://nvd.nist.gov/vuln/detail/CVE-2024-53862",
-            "https://www.cve.org/CVERecord?id=CVE-2024-53862"
-          ],
-          "PublishedDate": "2024-12-02T16:15:14.277Z",
-          "LastModifiedDate": "2024-12-02T16:15:14.277Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2023-45288",
-          "PkgID": "golang.org/x/net@v0.22.0",
-          "PkgName": "golang.org/x/net",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/golang.org/x/net@v0.22.0",
-            "UID": "338ea27622258a28"
-          },
-          "InstalledVersion": "v0.22.0",
-          "FixedVersion": "0.23.0",
-          "Status": "fixed",
-          "Layer": {},
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-45288",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory Go",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
-          },
-          "Title": "golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS",
-          "Description": "An attacker may cause an HTTP/2 endpoint to read arbitrary amounts of header data by sending an excessive number of CONTINUATION frames. Maintaining HPACK state requires parsing and processing all HEADERS and CONTINUATION frames on a connection. When a request's headers exceed MaxHeaderBytes, no memory is allocated to store the excess headers, but they are still parsed. This permits an attacker to cause an HTTP/2 endpoint to read arbitrary amounts of header data, all associated with a request which is going to be rejected. These headers can include Huffman-encoded data which is significantly more expensive for the receiver to decode than for an attacker to send. The fix sets a limit on the amount of excess header frames we will process before closing a connection.",
-          "Severity": "MEDIUM",
-          "VendorSeverity": {
-            "alma": 3,
-            "amazon": 2,
-            "azure": 3,
-            "bitnami": 3,
-            "cbl-mariner": 3,
-            "ghsa": 2,
-            "oracle-oval": 3,
-            "photon": 3,
-            "redhat": 3,
-            "rocky": 3,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "bitnami": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            },
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
-              "V3Score": 5.3
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2024/04/03/16",
-            "http://www.openwall.com/lists/oss-security/2024/04/05/4",
-            "https://access.redhat.com/errata/RHSA-2024:2724",
-            "https://access.redhat.com/security/cve/CVE-2023-45288",
-            "https://bugzilla.redhat.com/2268017",
-            "https://bugzilla.redhat.com/2268018",
-            "https://bugzilla.redhat.com/2268019",
-            "https://bugzilla.redhat.com/2268273",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2268017",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2268018",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2268019",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2268273",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-45288",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-45289",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-45290",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-24783",
-            "https://errata.almalinux.org/9/ALSA-2024-2724.html",
-            "https://errata.rockylinux.org/RLSA-2024:2724",
-            "https://go.dev/cl/576155",
-            "https://go.dev/issue/65051",
-            "https://groups.google.com/g/golang-announce/c/YgW0sx8mN3M",
-            "https://kb.cert.org/vuls/id/421644",
-            "https://linux.oracle.com/cve/CVE-2023-45288.html",
-            "https://linux.oracle.com/errata/ELSA-2024-3346.html",
-            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QRYFHIQ6XRKRYBI2F5UESH67BJBQXUPT",
-            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QRYFHIQ6XRKRYBI2F5UESH67BJBQXUPT/",
-            "https://nowotarski.info/http2-continuation-flood-technical-details",
-            "https://nowotarski.info/http2-continuation-flood/",
-            "https://nvd.nist.gov/vuln/detail/CVE-2023-45288",
-            "https://pkg.go.dev/vuln/GO-2024-2687",
-            "https://security.netapp.com/advisory/ntap-20240419-0009",
-            "https://security.netapp.com/advisory/ntap-20240419-0009/",
-            "https://ubuntu.com/security/notices/USN-6886-1",
-            "https://ubuntu.com/security/notices/USN-7109-1",
-            "https://ubuntu.com/security/notices/USN-7111-1",
-            "https://www.cve.org/CVERecord?id=CVE-2023-45288",
-            "https://www.kb.cert.org/vuls/id/421644"
-          ],
-          "PublishedDate": "2024-04-04T21:15:16.113Z",
-          "LastModifiedDate": "2024-08-26T21:35:02.457Z"
-        }
-      ]
+      "Type": "gomod"
     }
   ]
 }

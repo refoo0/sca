@@ -1,6 +1,7 @@
 #!/bin/bash
 
-SCAN_FILE="app/myapp"
+DEFAULT_SCAN_FILE=""
+SCAN_FILE=${1:-$DEFAULT_SCAN_FILE}
 
 # Execute trivy sbom script
 ./scripts/scanner/trivy.sh "" $SCAN_FILE
