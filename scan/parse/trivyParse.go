@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"os"
+
+	"github.com/refoo0/sca/scan/modul"
 )
 
 type Vulnerability struct {
@@ -64,7 +66,7 @@ func processTrivyJSON(trivy string, vulnInfo string) {
 	}
 
 	// Read the second JSON file (contains Vuln entries)
-	var secondFile VulnInfo
+	var secondFile modul.VulnInfo
 	err = readJSONFile(vulnInfo, &secondFile)
 	if err != nil {
 		fmt.Println(err)

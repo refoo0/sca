@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"os"
+
+	"github.com/refoo0/sca/scan/modul"
 )
 
 // VulnIDS beschreibt die Struktur von CVE, GHSA und GO IDs
@@ -26,7 +28,7 @@ func processSnykJSON(snykPath string, vulnInfo string) {
 	defer file.Close()
 
 	// Read the second JSON file (contains Vuln entries)
-	var secondFile VulnInfo
+	var secondFile modul.VulnInfo
 	err = readJSONFileSnyk(vulnInfo, &secondFile)
 	if err != nil {
 		fmt.Println("Fehler beim Lesen der zweiten Datei:", err)

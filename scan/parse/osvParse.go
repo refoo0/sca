@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"os"
+
+	"github.com/refoo0/sca/scan/modul"
 )
 
 type OSVJSON struct {
@@ -25,25 +27,25 @@ type VulnRecord struct {
 }
 
 // processJSON parses the input JSON file and maps CVE-ID, GHSA, and GO-ID into the required structure
-func processOSVJSON(filePath string) (VulnInfo, error) {
+func processOSVJSON(filePath string) (modul.VulnInfo, error) {
 	// Open the JSON file
 	file, err := os.Open(filePath)
 	if err != nil {
-		return VulnInfo{}, fmt.Errorf("error opening file: %v", err)
+		return modul.VulnInfo{}, fmt.Errorf("error opening file: %v", err)
 	}
 	defer file.Close()
 
 	// Read the JSON file contents
 	data, err := io.ReadAll(file)
 	if err != nil {
-		return VulnInfo{}, fmt.Errorf("error reading file: %v", err)
+		return modul.VulnInfo{}, fmt.Errorf("error reading file: %v", err)
 	}
 
 	// Parse the JSON data into the OSVJSON structure
 	var inputData OSVJSON
 	err = json.Unmarshal(data, &inputData)
 	if err != nil {
-		return VulnInfo{}, fmt.Errorf("error unmarshaling JSON: %v", err)
+		return modul.VulnInfo{}, fmt.Errorf("error unmarshaling JSON: %v", err)
 	}
 
 	// Use a map to avoid duplicates and to store CVE, GHSA, and GO-IDs together
@@ -105,10 +107,10 @@ func processOSVJSON(filePath string) (VulnInfo, error) {
 	}
 
 	// Return the final output JSON structure
-	return VulnInfo{Vuln: vulnList}, nil
+	return modul.VulnInfo{Vuln: vulnList}, nil
 }
 
-func saveOSVOutputJSON(filePath string, outputData VulnInfo) error {
+func saveOSVOutputJSON(filePath string, outputData modul.VulnInfo) error {
 	// Convert the output structure to JSON
 	jsonData, err := json.MarshalIndent(outputData, "", "  ")
 	if err != nil {

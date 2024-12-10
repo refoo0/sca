@@ -1,5 +1,5 @@
 DIR = app
-SUBDIR = caddy
+SUBDIR = frp
 APP_PATH = $(DIR)/$(SUBDIR)
 
 run::
@@ -8,3 +8,6 @@ run::
 
 t::
 	go run ./scan/main.go analysis ./results/scanner/osv.json ./results/scanner/trivy.json ./results/scanner/snyk.json $(SUBDIR) 
+
+generate::
+	go run ./scan/main.go generate ./results/archiv output.json  

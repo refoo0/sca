@@ -22,7 +22,9 @@ func Execute() {
 
 func init() {
 	cmd := commands.NewAnalysisCommand()
+	cmd2 := commands.NewGenerateCommand()
 	rootCmd.AddCommand(cmd)
+	rootCmd.AddCommand(cmd2)
 }
 
 func main() {
