@@ -1,0 +1,28 @@
+{
+  "Comment": "hier wurde beide indrikete Abhängigkeit von go.mod gelöscht, die eine Sicherheitslücke aufwies. Snyk korggiert go.mod",
+  "Counts": {
+    "CountOSV": 0,
+    "CountSnyk": 2,
+    "CountTrivy": 0,
+    "Target": "myapp",
+    "TotalEntries": 2
+  },
+  "Vuln": [
+    {
+      "CVE-ID": "CVE-2020-26160",
+      "GHSA": "GHSA-w73w-5m7g-f7qc",
+      "GO-ID": "",
+      "OSV": false,
+      "Snyk": true,
+      "Trivy": false
+    },
+    {
+      "CVE-ID": "CVE-2020-27813",
+      "GHSA": "GHSA-3xh2-74w9-5vxm",
+      "GO-ID": "",
+      "OSV": false,
+      "Snyk": true,
+      "Trivy": false
+    }
+  ]
+}

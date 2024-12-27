@@ -1,8 +1,11 @@
 #!/bin/bash
 
 # Set default values
-DEFAULT_OUTPUT_FILE="results/scanner/trivy.json"
-OUTPUT_FILE=${1:-$DEFAULT_OUTPUT_FILE}
+DEFAULT_OUTPUT_FILE_DIR="results/scanner"
+OUTPUT_FILE_DIR=${1:-$DEFAULT_OUTPUT_FILE_DIR}
+
+# Construct the output file path
+OUTPUT_FILE="${OUTPUT_FILE_DIR}/trivy.json"
 
 DEFAULT_SCAN_FILE="app"
 SCAN_FILE=${2:-$DEFAULT_SCAN_FILE}

@@ -1,0 +1,20 @@
+{
+  "Comment": "hier wurde nur in go.mod genutzt aber nicht in code main.go importiert. Es ändert sich nicht ob man go.sum löschte oder nicht",
+  "Counts": {
+    "CountOSV": 1,
+    "CountSnyk": 0,
+    "CountTrivy": 1,
+    "Target": "myapp",
+    "TotalEntries": 1
+  },
+  "Vuln": [
+    {
+      "CVE-ID": "CVE-2020-27813",
+      "GHSA": "GHSA-jf24-p9p9-4rjh",
+      "GO-ID": "GO-2020-0019",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": true
+    }
+  ]
+}

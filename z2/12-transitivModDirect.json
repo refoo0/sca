@@ -1,0 +1,12 @@
+{
+  "Comment": "die indirekte abhängigkeit wurde in go.mod behalten und nicht in main.go oder importiert",
+  "Mod": "require github.com/refoo0/sca-trnsitiv v0.0.2",
+  "Counts": {
+    "Target": "",
+    "TotalEntries": 0,
+    "CountOSV": 0,
+    "CountTrivy": 0,
+    "CountSnyk": 0
+  },
+  "Vuln": null
+}

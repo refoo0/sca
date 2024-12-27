@@ -1,0 +1,20 @@
+{
+  "Commment": "hier wurde eintrag aus go.mod gelöscht und go.sum NICHT gelöscht. Snyk korggiert go.mod aber es hat v1.5.3 insalliert, deswegen hat keien Schwachstellen",
+  "Counts": {
+    "CountOSV": 0,
+    "CountSnyk": 0,
+    "CountTrivy": 1,
+    "Target": "myapp",
+    "TotalEntries": 1
+  },
+  "Vuln": [
+    {
+      "CVE-ID": "CVE-2020-27813",
+      "GHSA": "",
+      "GO-ID": "",
+      "OSV": false,
+      "Snyk": false,
+      "Trivy": true
+    }
+  ]
+}

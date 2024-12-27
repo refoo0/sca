@@ -1,0 +1,19 @@
+{
+  "Counts": {
+    "CountOSV": 0,
+    "CountSnyk": 0,
+    "CountTrivy": 1,
+    "Target": "myapp",
+    "TotalEntries": 1
+  },
+  "Vuln": [
+    {
+      "CVE-ID": "CVE-2020-27813",
+      "GHSA": "",
+      "GO-ID": "",
+      "OSV": false,
+      "Snyk": false,
+      "Trivy": true
+    }
+  ]
+}

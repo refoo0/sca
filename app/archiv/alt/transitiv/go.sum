@@ -1,0 +1,4 @@
+github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumCAMpl/TFQ4/5kLM=
+github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
+github.com/refoo0/sca-trnsitiv v0.0.1 h1:Kju8pTK5od3/OkdvCJ5x4rD85/ZvicNsatq11uXGvRo=
+github.com/refoo0/sca-trnsitiv v0.0.1/go.mod h1:GxlWxpiIZnwQZScElXa+cX/KNm/nnTcxuIHZUZo4iHM=

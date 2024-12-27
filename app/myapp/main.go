@@ -1,52 +1,55 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
+	"net/http"
 
-	argo "github.com/argoproj/argo-workflows/v3/pkg/apis/workflow/v1alpha1"
-	wfclientset "github.com/argoproj/argo-workflows/v3/pkg/client/clientset/versioned"
-	corev1 "k8s.io/api/core/v1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/client-go/rest"
+	"github.com/gorilla/websocket" // Eine bekannte Bibliothek, die in der Vergangenheit Schwachstellen hatte
 )
 
+// WebSocket Upgrader mit unsicherer Konfiguration
+var upgrader = websocket.Upgrader{
+	CheckOrigin: func(r *http.Request) bool {
+		// Sicherheitslücke: Dies erlaubt Verbindungen von jeder Quelle (Cross-Origin Request Forgery, CSRF)
+		return true
+	},
+}
+
+func echo(w http.ResponseWriter, r *http.Request) {
+	// Upgrade der HTTP-Verbindung auf eine WebSocket-Verbindung
+	conn, err := upgrader.Upgrade(w, r, nil)
+	if err != nil {
+		log.Println("Fehler beim Upgrade auf WebSocket:", err)
+		return
+	}
+	defer conn.Close()
+
+	for {
+		// Nachrichten vom Client empfangen
+		messageType, message, err := conn.ReadMessage()
+		if err != nil {
+			log.Println("Lesefehler:", err)
+			break
+		}
+		fmt.Printf("Nachricht erhalten: %s\n", message)
+
+		// Nachricht zurücksenden (Echo)
+		err = conn.WriteMessage(messageType, message)
+		if err != nil {
+			log.Println("Schreibfehler:", err)
+			break
+		}
+	}
+}
+
 func main() {
+	fmt.Println("Starte WebSocket-Server auf Port 8080...")
 
-	// Erstelle die Konfiguration
-	client, err := wfclientset.NewForConfig(&rest.Config{
-		Host: "https://argo-server-url",
-	})
+	http.HandleFunc("/ws", echo)
+
+	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		log.Fatalf("Fehler beim Erstellen der Workflow-Client: %v", err)
+		log.Fatal("Server-Fehler:", err)
 	}
-
-	workflow := &argo.Workflow{
-		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: "example-workflow-",
-			Namespace:    "default",
-		},
-		Spec: argo.WorkflowSpec{
-			Entrypoint: "whalesay",
-			Templates: []argo.Template{
-				{
-					Name: "whalesay",
-					Container: &corev1.Container{
-						Image:   "docker/whalesay:latest",
-						Command: []string{"cowsay"},
-						Args:    []string{"hello world"},
-					},
-				},
-			},
-		},
-	}
-
-	createdWorkflow, err := client.ArgoprojV1alpha1().Workflows("default").Create(context.TODO(), workflow, metav1.CreateOptions{})
-	if err != nil {
-		log.Fatalf("Fehler beim Erstellen des Workflows: %v", err)
-	}
-
-	fmt.Printf("Workflow erstellt: %s\n", createdWorkflow.Name)
-
 }

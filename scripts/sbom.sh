@@ -1,7 +1,9 @@
 #!/bin/bash
 
 TIMESTAMP=$(date +"%Y%m%d%H%M%S")
-SCAN_FILE="app/myapp"
+
+DEFAULT_SCAN_FILE=""
+SCAN_FILE=${1:-$DEFAULT_SCAN_FILE}
 
 # Execute trivy sbom script
 ./scripts/sbom/trivy_sbom.sh $TIMESTAMP "" $SCAN_FILE

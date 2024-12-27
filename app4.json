@@ -1,0 +1,10 @@
+{
+  "Counts": {
+    "Target": "",
+    "TotalEntries": 0,
+    "CountOSV": 0,
+    "CountTrivy": 0,
+    "CountSnyk": 0
+  },
+  "Vuln": null
+}

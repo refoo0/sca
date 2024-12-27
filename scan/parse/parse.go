@@ -4,9 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+
+	"github.com/refoo0/sca/scan/modul"
 )
 
-func Parse(osvPath string, trivyPath string, snykPath string, target string) {
+func Parse(osvPath string, trivyPath string, snykPath string, target string) error {
 	// Path to the input JSON file
 	//osvPath := "./parse/osv.json"
 	//trivyPath := "./parse/trivy.json"
@@ -18,55 +20,69 @@ func Parse(osvPath string, trivyPath string, snykPath string, target string) {
 		vulnInfos = target + ".json"
 	}
 
-	// Process the OSV JSON file
-	outputData, err := processOSVJSON(osvPath)
+	var vulnInfoJson modul.VulnInfo
+	// JSON aus der Struktur erzeugen
+	jsonData, err := json.MarshalIndent(vulnInfoJson, "", "  ")
 	if err != nil {
-		fmt.Printf("Error processing JSON: %v\n", err)
-		return
+		fmt.Println("Fehler beim Erzeugen des JSON:", err)
+		return err
 	}
-	// Save the OSV in VulnInfo struct to a new JSON file
-	err = saveOSVOutputJSON(vulnInfos, outputData)
+
+	err = os.WriteFile(vulnInfos, jsonData, 0644)
 	if err != nil {
-		fmt.Printf("Error saving output JSON: %v\n", err)
-		return
+		fmt.Println("Fehler beim Schreiben der Datei:", err)
+		return err
+	}
+
+	//Process the OSV JSON file
+	err = processOSVJSON(osvPath, vulnInfos)
+	if err != nil {
+		fmt.Println(err)
+		return fmt.Errorf("error processing OSV JSON: %v", err)
 	}
 
 	// Process the Trivy JSON files
-	processTrivyJSON(trivyPath, vulnInfos)
+	err = processTrivyJSON(trivyPath, vulnInfos)
+	if err != nil {
+		fmt.Println(err)
+		return fmt.Errorf("error processing Trivy JSON: %v", err)
+	}
 
 	// Process the Snyk JSON files
-	processSnykJSON(snykPath, vulnInfos)
+	err = processSnykJSON(snykPath, vulnInfos)
+	if err != nil {
+		fmt.Println(err)
+		return fmt.Errorf("error processing Snyk JSON: %v", err)
+	}
 
 	// Calculate the counts of vulnerabilities
-	calculateCounts(vulnInfos, target)
+	err = calculateCounts(vulnInfos, target)
+	if err != nil {
+		fmt.Println(err)
+		return fmt.Errorf("error calculating counts: %v", err)
+	}
+
+	return nil
+
 }
 
-func calculateCounts(vulnInfo string, target string) {
+func calculateCounts(vulnInfo string, target string) error {
+
 	// Read the existing JSON file
 	existingData, err := os.ReadFile(vulnInfo)
 	if err != nil {
-		fmt.Println("Error reading existing JSON file:", err)
-		return
+		return fmt.Errorf("error reading existing JSON: %v", err)
 	}
 
-	// Unmarshal the existing JSON into a map
-	var existingJson map[string]interface{}
-	err = json.Unmarshal(existingData, &existingJson)
+	//unmarshal the existing JSON into a struct
+	var existingJso modul.VulnInfo
+	err = json.Unmarshal(existingData, &existingJso)
 	if err != nil {
-		fmt.Println("Error unmarshalling existing JSON:", err)
-		return
+		return fmt.Errorf("error unmarshalling existing JSON: %v", err)
 	}
 
 	// Extract the "Vuln" field to calculate counts
-	vulnData, ok := existingJson["Vuln"].([]interface{})
-	if vulnData == nil {
-		fmt.Println("Vuln is nil")
-		return
-	}
-	if !ok {
-		fmt.Println("Error: 'Vuln' field is not an array")
-		return
-	}
+	vulnData := existingJso.Vuln
 
 	// Initialize counters
 	countOSV := 0
@@ -76,44 +92,98 @@ func calculateCounts(vulnInfo string, target string) {
 
 	// Loop through each vulnerability and count true values
 	for _, vuln := range vulnData {
-		vulnMap, ok := vuln.(map[string]interface{})
-		if !ok {
-			fmt.Println("Error: failed to cast vulnerability to map")
-			continue
-		}
-		if osv, ok := vulnMap["OSV"].(bool); ok && osv {
+		if vuln.OSV {
 			countOSV++
 		}
-		if trivy, ok := vulnMap["Trivy"].(bool); ok && trivy {
+		if vuln.Trivy {
 			countTrivy++
 		}
-		if snyk, ok := vulnMap["Snyk"].(bool); ok && snyk {
+		if vuln.Snyk {
 			countSnyk++
 		}
 	}
 
-	// Update the "Counts" field in the existing JSON structure
-	if _, ok := existingJson["Counts"].(map[string]interface{}); !ok {
-		existingJson["Counts"] = make(map[string]interface{})
-	}
-	counts := existingJson["Counts"].(map[string]interface{})
-	counts["Target"] = target
-	counts["TotalEntries"] = totalEntries
-	counts["CountOSV"] = countOSV
-	counts["CountTrivy"] = countTrivy
-	counts["CountSnyk"] = countSnyk
+	existingJso.Counts.Target = target
+	existingJso.Counts.TotalEntries = totalEntries
 
-	// Marshal the updated structure back to JSON
-	finalJSON, err := json.MarshalIndent(existingJson, "", "  ")
-	if err != nil {
-		fmt.Println("Error marshalling final JSON:", err)
-		return
+	if existingJso.Counts.CountOSV != countOSV {
+		fmt.Printf("error: CountOSV mismatch: expected %v, got %v\n", existingJso.Counts.CountOSV, countOSV)
+	}
+	if existingJso.Counts.CountTrivy != countTrivy {
+		fmt.Printf("error: CountTrivy mismatch: expected %v, got %v\n", existingJso.Counts.CountTrivy, countTrivy)
+	}
+	if existingJso.Counts.CountSnyk != countSnyk {
+		fmt.Printf("error: CountSnyk mismatch: expected %v, got %v\n", existingJso.Counts.CountSnyk, countSnyk)
 	}
 
-	// Write the updated JSON back to the file
-	err = os.WriteFile(vulnInfo, finalJSON, 0644)
-	if err != nil {
-		fmt.Println("Error writing updated JSON file:", err)
-		return
+	// Update the counts in the JSON
+	onlyOSV := 0
+	onlyTrivy := 0
+	onlySnyk := 0
+	OSVTrivy := 0
+	OSVSnyk := 0
+	TrivySnyk := 0
+	allThree := 0
+
+	vulnOnlyOSV := []modul.Vuln{}
+	vulnOnlyTrivy := []modul.Vuln{}
+	vulnOnlySnyk := []modul.Vuln{}
+	vulnOSVTrivy := []modul.Vuln{}
+	vulnOSVSnyk := []modul.Vuln{}
+	vulnTrivySnyk := []modul.Vuln{}
+	vulnAllThree := []modul.Vuln{}
+
+	for _, vuln := range vulnData {
+		if vuln.OSV && !vuln.Trivy && !vuln.Snyk {
+			vulnOnlyOSV = append(vulnOnlyOSV, vuln)
+			onlyOSV++
+		}
+		if !vuln.OSV && vuln.Trivy && !vuln.Snyk {
+			vulnOnlyTrivy = append(vulnOnlyTrivy, vuln)
+			onlyTrivy++
+		}
+		if !vuln.OSV && !vuln.Trivy && vuln.Snyk {
+			vulnOnlySnyk = append(vulnOnlySnyk, vuln)
+			onlySnyk++
+		}
+		if vuln.OSV && vuln.Trivy && !vuln.Snyk {
+			vulnOSVTrivy = append(vulnOSVTrivy, vuln)
+			OSVTrivy++
+		}
+		if vuln.OSV && !vuln.Trivy && vuln.Snyk {
+			vulnOSVSnyk = append(vulnOSVSnyk, vuln)
+			OSVSnyk++
+		}
+		if !vuln.OSV && vuln.Trivy && vuln.Snyk {
+			vulnTrivySnyk = append(vulnTrivySnyk, vuln)
+			TrivySnyk++
+		}
+		if vuln.OSV && vuln.Trivy && vuln.Snyk {
+			vulnAllThree = append(vulnAllThree, vuln)
+			allThree++
+		}
 	}
+
+	existingJso.Counts.OnlyOSV = onlyOSV
+	existingJso.Counts.OnlyTrivy = onlyTrivy
+	existingJso.Counts.OnlySnyk = onlySnyk
+	existingJso.Counts.OSVTrivy = OSVTrivy
+	existingJso.Counts.OSVSnyk = OSVSnyk
+	existingJso.Counts.TrivySnyk = TrivySnyk
+	existingJso.Counts.AllThree = allThree
+
+	existingJso.Counts.VulnOnlyOSV = vulnOnlyOSV
+	existingJso.Counts.VulnOnlyTrivy = vulnOnlyTrivy
+	existingJso.Counts.VulnOnlySnyk = vulnOnlySnyk
+	existingJso.Counts.VulnOSVTrivy = vulnOSVTrivy
+	existingJso.Counts.VulnOSVSnyk = vulnOSVSnyk
+	existingJso.Counts.VulnTrivySnyk = vulnTrivySnyk
+	existingJso.Counts.VulnAllThree = vulnAllThree
+
+	err = writeJSONFile(vulnInfo, existingJso)
+	if err != nil {
+		return fmt.Errorf("error writing JSON file: %v", err)
+	}
+
+	return nil
 }

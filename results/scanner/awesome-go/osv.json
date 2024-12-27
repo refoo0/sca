@@ -1,0 +1,2890 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "/Users/refaei/dev/sca/app/awesome-go/go.mod",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "golang.org/x/net",
+            "version": "0.19.0",
+            "ecosystem": "Go"
+          },
+          "vulnerabilities": [
+            {
+              "modified": "2024-10-22T05:28:58Z",
+              "published": "2024-04-04T21:30:32Z",
+              "schema_version": "1.6.0",
+              "id": "GHSA-4v7x-pqxf-cx7m",
+              "aliases": [
+                "BIT-golang-2023-45288",
+                "CGA-8q47-wf6v-wqg5",
+                "CGA-c6f9-jh7g-69mj",
+                "CGA-grww-v9jg-rhw2",
+                "CVE-2023-45288",
+                "GO-2024-2687"
+              ],
+              "related": [
+                "CGA-2262-q924-x253",
+                "CGA-229c-42r9-3975",
+                "CGA-22hq-8ghg-j92h",
+                "CGA-2329-x2qf-95fq",
+                "CGA-2364-h5fp-vjhx",
+                "CGA-23pf-37h7-p6pq",
+                "CGA-246g-8m5h-7j3c",
+                "CGA-24j9-9pj7-35g6",
+                "CGA-26c2-x54v-xm6x",
+                "CGA-26h8-845v-vp5c",
+                "CGA-2727-jpr9-7c9q",
+                "CGA-276f-24wq-p3qv",
+                "CGA-2786-572v-xx8p",
+                "CGA-2843-fcvf-8h92",
+                "CGA-2899-hw54-35q2",
+                "CGA-28mq-8x2v-mfcf",
+                "CGA-2935-r8j6-3f9h",
+                "CGA-29vg-c625-f93h",
+                "CGA-2c6g-6cw5-r53w",
+                "CGA-2f5q-f36h-w8vq",
+                "CGA-2f8r-g4v3-7fp9",
+                "CGA-2j44-w39x-mfj4",
+                "CGA-2jvq-5gcg-63j5",
+                "CGA-2mgq-596m-6w2r",
+                "CGA-2qgx-f756-xmg4",
+                "CGA-2r2f-ccqh-qxw6",
+                "CGA-2r7h-3gxc-qhx6",
+                "CGA-2rc7-6348-hqjq",
+                "CGA-2v3p-p6xm-fcqm",
+                "CGA-2vj5-p29c-9vgr",
+                "CGA-2vm3-98gj-572g",
+                "CGA-2vph-39jr-wgx9",
+                "CGA-2x7f-f524-x5v6",
+                "CGA-2x9x-jh5g-vf3w",
+                "CGA-2xvg-3cp4-vw28",
+                "CGA-34h2-w5j4-9hgv",
+                "CGA-355m-fm8v-j65q",
+                "CGA-35j8-xqv7-pqmw",
+                "CGA-35ph-cgpf-8fgh",
+                "CGA-35qf-3339-4wfj",
+                "CGA-35qw-8wg6-xf83",
+                "CGA-363m-qw42-rh97",
+                "CGA-3686-7m9p-mmcx",
+                "CGA-37gw-93c9-m557",
+                "CGA-398x-7x37-f9j9",
+                "CGA-399h-j7j5-qqgx",
+                "CGA-39p2-3436-j283",
+                "CGA-3f9g-j4jm-qhvx",
+                "CGA-3fgf-896r-g49c",
+                "CGA-3gqw-qh9c-8h7v",
+                "CGA-3h73-qwjg-rwf8",
+                "CGA-3hjv-hw7j-hpfv",
+                "CGA-3hvh-4x5p-w4c4",
+                "CGA-3jqw-49xw-qw49",
+                "CGA-3jr7-jv8r-gpcq",
+                "CGA-3m4r-5jm8-crc5",
+                "CGA-3m4v-m29c-9w7r",
+                "CGA-3p2r-fvpp-xj2v",
+                "CGA-3p6v-xhp2-7mgf",
+                "CGA-3p92-rwjg-cp8q",
+                "CGA-3pm9-4v42-fpc3",
+                "CGA-3q9m-263j-9f6x",
+                "CGA-3qfj-776g-x8r7",
+                "CGA-3r44-pp2x-pc9v",
+                "CGA-3r8p-2g55-p9j6",
+                "CGA-3rj9-78h8-3w6f",
+                "CGA-3vxc-gqp7-xx66",
+                "CGA-3wx8-vmjx-859j",
+                "CGA-3xq7-2qmg-j57x",
+                "CGA-42r3-4479-2r68",
+                "CGA-433g-6943-hcqm",
+                "CGA-43qw-jrvg-j4c3",
+                "CGA-43x9-f523-vf5h",
+                "CGA-4445-w2m5-fvwc",
+                "CGA-4495-qr3m-35h5",
+                "CGA-45jj-xc39-mqmj",
+                "CGA-45px-77cr-66hq",
+                "CGA-45vf-g27h-rw67",
+                "CGA-45x9-2622-x77p",
+                "CGA-48j6-jmrx-2fvq",
+                "CGA-48q5-6fxp-56p8",
+                "CGA-4c9p-r9wv-rhfj",
+                "CGA-4cr9-h8qw-fv47",
+                "CGA-4g2h-7783-rgrx",
+                "CGA-4g2j-qp9c-33rp",
+                "CGA-4g99-g56j-9g6j",
+                "CGA-4g9c-9wc7-6jgq",
+                "CGA-4g9f-jcxv-28v7",
+                "CGA-4gf4-r5xf-h5pp",
+                "CGA-4gm6-937v-989c",
+                "CGA-4gph-76qm-f2h5",
+                "CGA-4h2v-r9cf-2rh2",
+                "CGA-4h4m-vrmw-mpqv",
+                "CGA-4mpw-8h49-985x",
+                "CGA-4p79-xp4q-63w9",
+                "CGA-4q8p-433f-f647",
+                "CGA-4qgv-q87x-cj49",
+                "CGA-4r8f-f2fm-pcw9",
+                "CGA-4v89-j3f2-6rmm",
+                "CGA-4vwh-8qmx-qgg3",
+                "CGA-4w3g-cfhr-x3c6",
+                "CGA-4w9x-qgwj-9xgm",
+                "CGA-4ww2-7p5q-2pf2",
+                "CGA-4ww9-g958-5956",
+                "CGA-52vw-3688-3wgm",
+                "CGA-53gj-cj88-vfhv",
+                "CGA-545j-c6mv-rvgq",
+                "CGA-54j5-p7g2-j843",
+                "CGA-563p-8j89-6c8v",
+                "CGA-566f-p6j8-5jqg",
+                "CGA-56gq-37gw-r4c8",
+                "CGA-56r9-vrq8-p46w",
+                "CGA-58f4-7r24-2pc7",
+                "CGA-58vr-fc82-vmw2",
+                "CGA-5cc3-gx9j-9f8q",
+                "CGA-5cf5-j5x2-7mc3",
+                "CGA-5cw2-jjcc-2q27",
+                "CGA-5gff-gqp8-r2xh",
+                "CGA-5h5f-2ff4-383j",
+                "CGA-5j68-6rm7-758w",
+                "CGA-5m34-594f-pg77",
+                "CGA-5m85-p444-v7xh",
+                "CGA-5m87-r7vv-crjf",
+                "CGA-5mc6-v87c-8mh4",
+                "CGA-5mmw-p4g5-3f7p",
+                "CGA-5mrr-m336-9w2x",
+                "CGA-5p8w-3c5m-j366",
+                "CGA-5pg2-gc3x-2cfj",
+                "CGA-5pw5-f25v-x42q",
+                "CGA-5q6q-7v35-3pwg",
+                "CGA-5qg5-959p-3qfq",
+                "CGA-5w2p-j6rq-j2c5",
+                "CGA-5w53-cvfj-9jc8",
+                "CGA-5wc3-6xmm-x3fp",
+                "CGA-5xp8-mv3v-h5mx",
+                "CGA-5xrh-q838-pqwm",
+                "CGA-6273-cmv9-r9x3",
+                "CGA-63v9-gj93-28vj",
+                "CGA-645m-h5rm-5r7h",
+                "CGA-64wr-696r-g68q",
+                "CGA-66qc-6xpc-f7rj",
+                "CGA-67cc-395f-qrhw",
+                "CGA-67p2-h69h-f8q2",
+                "CGA-6848-6qf8-38g5",
+                "CGA-688v-prj5-2w5c",
+                "CGA-69c4-gq9x-xp4m",
+                "CGA-69w7-rgmm-3p64",
+                "CGA-6c2c-r49j-3hh6",
+                "CGA-6c34-8779-3pff",
+                "CGA-6c5g-6g2c-h4j2",
+                "CGA-6g7c-qm8p-r28f",
+                "CGA-6gr2-7wq6-g2pv",
+                "CGA-6h8c-cx78-8gcw",
+                "CGA-6hh2-rjr2-8m5x",
+                "CGA-6hxr-g299-6px9",
+                "CGA-6jqm-chpx-gm57",
+                "CGA-6mc5-m9xv-93xr",
+                "CGA-6mfh-w65f-3m9c",
+                "CGA-6mpr-4p8g-24mv",
+                "CGA-6pmm-4rjx-7wg5",
+                "CGA-6qrm-hfr7-5438",
+                "CGA-6qxf-wjmx-345v",
+                "CGA-6r8g-r2wv-6ggj",
+                "CGA-6rxg-jhvq-26vw",
+                "CGA-6v3c-p99q-jvp4",
+                "CGA-6vfw-xjx6-3x7m",
+                "CGA-6vr5-52rr-c6xj",
+                "CGA-6w6f-v3c3-jgwp",
+                "CGA-6wvc-hm27-8795",
+                "CGA-725p-v62q-cf39",
+                "CGA-72hm-gx2p-7pqm",
+                "CGA-738f-998w-rx32",
+                "CGA-744g-w4rw-fhm5",
+                "CGA-75ph-74w5-8p8f",
+                "CGA-75rv-p374-f97h",
+                "CGA-75v2-8qfq-hmf3",
+                "CGA-7648-c385-wv6f",
+                "CGA-766x-mpvm-3782",
+                "CGA-772c-96hf-4vhx",
+                "CGA-772w-jpqq-qvqc",
+                "CGA-777f-8hmv-9m5f",
+                "CGA-789g-cp57-2ff7",
+                "CGA-794w-r3x2-jj92",
+                "CGA-7fr7-vvv2-f8h5",
+                "CGA-7gj5-2j5r-rmhc",
+                "CGA-7h4v-wpm9-6hfm",
+                "CGA-7j5f-3rcw-wg3q",
+                "CGA-7j9r-x7cg-3h63",
+                "CGA-7jvq-5ffc-wggh",
+                "CGA-7pgm-p2qc-g2mj",
+                "CGA-7pmp-3vm9-m6w4",
+                "CGA-7rjv-xm94-68xg",
+                "CGA-7w3g-hh88-rvqr",
+                "CGA-7wc6-52fg-jvq4",
+                "CGA-7xfj-vrr8-5h36",
+                "CGA-832h-jgm6-p8fg",
+                "CGA-845p-47xj-pqx8",
+                "CGA-848c-vpg5-2vvq",
+                "CGA-84fj-mhvx-c4x2",
+                "CGA-84mg-5ggv-f793",
+                "CGA-86mp-87m2-57v8",
+                "CGA-86v3-6c8r-2hrh",
+                "CGA-86wm-h3cp-6cvq",
+                "CGA-87pv-v73v-vw26",
+                "CGA-883p-xmch-hq45",
+                "CGA-884v-7gjq-mwqg",
+                "CGA-88wx-xvq5-cqr6",
+                "CGA-8cpx-7mfr-mfjp",
+                "CGA-8f8r-63w4-p565",
+                "CGA-8fhh-4524-wvg8",
+                "CGA-8fq2-p7w5-fvcf",
+                "CGA-8gvm-wcqw-75mg",
+                "CGA-8hc8-vfg4-w4gm",
+                "CGA-8j79-758p-9xxj",
+                "CGA-8mgg-jf4h-3p2p",
+                "CGA-8p43-7hfc-3ghr",
+                "CGA-8p6h-w38x-hjr8",
+                "CGA-8q25-h935-vf5h",
+                "CGA-8q4w-5cm4-gxcm",
+                "CGA-8q7q-46f8-6xpr",
+                "CGA-8qg5-9qcv-wrp7",
+                "CGA-8r93-28f6-q32x",
+                "CGA-8rjm-r2gp-5wp6",
+                "CGA-8vr7-qqr8-82xj",
+                "CGA-8wv8-q5h8-7wvv",
+                "CGA-9278-95p5-f3qx",
+                "CGA-92h8-mvm8-r4qh",
+                "CGA-938x-8r9h-7wq2",
+                "CGA-93q8-5gjg-jjcg",
+                "CGA-93x3-5x94-g75j",
+                "CGA-93xq-c6pj-3298",
+                "CGA-945p-c35c-m5m8",
+                "CGA-94fq-x4mr-2hf9",
+                "CGA-94jf-8qqv-6p3f",
+                "CGA-94vf-4qw5-ffmc",
+                "CGA-94w5-mq8h-q3c7",
+                "CGA-958v-9mr7-jjj2",
+                "CGA-95m6-7w35-cpqj",
+                "CGA-96c7-w3f9-6vgj",
+                "CGA-96xm-gw6v-6q93",
+                "CGA-974x-79qj-f626",
+                "CGA-975c-hjw5-6cj6",
+                "CGA-9938-j54w-3fr8",
+                "CGA-993m-p2fp-4qxv",
+                "CGA-99f5-w3j6-hm77",
+                "CGA-99q2-4xh8-42h8",
+                "CGA-9c4p-347j-pppx",
+                "CGA-9c58-fhmc-cvq5",
+                "CGA-9fc6-cwv3-r64h",
+                "CGA-9fch-q7xh-r5wc",
+                "CGA-9fvh-wv47-3r26",
+                "CGA-9grm-p56r-h4g3",
+                "CGA-9h4x-98rf-mqjr",
+                "CGA-9h7p-f9x2-5734",
+                "CGA-9j4g-hqgq-6gxf",
+                "CGA-9j89-c49g-v3r2",
+                "CGA-9j93-762h-9883",
+                "CGA-9jw8-wmrq-96xh",
+                "CGA-9m4q-435q-g4qr",
+                "CGA-9mv3-jpxx-rvg9",
+                "CGA-9ppv-689j-6pr6",
+                "CGA-9pqp-qpmp-g7jf",
+                "CGA-9pw3-39m7-rg3r",
+                "CGA-9q7h-rhc9-q2p5",
+                "CGA-9qj7-8jwm-mvhx",
+                "CGA-9rv7-m6qj-7pqv",
+                "CGA-9vg2-g54g-4q78",
+                "CGA-9vpw-jvc5-j9g2",
+                "CGA-9w5w-82c4-j49c",
+                "CGA-9wrg-6wx3-6rwv",
+                "CGA-9x53-q7fc-6j7p",
+                "CGA-9xgx-v8gp-5gf7",
+                "CGA-9xp5-2xcc-ghvx",
+                "CGA-9xv3-pj47-qjr9",
+                "CGA-c2x9-chxx-r6jx",
+                "CGA-c3xq-c59f-37hp",
+                "CGA-c429-pqwg-mx28",
+                "CGA-c4wc-cm69-q7f7",
+                "CGA-c6jj-gh57-54rh",
+                "CGA-c7f2-cmc5-qw4m",
+                "CGA-c7qf-9f9m-cq7r",
+                "CGA-cc4h-8crf-pgx6",
+                "CGA-ccgj-22g2-w226",
+                "CGA-cfj9-g999-f96c",
+                "CGA-cfw8-gcrr-h5ch",
+                "CGA-chgg-wpj9-mvpf",
+                "CGA-cjcv-vvh8-vfqv",
+                "CGA-cmpm-954c-v92h",
+                "CGA-cp6c-3h68-wcmr",
+                "CGA-cqc9-vf23-2xmw",
+                "CGA-crh5-88pm-97pp",
+                "CGA-cv3w-qqx7-wc25",
+                "CGA-cv4j-pvf7-rwp8",
+                "CGA-cvmc-gfqx-733x",
+                "CGA-cwf3-5p6r-h729",
+                "CGA-f282-75m2-w9m3",
+                "CGA-f3g4-3r8w-prvh",
+                "CGA-f525-q9hq-mm96",
+                "CGA-f548-8pc2-hjcm",
+                "CGA-f657-ghxg-hwp3",
+                "CGA-f6c3-h7fx-8vx6",
+                "CGA-f6p6-h283-fp2c",
+                "CGA-f6wc-qg8x-5j55",
+                "CGA-f6xc-8rhf-rxj4",
+                "CGA-f83w-x85v-6v43",
+                "CGA-f858-25gf-x35q",
+                "CGA-f89g-q84m-f72f",
+                "CGA-f8pj-rm5q-vw8h",
+                "CGA-f96r-7fp2-rx37",
+                "CGA-fchr-jc3j-8323",
+                "CGA-fcpg-wjqr-cf83",
+                "CGA-ff25-9pgr-v35m",
+                "CGA-ff2v-f9mv-hr3m",
+                "CGA-fgf3-v29v-6663",
+                "CGA-fgg4-9j9w-h6j3",
+                "CGA-fhv8-h985-cm68",
+                "CGA-fjw8-hrc9-c8qc",
+                "CGA-fm9v-7fq6-g4p6",
+                "CGA-fp44-6r22-fpqr",
+                "CGA-fqjp-jpc6-8r4p",
+                "CGA-frfq-p8j9-4fqp",
+                "CGA-fv95-87h7-gvm3",
+                "CGA-fx5w-8h69-qc29",
+                "CGA-fx7v-7f27-h9x2",
+                "CGA-fxmm-mhvr-qp3x",
+                "CGA-fxpr-g89j-699p",
+                "CGA-g2cg-hhrf-q83m",
+                "CGA-g3jq-wxcf-v5pp",
+                "CGA-g4x9-7w6p-8399",
+                "CGA-g563-cv6f-99xw",
+                "CGA-g5jq-55fh-mvr4",
+                "CGA-g6vv-5xx6-hfwc",
+                "CGA-g74f-9jqm-p8g9",
+                "CGA-g839-hf73-w9f8",
+                "CGA-gc9p-86v8-4pcx",
+                "CGA-gg8p-6xjh-pcpr",
+                "CGA-ghv6-q2pg-2hm5",
+                "CGA-ghw7-h4f2-r3gc",
+                "CGA-ghx7-p567-qw98",
+                "CGA-gj4m-vq4g-mx8m",
+                "CGA-gj99-475m-9jpv",
+                "CGA-gjxm-r2gw-g7vx",
+                "CGA-gjxx-4ph9-gwfx",
+                "CGA-gmmp-7w24-66h2",
+                "CGA-gp4r-74wg-xpm4",
+                "CGA-gp5g-ffm8-64pf",
+                "CGA-gp5p-8226-9mvc",
+                "CGA-gq5x-wcwp-8792",
+                "CGA-gq65-jpq3-9xgg",
+                "CGA-gqm8-87ww-c4xm",
+                "CGA-gr2v-9pjx-jmqv",
+                "CGA-gv78-5qhq-jqfv",
+                "CGA-gv8v-8hc2-jfvg",
+                "CGA-gx5x-qrj3-xpvm",
+                "CGA-h28r-68pf-6hh4",
+                "CGA-h2pc-m848-m669",
+                "CGA-h363-2hvx-9cj5",
+                "CGA-h3qf-p77x-w7cf",
+                "CGA-h3vc-52fq-mjp6",
+                "CGA-h46j-223g-crfh",
+                "CGA-h4h4-fmq5-xmpf",
+                "CGA-h4h6-7jxg-g7gg",
+                "CGA-h523-9p65-r8jj",
+                "CGA-h6g6-24gj-8g87",
+                "CGA-h6v2-36fx-5cxf",
+                "CGA-h6wq-3vfj-vrgv",
+                "CGA-h7qg-pr39-8h7q",
+                "CGA-h8fg-3jm6-76c4",
+                "CGA-h94h-w9cv-hfj7",
+                "CGA-hff2-v2f5-95vg",
+                "CGA-hgg7-278w-pj7m",
+                "CGA-hhpf-g3ch-f2jv",
+                "CGA-hhwf-pqgj-686m",
+                "CGA-hjc6-v6jw-r8jc",
+                "CGA-hjwr-qh46-9jwg",
+                "CGA-hjww-hr2w-vw69",
+                "CGA-hm4f-wq87-qpf5",
+                "CGA-hq96-943g-4977",
+                "CGA-hrcf-86q6-hj67",
+                "CGA-hv87-fg78-wjh7",
+                "CGA-hvjc-9w4v-x9rr",
+                "CGA-hvrc-vpp9-7f6v",
+                "CGA-hw94-55jc-8h82",
+                "CGA-hx4h-gf4r-3hxw",
+                "CGA-hxj2-9ww8-pcp7",
+                "CGA-j2g6-2v33-63wf",
+                "CGA-j33p-qcr7-xq3p",
+                "CGA-j35q-rwr6-rcqq",
+                "CGA-j363-2vg2-4ph9",
+                "CGA-j398-fp47-3wf5",
+                "CGA-j4qc-rxpf-5c4f",
+                "CGA-j4qf-j5jq-vh64",
+                "CGA-j4ww-mvhq-m25c",
+                "CGA-j5xh-jgqc-gr2w",
+                "CGA-j657-9rh4-f2x2",
+                "CGA-j6cp-29x4-pj75",
+                "CGA-j6pm-25hv-w5wg",
+                "CGA-j77p-5mj2-4mq2",
+                "CGA-j7jp-gh9r-3jqq",
+                "CGA-j84x-q282-m7r2",
+                "CGA-j85v-86cw-5mmh",
+                "CGA-j8q6-rhfr-p6ww",
+                "CGA-j96f-427c-hhmh",
+                "CGA-j9mw-5w6g-48wq",
+                "CGA-jc6r-w5fc-w9hm",
+                "CGA-jcjj-xjfc-hm42",
+                "CGA-jcww-wj72-fr48",
+                "CGA-jf76-ph96-539q",
+                "CGA-jfqp-cg7x-769m",
+                "CGA-jfvf-9p39-xgvh",
+                "CGA-jg9x-pf2p-jvcc",
+                "CGA-jgfc-42gm-4wr6",
+                "CGA-jgrm-58wc-f66p",
+                "CGA-jhgj-jpxx-4r7r",
+                "CGA-jj2c-5h9v-pv9g",
+                "CGA-jj8m-3gfr-2f27",
+                "CGA-jjc6-mg4w-cwv6",
+                "CGA-jjh8-c6rv-ppxv",
+                "CGA-jjmh-pv5v-jjfg",
+                "CGA-jm38-j8c5-vc96",
+                "CGA-jm8w-7p23-hgmf",
+                "CGA-jmf8-qmq3-ppp3",
+                "CGA-jmh8-jw6g-fp56",
+                "CGA-jmqp-mfcw-c33w",
+                "CGA-jmvp-xjqf-689w",
+                "CGA-jp6j-vm25-4c2g",
+                "CGA-jpfv-v347-9h5c",
+                "CGA-jq22-vqfg-j2wm",
+                "CGA-jrxw-87pv-hgqq",
+                "CGA-jvjc-rjq5-ggmh",
+                "CGA-jx72-gxrf-rw2m",
+                "CGA-jxcg-5j7g-6w5w",
+                "CGA-jxj9-r892-jc6f",
+                "CGA-jxph-77h6-7r6f",
+                "CGA-m253-2qcw-2vp6",
+                "CGA-m4x5-fqmp-jhgm",
+                "CGA-m5qm-vvpw-69fw",
+                "CGA-m64r-x3xf-xv44",
+                "CGA-m66g-qwq8-c9x2",
+                "CGA-m67j-557q-99c6",
+                "CGA-m6hp-m4m9-gpf9",
+                "CGA-m7f6-wp3p-jx2q",
+                "CGA-m7j2-5r93-4hv7",
+                "CGA-m7pq-6hj6-2r9f",
+                "CGA-m86f-39hm-m787",
+                "CGA-m8qc-mrvc-p4gm",
+                "CGA-m92p-qfjc-qvq5",
+                "CGA-m9wx-w8m2-37qj",
+                "CGA-mccq-54c2-h7f9",
+                "CGA-mcv5-6q8q-pjg4",
+                "CGA-mfp7-grjm-cp36",
+                "CGA-mfw3-9p4f-353f",
+                "CGA-mh25-xhc8-8373",
+                "CGA-mh5q-rh24-hppp",
+                "CGA-mhpv-9cvg-7vjv",
+                "CGA-mjh7-w5v4-2rp9",
+                "CGA-mjwq-f94x-wpxq",
+                "CGA-mmch-w3j9-pwx4",
+                "CGA-mpxm-2988-mjp5",
+                "CGA-mqm2-7q36-h2fr",
+                "CGA-mrcw-7r72-8h7f",
+                "CGA-mvc4-ff7p-842h",
+                "CGA-mvh2-f7wj-r532",
+                "CGA-p29f-mff3-cf36",
+                "CGA-p3w4-5wg4-9f9x",
+                "CGA-p4vr-2hfq-mqhx",
+                "CGA-p64v-fw22-593q",
+                "CGA-p788-gvxp-mh6g",
+                "CGA-p8jx-h4xw-g924",
+                "CGA-p8qw-7qp5-947x",
+                "CGA-p947-44wq-5x5h",
+                "CGA-p9q8-fmmc-7cj8",
+                "CGA-p9qc-fqxv-5xcc",
+                "CGA-pc4w-xv9p-8mqw",
+                "CGA-pcf7-493j-x945",
+                "CGA-pcvw-629h-xqqj",
+                "CGA-pf6v-4h44-3293",
+                "CGA-pfc9-7869-wf47",
+                "CGA-pfcc-r4qf-x8w7",
+                "CGA-pfhc-ffv6-g296",
+                "CGA-ph8v-rvg2-rg3x",
+                "CGA-pm7p-qwhh-c8x2",
+                "CGA-pp7x-9q96-gfr3",
+                "CGA-pqfp-q9g3-f4fm",
+                "CGA-pr72-6w2j-m3p4",
+                "CGA-prfp-vc2h-7jf5",
+                "CGA-pvm6-h93v-9372",
+                "CGA-pw94-jq5p-qq98",
+                "CGA-px28-p57f-5xq8",
+                "CGA-px79-gjfw-mh96",
+                "CGA-q2q3-jc39-fv36",
+                "CGA-q2r6-j6qx-7gx7",
+                "CGA-q393-3cjp-vhf6",
+                "CGA-q3qf-fhh8-464x",
+                "CGA-q44h-wgrh-76c6",
+                "CGA-q5mc-c7gq-82p8",
+                "CGA-q5x8-8pgc-r8g5",
+                "CGA-q672-w479-6w63",
+                "CGA-q836-5wpw-7h58",
+                "CGA-q8p4-rvj5-68c3",
+                "CGA-q93h-52m4-v2mj",
+                "CGA-q94q-mw9j-jxgc",
+                "CGA-q97p-mpcp-rqh9",
+                "CGA-q9hh-fvqf-4jhj",
+                "CGA-qcg4-w6w7-4758",
+                "CGA-qcp7-cxww-jcpm",
+                "CGA-qf8h-h85c-wcqh",
+                "CGA-qfj2-h5hf-4mh5",
+                "CGA-qfmm-g42w-4m25",
+                "CGA-qfpm-8pvf-mrxc",
+                "CGA-qfv6-892v-2j8f",
+                "CGA-qg75-c5fq-r2wm",
+                "CGA-qj3p-h38f-4ch9",
+                "CGA-qj6c-p38g-3p9c",
+                "CGA-qjgq-2xfj-r7wf",
+                "CGA-qjq8-j239-vhpg",
+                "CGA-qjrv-7236-4m2q",
+                "CGA-qm56-rgp9-x33w",
+                "CGA-qqh7-5539-mg9j",
+                "CGA-qrhg-pch5-qxwf",
+                "CGA-qrp4-2p65-qcr2",
+                "CGA-qwwg-c385-mv9r",
+                "CGA-qxqg-mmcp-2vqx",
+                "CGA-r25p-qhpr-92fg",
+                "CGA-r3h8-pvhh-9jqv",
+                "CGA-r3mw-jw57-9vh7",
+                "CGA-r3wf-3w39-84vm",
+                "CGA-r437-mpvw-qphf",
+                "CGA-r4c6-p6wr-pfxr",
+                "CGA-r665-2835-4pc9",
+                "CGA-r7mr-6c3p-8v5r",
+                "CGA-r7rm-4hgm-23j7",
+                "CGA-r97v-f33m-37v3",
+                "CGA-r98j-mw3w-87fh",
+                "CGA-r9m6-qjvh-jppg",
+                "CGA-rcr8-m2g6-cfg3",
+                "CGA-rfj3-p6xw-3mq9",
+                "CGA-rg8j-x623-whf4",
+                "CGA-rgx9-87v5-mwqw",
+                "CGA-rh83-9w4h-m426",
+                "CGA-rhw8-gfrg-93j5",
+                "CGA-rmpx-wjcc-4gqc",
+                "CGA-rp58-54q7-r2m3",
+                "CGA-rp65-rfpv-xrvv",
+                "CGA-rp6p-j56g-39vw",
+                "CGA-rpv7-6mq2-27cg",
+                "CGA-rqc2-wjq8-24gw",
+                "CGA-rrjh-rwvp-6f37",
+                "CGA-rrqh-fpcm-4xhf",
+                "CGA-rwqj-gc95-9657",
+                "CGA-rww8-rwmq-pcch",
+                "CGA-rx3c-8rh2-m2r3",
+                "CGA-rx9g-24f5-6438",
+                "CGA-v27h-4qpf-x5ph",
+                "CGA-v3f8-qh5v-287c",
+                "CGA-v3qw-6vjp-88h4",
+                "CGA-v4p7-42q4-5jj8",
+                "CGA-v66r-g9c3-r3gv",
+                "CGA-v67r-9cjj-w3jh",
+                "CGA-v6c3-3fr3-4r35",
+                "CGA-v6gf-wg9c-vx22",
+                "CGA-v79g-j846-9r9h",
+                "CGA-v7g4-56wg-j7mh",
+                "CGA-v82x-43rw-7q9p",
+                "CGA-v846-4j37-2xhw",
+                "CGA-v8v3-jwhq-v6jp",
+                "CGA-v8vx-hxmc-c3fv",
+                "CGA-v973-qcwf-6576",
+                "CGA-vcgr-fqw9-435h",
+                "CGA-vcw6-gjmf-vcfg",
+                "CGA-vf7w-7658-3jmx",
+                "CGA-vh9q-48x5-fc69",
+                "CGA-vhq2-j432-vcqp",
+                "CGA-vm5r-59g5-4pq7",
+                "CGA-vm7p-7p7r-79x8",
+                "CGA-vmfm-2hh2-mh2r",
+                "CGA-vmj4-6fpv-mjvp",
+                "CGA-vmxf-xhfm-72h4",
+                "CGA-vp32-ch3h-3qrp",
+                "CGA-vrhq-jmp2-6f5j",
+                "CGA-vrwp-p899-5fx8",
+                "CGA-vwqq-x53h-f3r5",
+                "CGA-vx6c-fm79-w26f",
+                "CGA-vxr5-rwg9-574p",
+                "CGA-w23w-3v6c-p8fq",
+                "CGA-w3cc-v78j-hc5j",
+                "CGA-w3fx-x557-vmrw",
+                "CGA-w4fr-mqq5-fgvq",
+                "CGA-w59q-2h8g-r6q9",
+                "CGA-w59q-h38c-57j5",
+                "CGA-w5f6-22m3-57fx",
+                "CGA-w6cw-vwff-jv7m",
+                "CGA-w78h-r56c-h5g4",
+                "CGA-w798-4cfh-pfqg",
+                "CGA-w97f-9w79-296g",
+                "CGA-w9cg-h4fr-jxqw",
+                "CGA-wcgf-p72v-c586",
+                "CGA-wg6g-q64p-3fwg",
+                "CGA-wgmx-93r6-w5cf",
+                "CGA-wgrp-cx25-p993",
+                "CGA-wj9p-h66q-f58h",
+                "CGA-wp2c-65rv-c8m2",
+                "CGA-wqf3-9vcm-68r9",
+                "CGA-wqj2-qhfx-7xvw",
+                "CGA-wrqx-j22h-x46r",
+                "CGA-ww7x-73c8-jmwc",
+                "CGA-wwfj-2vcc-vv9w",
+                "CGA-wwpr-96mw-f3wq",
+                "CGA-wwqf-r7g5-p439",
+                "CGA-wx5w-xr4v-4vqj",
+                "CGA-wx96-f2j4-gg25",
+                "CGA-wx9w-24fh-7jrh",
+                "CGA-x2fp-h293-fvrg",
+                "CGA-x35p-43q5-p68w",
+                "CGA-x393-2m6w-rmh8",
+                "CGA-x3jx-w3hh-vcm9",
+                "CGA-x5h5-hmmr-7282",
+                "CGA-x627-p5f7-f784",
+                "CGA-x6gh-xc8g-hwq3",
+                "CGA-x6jw-rj64-9352",
+                "CGA-x6rg-fcg6-m26x",
+                "CGA-x7cm-4pm6-7xr4",
+                "CGA-x7p6-3hw6-qx43",
+                "CGA-x8vq-r7fc-g93j",
+                "CGA-x96c-25g9-fjqc",
+                "CGA-xcpf-3q34-vqmr",
+                "CGA-xf76-vchp-j99m",
+                "CGA-xf84-w2f9-vh5f",
+                "CGA-xg86-v83g-q39j",
+                "CGA-xgc4-j5r6-v7q3",
+                "CGA-xgc8-q9r4-ff8v",
+                "CGA-xgpv-3737-26mg",
+                "CGA-xgr5-pjr6-9qw2",
+                "CGA-xhf2-4cvp-gjp4",
+                "CGA-xhw3-6cw5-8rqh",
+                "CGA-xhwj-9fgp-2wg8",
+                "CGA-xj7r-5qgj-84hm",
+                "CGA-xj7x-v8cr-629r",
+                "CGA-xj8p-j5cc-rg3m",
+                "CGA-xm54-h735-jjfv",
+                "CGA-xm5m-353x-mf9p",
+                "CGA-xmxp-gm7h-hpgr",
+                "CGA-xpj6-7jh7-2q38",
+                "CGA-xvr3-fh9c-3j23",
+                "CGA-xw47-w8m5-2jrc",
+                "CGA-xw4w-5r9q-6mrm",
+                "CGA-xw5h-mq5m-fjpc",
+                "CGA-xwfp-r4c4-9m4c",
+                "CGA-xxx8-h589-x6vh"
+              ],
+              "summary": "net/http, x/net/http2: close connections when receiving too many headers",
+              "details": "An attacker may cause an HTTP/2 endpoint to read arbitrary amounts of header data by sending an excessive number of CONTINUATION frames. Maintaining HPACK state requires parsing and processing all HEADERS and CONTINUATION frames on a connection. When a request's headers exceed MaxHeaderBytes, no memory is allocated to store the excess headers, but they are still parsed. This permits an attacker to cause an HTTP/2 endpoint to read arbitrary amounts of header data, all associated with a request which is going to be rejected. These headers can include Huffman-encoded data which is significantly more expensive for the receiver to decode than for an attacker to send. The fix sets a limit on the amount of excess header frames we will process before closing a connection.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "net/http",
+                    "purl": "pkg:golang/net/http"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.9"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-4v7x-pqxf-cx7m/GHSA-4v7x-pqxf-cx7m.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/net/http2",
+                    "purl": "pkg:golang/golang.org/x/net/http2"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.23.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-4v7x-pqxf-cx7m/GHSA-4v7x-pqxf-cx7m.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "net/http",
+                    "purl": "pkg:golang/net/http"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.2"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-4v7x-pqxf-cx7m/GHSA-4v7x-pqxf-cx7m.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/net",
+                    "purl": "pkg:golang/golang.org/x/net"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.23.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-4v7x-pqxf-cx7m/GHSA-4v7x-pqxf-cx7m.json"
+                  }
+                }
+              ],
+              "severity": [
+                {
+                  "type": "CVSS_V3",
+                  "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+                }
+              ],
+              "references": [
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-45288"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://go.dev/cl/576155"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://go.dev/issue/65051"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/YgW0sx8mN3M"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QRYFHIQ6XRKRYBI2F5UESH67BJBQXUPT"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://nowotarski.info/http2-continuation-flood-technical-details"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://pkg.go.dev/vuln/GO-2024-2687"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://security.netapp.com/advisory/ntap-20240419-0009"
+                },
+                {
+                  "type": "WEB",
+                  "url": "http://www.openwall.com/lists/oss-security/2024/04/03/16"
+                },
+                {
+                  "type": "WEB",
+                  "url": "http://www.openwall.com/lists/oss-security/2024/04/05/4"
+                }
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-400"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2024-04-04T23:02:57Z",
+                "nvd_published_at": "2024-04-04T21:15:16Z",
+                "severity": "MODERATE"
+              }
+            },
+            {
+              "modified": "2024-10-22T05:28:58Z",
+              "published": "2024-04-03T21:12:01Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2687",
+              "aliases": [
+                "BIT-golang-2023-45288",
+                "CGA-8q47-wf6v-wqg5",
+                "CGA-c6f9-jh7g-69mj",
+                "CGA-grww-v9jg-rhw2",
+                "CVE-2023-45288",
+                "GHSA-4v7x-pqxf-cx7m"
+              ],
+              "related": [
+                "RHSA-2024:1892",
+                "RHSA-2024:1897",
+                "RHSA-2024:1899",
+                "RHSA-2024:1962",
+                "RHSA-2024:1963",
+                "RHSA-2024:2049",
+                "RHSA-2024:2079",
+                "RHSA-2024:2562",
+                "RHSA-2024:2625",
+                "RHSA-2024:2667",
+                "RHSA-2024:2671",
+                "RHSA-2024:2672",
+                "RHSA-2024:2699",
+                "RHSA-2024:2724",
+                "RHSA-2024:2729",
+                "RHSA-2024:2892",
+                "RHSA-2024:2935",
+                "RHSA-2024:2936",
+                "RHSA-2024:3259",
+                "RHSA-2024:3346",
+                "RHSA-2024:3352",
+                "RHSA-2024:3467",
+                "RHSA-2024:3781",
+                "RHSA-2024:4023",
+                "RHSA-2024:4125",
+                "RHSA-2024:4146",
+                "RHSA-2024:4543",
+                "RHSA-2024:4545",
+                "RHSA-2024:4546",
+                "RHSA-2024:4933",
+                "RHSA-2024:4934"
+              ],
+              "summary": "HTTP/2 CONTINUATION flood in net/http",
+              "details": "An attacker may cause an HTTP/2 endpoint to read arbitrary amounts of header data by sending an excessive number of CONTINUATION frames.\n\nMaintaining HPACK state requires parsing and processing all HEADERS and CONTINUATION frames on a connection. When a request's headers exceed MaxHeaderBytes, no memory is allocated to store the excess headers, but they are still parsed.\n\nThis permits an attacker to cause an HTTP/2 endpoint to read arbitrary amounts of header data, all associated with a request which is going to be rejected. These headers can include Huffman-encoded data which is significantly more expensive for the receiver to decode than for an attacker to send.\n\nThe fix sets a limit on the amount of excess header frames we will process before closing a connection.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.9"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.2"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2687.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "net/http",
+                        "symbols": [
+                          "CanonicalHeaderKey",
+                          "Client.CloseIdleConnections",
+                          "Client.Do",
+                          "Client.Get",
+                          "Client.Head",
+                          "Client.Post",
+                          "Client.PostForm",
+                          "Cookie.String",
+                          "Cookie.Valid",
+                          "Dir.Open",
+                          "Error",
+                          "Get",
+                          "HandlerFunc.ServeHTTP",
+                          "Head",
+                          "Header.Add",
+                          "Header.Del",
+                          "Header.Get",
+                          "Header.Set",
+                          "Header.Values",
+                          "Header.Write",
+                          "Header.WriteSubset",
+                          "ListenAndServe",
+                          "ListenAndServeTLS",
+                          "NewRequest",
+                          "NewRequestWithContext",
+                          "NotFound",
+                          "ParseTime",
+                          "Post",
+                          "PostForm",
+                          "ProxyFromEnvironment",
+                          "ReadRequest",
+                          "ReadResponse",
+                          "Redirect",
+                          "Request.AddCookie",
+                          "Request.BasicAuth",
+                          "Request.FormFile",
+                          "Request.FormValue",
+                          "Request.MultipartReader",
+                          "Request.ParseForm",
+                          "Request.ParseMultipartForm",
+                          "Request.PostFormValue",
+                          "Request.Referer",
+                          "Request.SetBasicAuth",
+                          "Request.UserAgent",
+                          "Request.Write",
+                          "Request.WriteProxy",
+                          "Response.Cookies",
+                          "Response.Location",
+                          "Response.Write",
+                          "ResponseController.EnableFullDuplex",
+                          "ResponseController.Flush",
+                          "ResponseController.Hijack",
+                          "ResponseController.SetReadDeadline",
+                          "ResponseController.SetWriteDeadline",
+                          "Serve",
+                          "ServeContent",
+                          "ServeFile",
+                          "ServeMux.ServeHTTP",
+                          "ServeTLS",
+                          "Server.Close",
+                          "Server.ListenAndServe",
+                          "Server.ListenAndServeTLS",
+                          "Server.Serve",
+                          "Server.ServeTLS",
+                          "Server.SetKeepAlivesEnabled",
+                          "Server.Shutdown",
+                          "SetCookie",
+                          "Transport.CancelRequest",
+                          "Transport.Clone",
+                          "Transport.CloseIdleConnections",
+                          "Transport.RoundTrip",
+                          "body.Close",
+                          "body.Read",
+                          "bodyEOFSignal.Close",
+                          "bodyEOFSignal.Read",
+                          "bodyLocked.Read",
+                          "bufioFlushWriter.Write",
+                          "cancelTimerBody.Close",
+                          "cancelTimerBody.Read",
+                          "checkConnErrorWriter.Write",
+                          "chunkWriter.Write",
+                          "connReader.Read",
+                          "connectMethodKey.String",
+                          "expectContinueReader.Close",
+                          "expectContinueReader.Read",
+                          "extraHeader.Write",
+                          "fileHandler.ServeHTTP",
+                          "fileTransport.RoundTrip",
+                          "globalOptionsHandler.ServeHTTP",
+                          "gzipReader.Close",
+                          "gzipReader.Read",
+                          "http2ClientConn.Close",
+                          "http2ClientConn.Ping",
+                          "http2ClientConn.RoundTrip",
+                          "http2ClientConn.Shutdown",
+                          "http2ConnectionError.Error",
+                          "http2ErrCode.String",
+                          "http2FrameHeader.String",
+                          "http2FrameType.String",
+                          "http2FrameWriteRequest.String",
+                          "http2Framer.ReadFrame",
+                          "http2Framer.WriteContinuation",
+                          "http2Framer.WriteData",
+                          "http2Framer.WriteDataPadded",
+                          "http2Framer.WriteGoAway",
+                          "http2Framer.WriteHeaders",
+                          "http2Framer.WritePing",
+                          "http2Framer.WritePriority",
+                          "http2Framer.WritePushPromise",
+                          "http2Framer.WriteRSTStream",
+                          "http2Framer.WriteRawFrame",
+                          "http2Framer.WriteSettings",
+                          "http2Framer.WriteSettingsAck",
+                          "http2Framer.WriteWindowUpdate",
+                          "http2Framer.readMetaFrame",
+                          "http2GoAwayError.Error",
+                          "http2Server.ServeConn",
+                          "http2Setting.String",
+                          "http2SettingID.String",
+                          "http2SettingsFrame.ForeachSetting",
+                          "http2StreamError.Error",
+                          "http2Transport.CloseIdleConnections",
+                          "http2Transport.NewClientConn",
+                          "http2Transport.RoundTrip",
+                          "http2Transport.RoundTripOpt",
+                          "http2bufferedWriter.Flush",
+                          "http2bufferedWriter.Write",
+                          "http2chunkWriter.Write",
+                          "http2clientConnPool.GetClientConn",
+                          "http2connError.Error",
+                          "http2dataBuffer.Read",
+                          "http2duplicatePseudoHeaderError.Error",
+                          "http2gzipReader.Close",
+                          "http2gzipReader.Read",
+                          "http2headerFieldNameError.Error",
+                          "http2headerFieldValueError.Error",
+                          "http2noDialClientConnPool.GetClientConn",
+                          "http2noDialH2RoundTripper.RoundTrip",
+                          "http2pipe.Read",
+                          "http2priorityWriteScheduler.CloseStream",
+                          "http2priorityWriteScheduler.OpenStream",
+                          "http2pseudoHeaderError.Error",
+                          "http2requestBody.Close",
+                          "http2requestBody.Read",
+                          "http2responseWriter.Flush",
+                          "http2responseWriter.FlushError",
+                          "http2responseWriter.Push",
+                          "http2responseWriter.SetReadDeadline",
+                          "http2responseWriter.SetWriteDeadline",
+                          "http2responseWriter.Write",
+                          "http2responseWriter.WriteHeader",
+                          "http2responseWriter.WriteString",
+                          "http2roundRobinWriteScheduler.OpenStream",
+                          "http2serverConn.CloseConn",
+                          "http2serverConn.Flush",
+                          "http2stickyErrWriter.Write",
+                          "http2transportResponseBody.Close",
+                          "http2transportResponseBody.Read",
+                          "http2writeData.String",
+                          "initALPNRequest.ServeHTTP",
+                          "loggingConn.Close",
+                          "loggingConn.Read",
+                          "loggingConn.Write",
+                          "maxBytesReader.Close",
+                          "maxBytesReader.Read",
+                          "onceCloseListener.Close",
+                          "persistConn.Read",
+                          "persistConnWriter.ReadFrom",
+                          "persistConnWriter.Write",
+                          "populateResponse.Write",
+                          "populateResponse.WriteHeader",
+                          "readTrackingBody.Close",
+                          "readTrackingBody.Read",
+                          "readWriteCloserBody.Read",
+                          "redirectHandler.ServeHTTP",
+                          "response.Flush",
+                          "response.FlushError",
+                          "response.Hijack",
+                          "response.ReadFrom",
+                          "response.Write",
+                          "response.WriteHeader",
+                          "response.WriteString",
+                          "serverHandler.ServeHTTP",
+                          "socksDialer.DialWithConn",
+                          "socksUsernamePassword.Authenticate",
+                          "stringWriter.WriteString",
+                          "timeoutHandler.ServeHTTP",
+                          "timeoutWriter.Write",
+                          "timeoutWriter.WriteHeader",
+                          "transportReadFromServerError.Error"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/net",
+                    "purl": "pkg:golang/golang.org/x/net"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.23.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2687.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "golang.org/x/net/http2",
+                        "symbols": [
+                          "ClientConn.Close",
+                          "ClientConn.Ping",
+                          "ClientConn.RoundTrip",
+                          "ClientConn.Shutdown",
+                          "ConfigureServer",
+                          "ConfigureTransport",
+                          "ConfigureTransports",
+                          "ConnectionError.Error",
+                          "ErrCode.String",
+                          "FrameHeader.String",
+                          "FrameType.String",
+                          "FrameWriteRequest.String",
+                          "Framer.ReadFrame",
+                          "Framer.WriteContinuation",
+                          "Framer.WriteData",
+                          "Framer.WriteDataPadded",
+                          "Framer.WriteGoAway",
+                          "Framer.WriteHeaders",
+                          "Framer.WritePing",
+                          "Framer.WritePriority",
+                          "Framer.WritePushPromise",
+                          "Framer.WriteRSTStream",
+                          "Framer.WriteRawFrame",
+                          "Framer.WriteSettings",
+                          "Framer.WriteSettingsAck",
+                          "Framer.WriteWindowUpdate",
+                          "Framer.readMetaFrame",
+                          "GoAwayError.Error",
+                          "ReadFrameHeader",
+                          "Server.ServeConn",
+                          "Setting.String",
+                          "SettingID.String",
+                          "SettingsFrame.ForeachSetting",
+                          "StreamError.Error",
+                          "Transport.CloseIdleConnections",
+                          "Transport.NewClientConn",
+                          "Transport.RoundTrip",
+                          "Transport.RoundTripOpt",
+                          "bufferedWriter.Flush",
+                          "bufferedWriter.Write",
+                          "chunkWriter.Write",
+                          "clientConnPool.GetClientConn",
+                          "connError.Error",
+                          "dataBuffer.Read",
+                          "duplicatePseudoHeaderError.Error",
+                          "gzipReader.Close",
+                          "gzipReader.Read",
+                          "headerFieldNameError.Error",
+                          "headerFieldValueError.Error",
+                          "noDialClientConnPool.GetClientConn",
+                          "noDialH2RoundTripper.RoundTrip",
+                          "pipe.Read",
+                          "priorityWriteScheduler.CloseStream",
+                          "priorityWriteScheduler.OpenStream",
+                          "pseudoHeaderError.Error",
+                          "requestBody.Close",
+                          "requestBody.Read",
+                          "responseWriter.Flush",
+                          "responseWriter.FlushError",
+                          "responseWriter.Push",
+                          "responseWriter.SetReadDeadline",
+                          "responseWriter.SetWriteDeadline",
+                          "responseWriter.Write",
+                          "responseWriter.WriteHeader",
+                          "responseWriter.WriteString",
+                          "roundRobinWriteScheduler.OpenStream",
+                          "serverConn.CloseConn",
+                          "serverConn.Flush",
+                          "stickyErrWriter.Write",
+                          "transportResponseBody.Close",
+                          "transportResponseBody.Read",
+                          "writeData.String"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/65051"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/576155"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/YgW0sx8mN3M"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Bartek Nowotarski (https://nowotarski.info/)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2687"
+              }
+            },
+            {
+              "modified": "2024-12-18T22:11:53Z",
+              "published": "2024-12-18T21:59:48Z",
+              "schema_version": "1.6.0",
+              "id": "GHSA-w32m-9786-jp63",
+              "aliases": [
+                "CVE-2024-45338",
+                "GO-2024-3333"
+              ],
+              "related": [
+                "CGA-22cc-jwcv-w329",
+                "CGA-23wp-xgcv-fmwc",
+                "CGA-2489-j9r3-xx48",
+                "CGA-2529-m92c-7g9f",
+                "CGA-25fh-79w2-q553",
+                "CGA-25gr-mpxp-g5g2",
+                "CGA-26pf-fr79-vw5x",
+                "CGA-2cqj-w55r-3rcf",
+                "CGA-2f8g-vw27-6p86",
+                "CGA-2g8w-w5xp-pmh4",
+                "CGA-2gvr-qv7p-c3mg",
+                "CGA-2gvx-h7c2-3mh8",
+                "CGA-2gwx-r97v-mv53",
+                "CGA-2h76-rq2g-rm23",
+                "CGA-2j39-wg8g-8vr2",
+                "CGA-2xvx-2chr-r3h7",
+                "CGA-2xxm-2hg3-mx2j",
+                "CGA-3433-qrqq-p65c",
+                "CGA-34xr-g2f2-55qg",
+                "CGA-36jx-4h2r-78fw",
+                "CGA-36q8-rc5w-g8hf",
+                "CGA-36w8-3qw6-xhxm",
+                "CGA-3799-mmj9-v3cg",
+                "CGA-3866-jhvj-7mwr",
+                "CGA-3968-78vg-4rv2",
+                "CGA-397j-wc65-q76v",
+                "CGA-399p-22q7-xr44",
+                "CGA-3fvv-v8vq-mjr9",
+                "CGA-3gxx-pj27-5vmh",
+                "CGA-3hcg-86qm-c365",
+                "CGA-3hw5-92gc-9cvv",
+                "CGA-3hxc-g5wc-89g7",
+                "CGA-3m34-gw74-cq87",
+                "CGA-3m4h-mc9f-c6qv",
+                "CGA-3m6m-jr48-2rm9",
+                "CGA-3m8j-77x2-gj79",
+                "CGA-3mjw-qcpg-w6gc",
+                "CGA-3p5v-f62x-5m56",
+                "CGA-3p7c-2h7x-xxjx",
+                "CGA-3q2c-p9vm-57f3",
+                "CGA-42cf-xvwx-4974",
+                "CGA-42cw-qx6m-m3v4",
+                "CGA-453v-qgw6-299g",
+                "CGA-462w-55w8-j9q9",
+                "CGA-47g6-3p9r-fpc9",
+                "CGA-48fr-jgw2-9gfj",
+                "CGA-48pr-v7mw-gp8r",
+                "CGA-49c3-vpjc-5wh7",
+                "CGA-4crh-5qrg-37pp",
+                "CGA-4g8x-mjmq-hmq2",
+                "CGA-4gc2-h526-q3x9",
+                "CGA-4gw3-grxf-p9fc",
+                "CGA-4h25-6j8p-r259",
+                "CGA-4mr7-qpvx-r3qp",
+                "CGA-4p3q-mgfx-fm9x",
+                "CGA-4p49-g6gf-r9ph",
+                "CGA-4pmv-7h85-79ww",
+                "CGA-4pr6-6429-jq3h",
+                "CGA-4r7q-j27j-2w44",
+                "CGA-4rx5-j875-vgv5",
+                "CGA-4w5f-7847-x7gp",
+                "CGA-4wq6-53m3-66gg",
+                "CGA-4x4q-jh67-hf43",
+                "CGA-5233-2m4w-7vhg",
+                "CGA-5297-cw32-w8jf",
+                "CGA-52q6-rp99-g282",
+                "CGA-55ph-v94j-hhmg",
+                "CGA-5684-6774-mvjj",
+                "CGA-5797-xq7c-6424",
+                "CGA-57mw-pf7c-4v2m",
+                "CGA-585x-pfwp-vf75",
+                "CGA-59mj-p5qc-fpgv",
+                "CGA-59wj-ph6r-vr36",
+                "CGA-5c4h-gchv-7vjw",
+                "CGA-5g63-7698-jf44",
+                "CGA-5hcx-8gwq-qxmf",
+                "CGA-5p6v-qm2p-crc5",
+                "CGA-5qpw-rjrw-58hm",
+                "CGA-5r3r-f9p6-xwhp",
+                "CGA-5v3p-3r72-9h95",
+                "CGA-5wj3-jcw6-f28h",
+                "CGA-5x25-9pfq-prhw",
+                "CGA-5xfg-49r5-j5q6",
+                "CGA-63rc-3395-99px",
+                "CGA-64f3-q6h6-r6xg",
+                "CGA-64hv-5m68-556r",
+                "CGA-664w-vmrm-9g2j",
+                "CGA-668r-52hp-3fff",
+                "CGA-677j-5595-m8c9",
+                "CGA-677m-xx67-2v88",
+                "CGA-67fr-gghm-jhqc",
+                "CGA-67xw-qf7w-53c3",
+                "CGA-68m2-m3rj-89ch",
+                "CGA-69cw-j962-7rxc",
+                "CGA-6gf7-wv3f-9f5x",
+                "CGA-6h9j-f4pj-w4xr",
+                "CGA-6hg3-pwrj-2772",
+                "CGA-6hx6-f2j9-79r7",
+                "CGA-6j7j-9rr2-rpc2",
+                "CGA-6mfp-5qgf-5mh7",
+                "CGA-6mww-6542-fq9c",
+                "CGA-6p6q-4mj7-qp8c",
+                "CGA-6q8j-q2jh-r8mv",
+                "CGA-6r34-5xxx-wq7f",
+                "CGA-6wjg-v32r-wgqq",
+                "CGA-6ww5-9wjg-62hm",
+                "CGA-6xfg-p2h4-5g47",
+                "CGA-72hc-8jv5-wrwm",
+                "CGA-72wj-v65w-64r8",
+                "CGA-752r-6jf6-pxgv",
+                "CGA-75mr-fqfp-pg55",
+                "CGA-7889-9c3r-p8jq",
+                "CGA-78fw-fp3c-45x3",
+                "CGA-793c-p5q8-mjm8",
+                "CGA-79ch-h78m-xpw7",
+                "CGA-7cm9-8wp4-5h5p",
+                "CGA-7f79-3835-69xc",
+                "CGA-7gqm-xf2p-7xjv",
+                "CGA-7gr4-fxw6-vp94",
+                "CGA-7mfx-9h6f-79cv",
+                "CGA-7prf-fffj-hc47",
+                "CGA-7qhp-66xg-jcfp",
+                "CGA-7r54-x7w6-xqhg",
+                "CGA-7wwv-49p9-fh4f",
+                "CGA-7xjq-4w42-j4gh",
+                "CGA-7xrc-7rch-cpx3",
+                "CGA-8246-3w73-wm6c",
+                "CGA-8347-g2f6-hp74",
+                "CGA-83h6-mxxh-vp6h",
+                "CGA-84j8-wrmp-7cxx",
+                "CGA-84pq-f8mx-gq9f",
+                "CGA-8744-8f68-67x8",
+                "CGA-875c-5xx8-qwjf",
+                "CGA-884r-m6w5-7v39",
+                "CGA-899g-pqrj-cp8p",
+                "CGA-8m7j-p4f4-8g2f",
+                "CGA-8pjm-3xfw-mxhc",
+                "CGA-8pxr-x3p2-9xgq",
+                "CGA-8qhh-2qm9-37mq",
+                "CGA-8r8f-g5j8-4xwh",
+                "CGA-95cg-cj7v-4h99",
+                "CGA-96pp-pj97-4h2q",
+                "CGA-9729-m9qm-hvxr",
+                "CGA-974x-cf77-jcxh",
+                "CGA-9cx2-rxcf-vmf4",
+                "CGA-9hw9-p8p4-9h4v",
+                "CGA-9rv8-72rf-qqqj",
+                "CGA-9v92-rjch-23wh",
+                "CGA-9w25-xrvr-g74w",
+                "CGA-9wh8-5w4c-rfvr",
+                "CGA-9x5w-5wqq-xggh",
+                "CGA-c2g3-w8mc-w655",
+                "CGA-c35g-fvgc-qwhj",
+                "CGA-c38x-3vjq-ww2x",
+                "CGA-c3hp-g9qv-p8vv",
+                "CGA-c49h-28c2-cpwj",
+                "CGA-c4ff-q96g-598j",
+                "CGA-c4jr-7h78-vj53",
+                "CGA-c54c-5xmj-x57r",
+                "CGA-c565-wm6g-wpcc",
+                "CGA-c6gj-w6ph-qp3p",
+                "CGA-c6jc-gjgh-r235",
+                "CGA-c9gm-754c-mwfg",
+                "CGA-c9pg-73rj-g3rh",
+                "CGA-cf86-46rr-q2qf",
+                "CGA-cgqx-ch65-vmpm",
+                "CGA-chm7-h279-7xfg",
+                "CGA-cj7r-4hfm-8f22",
+                "CGA-cp4h-jmmr-99h3",
+                "CGA-crpp-6834-52pg",
+                "CGA-crxx-j3mx-f29c",
+                "CGA-cv2m-g2v8-fwmh",
+                "CGA-cvc2-5p6c-m73j",
+                "CGA-cwrx-325r-3q88",
+                "CGA-cxhw-phgv-w62g",
+                "CGA-f3h7-gmf2-7g62",
+                "CGA-f5q6-2mjc-pxf6",
+                "CGA-f638-cq7f-3m6h",
+                "CGA-f69w-gf5q-jjmh",
+                "CGA-f6vm-9vrg-4cjq",
+                "CGA-f9w6-q5xq-jh96",
+                "CGA-fc88-hwv5-5j2m",
+                "CGA-fcj4-xq6x-7543",
+                "CGA-fgj7-g95g-6j84",
+                "CGA-fgqj-8g7q-vpmr",
+                "CGA-fgxf-f9gr-xwr8",
+                "CGA-fh6x-v262-28jh",
+                "CGA-fhgw-65cm-r8vq",
+                "CGA-fjm6-h695-w7wx",
+                "CGA-fjpj-4qqh-r9mv",
+                "CGA-fmgp-qxxg-5vp7",
+                "CGA-fp9x-hfxf-2cww",
+                "CGA-fq7c-5683-jmfw",
+                "CGA-frgx-m77p-wx8q",
+                "CGA-fv5p-ghmf-p93r",
+                "CGA-fv8h-r4vf-pqp2",
+                "CGA-fwqv-xwr9-2gvf",
+                "CGA-fww7-h6j5-x399",
+                "CGA-g254-hq7c-x5xp",
+                "CGA-g29f-qmxw-898c",
+                "CGA-g542-fcm5-gcwf",
+                "CGA-g5j4-vxj6-ch4c",
+                "CGA-g6hf-h89h-c666",
+                "CGA-g7fq-hg49-gp9r",
+                "CGA-g7q3-cxp6-3c25",
+                "CGA-g83w-hp6g-c9fm",
+                "CGA-g8v5-vhfx-53xc",
+                "CGA-g9x3-vj3c-vwp5",
+                "CGA-gh53-cf7x-8wcw",
+                "CGA-gp2q-gw6h-6c7p",
+                "CGA-gp9v-g8hh-8rm6",
+                "CGA-gq2f-h6wf-gpxq",
+                "CGA-gq97-32xw-9chj",
+                "CGA-gqfx-fc46-rccr",
+                "CGA-grmc-f69v-xmxm",
+                "CGA-grqg-g6f8-w2r8",
+                "CGA-grxv-mvc3-mmch",
+                "CGA-gw2g-vr35-hjv8",
+                "CGA-gw7m-cqmv-356x",
+                "CGA-gxqw-98mh-fhr9",
+                "CGA-gxxg-5m4c-4hf6",
+                "CGA-h332-mhrh-j67c",
+                "CGA-h3jw-5qhp-c7g2",
+                "CGA-h693-m2vv-xfmh",
+                "CGA-h6j7-rrph-q2vh",
+                "CGA-hc6q-p7vh-qqm4",
+                "CGA-hfjh-c8h2-25v4",
+                "CGA-hmc9-7m57-r8p2",
+                "CGA-hmvh-96m2-wcrj",
+                "CGA-hp49-8c88-wc5h",
+                "CGA-hp88-gvjr-p7mw",
+                "CGA-hr7p-r7wv-g4gx",
+                "CGA-hrr5-96x7-xv53",
+                "CGA-hvwv-x624-392j",
+                "CGA-hww9-c8x5-grgg",
+                "CGA-hx53-29r5-p52v",
+                "CGA-j2g9-vgcv-79fv",
+                "CGA-j2w7-5fhx-m9xg",
+                "CGA-j66m-cw3g-g8h8",
+                "CGA-j8jh-9hm8-6q4p",
+                "CGA-j8p9-6jmc-79ph",
+                "CGA-j8pj-4p42-46r4",
+                "CGA-j8w8-2r9f-qjwc",
+                "CGA-j9p8-2mm9-4vwq",
+                "CGA-jc25-5mjg-p7hj",
+                "CGA-jgxw-2cwm-v5x8",
+                "CGA-jh22-p8xx-jqmp",
+                "CGA-jjrr-rpjx-gx8j",
+                "CGA-jmpj-f9j9-h5cm",
+                "CGA-jwq3-5872-8qv3",
+                "CGA-m34f-vh84-xhq5",
+                "CGA-m3vv-4q63-r828",
+                "CGA-m4vv-x2gj-h7w8",
+                "CGA-m6x6-vh2m-462j",
+                "CGA-m76g-84w4-jwcg",
+                "CGA-m8m9-4r86-966j",
+                "CGA-m8qf-cm95-hrvc",
+                "CGA-m96q-rh9c-8hq4",
+                "CGA-m994-q496-257c",
+                "CGA-mcmg-fg9v-hx4j",
+                "CGA-mcx9-3mf4-37r4",
+                "CGA-mgfw-vqhf-gqc8",
+                "CGA-mgg9-3vgw-5vr3",
+                "CGA-mp5j-4w3w-7qc9",
+                "CGA-mppq-2pw7-h2jq",
+                "CGA-mxwx-4v6h-5vjc",
+                "CGA-p7cj-6x38-hqjq",
+                "CGA-p9cj-4q76-5fwc",
+                "CGA-pf3x-h4p6-m373",
+                "CGA-pggc-4h3f-5pgp",
+                "CGA-pjfc-mxmw-jw57",
+                "CGA-pjq3-4gjh-f2vx",
+                "CGA-pm45-74j9-4r56",
+                "CGA-pm9f-8788-4g75",
+                "CGA-pp36-v4j6-q2r4",
+                "CGA-ppxg-h398-pvvx",
+                "CGA-pq9w-4v5c-cjqq",
+                "CGA-pwjw-j294-24qr",
+                "CGA-px6w-wv92-fq7m",
+                "CGA-pxj6-r3gf-vmhq",
+                "CGA-pxpj-w9rw-gpfm",
+                "CGA-q3rc-973x-j4cf",
+                "CGA-q45c-g42g-h7vp",
+                "CGA-q5mw-p3cj-f7cr",
+                "CGA-q6p6-56g3-m7c2",
+                "CGA-q934-h92r-75fg",
+                "CGA-qfvh-jg6h-hqjr",
+                "CGA-qjp7-583q-844f",
+                "CGA-qm24-39m6-4jj8",
+                "CGA-qqmw-6363-qg5w",
+                "CGA-qv4x-wgvx-pvmj",
+                "CGA-qv64-jh5p-fph4",
+                "CGA-qx82-54x4-2vrc",
+                "CGA-r359-f9wj-qjv9",
+                "CGA-r7g7-3r9p-q283",
+                "CGA-r84c-4hvv-2h4m",
+                "CGA-r8j2-g864-gwj4",
+                "CGA-r98x-c7ch-hj4f",
+                "CGA-rcpx-8vjm-f382",
+                "CGA-rf69-3c6p-vq9r",
+                "CGA-rgfv-47qf-p5pq",
+                "CGA-rghh-gj8p-m22w",
+                "CGA-rjqq-4rxg-r73m",
+                "CGA-rjxf-32m5-p6hm",
+                "CGA-rrjx-xfmf-35wx",
+                "CGA-rv94-8j74-wh68",
+                "CGA-v3mh-3fq2-3fj5",
+                "CGA-v6hq-pxqq-ch2w",
+                "CGA-v94m-53jx-gf8r",
+                "CGA-vc3j-mm8g-v69v",
+                "CGA-vfxh-hhw7-576p",
+                "CGA-vg86-fh4c-v7qp",
+                "CGA-vh4h-7p8p-f32h",
+                "CGA-vhj4-x4pf-2pmg",
+                "CGA-vpr8-p9p9-wjq3",
+                "CGA-vr23-4pp7-4rhp",
+                "CGA-vr8f-mhqq-2jj4",
+                "CGA-vvp7-2fc7-xvw7",
+                "CGA-w32g-5mwx-6frf",
+                "CGA-w5g7-vm23-fc97",
+                "CGA-w5rc-x6vr-7cc9",
+                "CGA-w728-gggg-43q3",
+                "CGA-w7jm-2wmj-w388",
+                "CGA-w893-7g5g-8hfv",
+                "CGA-wcwg-2rfx-pv56",
+                "CGA-wgc5-fx3w-gfq6",
+                "CGA-wph4-mj85-c6mx",
+                "CGA-wpj9-gw6w-8q53",
+                "CGA-wppw-w643-pqg6",
+                "CGA-wv59-v5p4-hfj6",
+                "CGA-wv9f-cj8f-3v4p",
+                "CGA-wvj2-3chg-gqv6",
+                "CGA-ww39-rq4c-pg4f",
+                "CGA-wx55-4wv4-xwc7",
+                "CGA-wxp6-2p5r-h642",
+                "CGA-x4m6-vm8x-r7mp",
+                "CGA-x59p-mmrw-qjpv",
+                "CGA-x67r-rr43-2q7x",
+                "CGA-x6wj-hf2p-2rcj",
+                "CGA-x738-rr83-5mg5",
+                "CGA-x8c7-rm97-h256",
+                "CGA-x8wp-wv6h-5cfm",
+                "CGA-x8wx-7qm6-jcqx",
+                "CGA-xfw9-2fvm-j9x5",
+                "CGA-xg2f-c775-jpgf",
+                "CGA-xm7h-xf4j-rx82",
+                "CGA-xm88-m8c9-hmrg",
+                "CGA-xm8j-qxpf-3fxc",
+                "CGA-xx69-98pg-jxm9"
+              ],
+              "summary": "Non-linear parsing of case-insensitive content in golang.org/x/net/html",
+              "details": "An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/net",
+                    "purl": "pkg:golang/golang.org/x/net"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.33.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-w32m-9786-jp63/GHSA-w32m-9786-jp63.json"
+                  }
+                }
+              ],
+              "severity": [
+                {
+                  "type": "CVSS_V4",
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+                }
+              ],
+              "references": [
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-45338"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/golang/go/issues/70906"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://cs.opensource.google/go/x/net"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://go.dev/cl/637536"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://go.dev/issue/70906"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/wSCRmFnNmPA/m/Lvcd0mRMAwAJ"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://pkg.go.dev/vuln/GO-2024-3333"
+                }
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-770"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2024-12-18T21:59:48Z",
+                "nvd_published_at": "2024-12-18T21:15:08Z",
+                "severity": "HIGH"
+              }
+            },
+            {
+              "modified": "2024-12-20T20:37:27Z",
+              "published": "2024-12-18T20:22:06Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3333",
+              "aliases": [
+                "CVE-2024-45338",
+                "GHSA-w32m-9786-jp63"
+              ],
+              "summary": "Non-linear parsing of case-insensitive content in golang.org/x/net/html",
+              "details": "An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/net",
+                    "purl": "pkg:golang/golang.org/x/net"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.33.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3333.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "golang.org/x/net/html",
+                        "symbols": [
+                          "Parse",
+                          "ParseFragment",
+                          "ParseFragmentWithOptions",
+                          "ParseWithOptions",
+                          "htmlIntegrationPoint",
+                          "inBodyIM",
+                          "inTableIM",
+                          "parseDoctype"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/637536"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/70906"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/wSCRmFnNmPA/m/Lvcd0mRMAwAJ"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Guido Vranken"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3333"
+              }
+            }
+          ],
+          "groups": [
+            {
+              "ids": [
+                "GO-2024-2687",
+                "GHSA-4v7x-pqxf-cx7m"
+              ],
+              "aliases": [
+                "BIT-golang-2023-45288",
+                "CGA-8q47-wf6v-wqg5",
+                "CGA-c6f9-jh7g-69mj",
+                "CGA-grww-v9jg-rhw2",
+                "CVE-2023-45288",
+                "GHSA-4v7x-pqxf-cx7m",
+                "GO-2024-2687"
+              ],
+              "max_severity": "5.3"
+            },
+            {
+              "ids": [
+                "GO-2024-3333",
+                "GHSA-w32m-9786-jp63"
+              ],
+              "aliases": [
+                "CVE-2024-45338",
+                "GHSA-w32m-9786-jp63",
+                "GO-2024-3333"
+              ],
+              "max_severity": "8.7"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "google.golang.org/protobuf",
+            "version": "1.31.0",
+            "ecosystem": "Go"
+          },
+          "vulnerabilities": [
+            {
+              "modified": "2024-11-07T19:19:40Z",
+              "published": "2024-03-06T00:31:27Z",
+              "schema_version": "1.6.0",
+              "id": "GHSA-8r3f-844c-mc37",
+              "aliases": [
+                "CGA-2vgr-6mqh-4r48",
+                "CGA-v9cm-f6x8-5vj7",
+                "CVE-2024-24786",
+                "GO-2024-2611"
+              ],
+              "related": [
+                "CGA-23h9-644m-jqc8",
+                "CGA-252j-3q54-j333",
+                "CGA-25gh-37cq-54x5",
+                "CGA-266h-vmf7-6wp8",
+                "CGA-29m7-c5g6-236m",
+                "CGA-29wh-8p9x-hxm8",
+                "CGA-2fx4-8x6c-92mc",
+                "CGA-2g99-c7hv-3cx6",
+                "CGA-2g9v-338x-hqx4",
+                "CGA-2gm8-cpgq-rwf9",
+                "CGA-2jv4-qcmh-4985",
+                "CGA-2mv7-h656-r3gv",
+                "CGA-2mvq-gm6x-2c36",
+                "CGA-2qf3-v342-5frv",
+                "CGA-2rf6-cjpx-9ffx",
+                "CGA-2rr6-4j9m-wgmw",
+                "CGA-2v76-f4w2-7j44",
+                "CGA-2vf6-pgvh-rm3w",
+                "CGA-2w34-48h9-6fwm",
+                "CGA-2xfv-hgf8-x295",
+                "CGA-32gq-j8v8-crph",
+                "CGA-34p4-vq54-3q43",
+                "CGA-353x-xvjg-8fw4",
+                "CGA-372h-96r9-v9ff",
+                "CGA-38rf-mmj6-5g5m",
+                "CGA-3hm5-g3r8-5pxq",
+                "CGA-3j7j-jvxw-cw76",
+                "CGA-3jqg-535v-v99v",
+                "CGA-3m4m-4p3x-jp47",
+                "CGA-3rf7-8xm8-2px9",
+                "CGA-3vj5-fmp7-g35w",
+                "CGA-3vq5-7hf9-5mqh",
+                "CGA-3wfr-c5gc-ppr9",
+                "CGA-3xvq-4v26-x678",
+                "CGA-4227-jrq9-cgp7",
+                "CGA-4366-hrpm-2524",
+                "CGA-4383-jmp4-2h28",
+                "CGA-44p2-4m3v-xqrc",
+                "CGA-489j-74j8-x847",
+                "CGA-4927-59r6-c54f",
+                "CGA-4984-4mxj-73gx",
+                "CGA-4c6q-767j-4fh6",
+                "CGA-4c9v-5hr4-8rf2",
+                "CGA-4g5j-w2xr-p274",
+                "CGA-4g68-mjm3-vw9v",
+                "CGA-4h84-c48x-j36j",
+                "CGA-4hrf-2mhj-pvjp",
+                "CGA-4jm2-p72v-44w7",
+                "CGA-4jxx-3qx8-3xvh",
+                "CGA-4prm-69q8-wh27",
+                "CGA-4q6x-q6mj-8753",
+                "CGA-4qp2-cm83-776p",
+                "CGA-4v8v-gq8m-vvhf",
+                "CGA-4w9g-w4gp-hqrf",
+                "CGA-4x5f-f5jh-jmch",
+                "CGA-4xv9-4jrq-q3jc",
+                "CGA-526x-wx55-h52c",
+                "CGA-528f-25qg-f633",
+                "CGA-54f3-xhf6-gm99",
+                "CGA-5552-w4jm-64jm",
+                "CGA-55mj-3986-92v8",
+                "CGA-566g-fvfx-fpxc",
+                "CGA-56vp-xw2h-3cpw",
+                "CGA-574p-mxhc-5rvr",
+                "CGA-57qv-982q-5rmq",
+                "CGA-598q-6r76-4m28",
+                "CGA-59gp-63qq-hq4q",
+                "CGA-59q3-6xjj-5wgw",
+                "CGA-5c7f-x484-w4h7",
+                "CGA-5cmr-4p39-j9rx",
+                "CGA-5cqp-fq6r-f2h9",
+                "CGA-5cxq-5rxv-325r",
+                "CGA-5f2m-53rf-6jqg",
+                "CGA-5f42-7jh9-r5h9",
+                "CGA-5g25-x67f-xpc9",
+                "CGA-5g64-g774-jmqc",
+                "CGA-5g6v-56rf-7mc2",
+                "CGA-5jqq-jvc7-r6g7",
+                "CGA-5m9c-pwfg-xw2j",
+                "CGA-5p6f-3v3g-q75j",
+                "CGA-5q23-w9f5-2866",
+                "CGA-5q4j-59mx-g375",
+                "CGA-5rp7-rhm2-qg8r",
+                "CGA-5vqp-r58w-9f56",
+                "CGA-5wcq-rg2g-jwq2",
+                "CGA-5wgg-98fq-xf47",
+                "CGA-5xx4-46g2-5wg8",
+                "CGA-6268-9rp2-329r",
+                "CGA-62p7-xc86-cprq",
+                "CGA-6456-g576-pw4m",
+                "CGA-64cr-8f5m-5xvr",
+                "CGA-64v8-p8cw-m5w7",
+                "CGA-652q-6q28-473w",
+                "CGA-673p-254x-vv9g",
+                "CGA-6848-vg9h-3xg7",
+                "CGA-685p-9cc5-v676",
+                "CGA-68w5-8rwj-6j5h",
+                "CGA-6989-gwj4-x98q",
+                "CGA-6c58-f39m-9qg8",
+                "CGA-6f25-ffv2-f72q",
+                "CGA-6j6p-fxxq-f23p",
+                "CGA-6mc3-5r5h-29xg",
+                "CGA-6mcr-jfjh-7c45",
+                "CGA-6mr3-f8cf-r8rx",
+                "CGA-6p2p-fjqq-c3wx",
+                "CGA-6qjp-27mw-2vv6",
+                "CGA-6qjq-38jq-6vc6",
+                "CGA-6r3j-9fh7-jpxp",
+                "CGA-6v9p-54g6-92v5",
+                "CGA-6vxg-xrh4-v36q",
+                "CGA-6w44-gg42-vwcq",
+                "CGA-6wqw-jfp2-r23g",
+                "CGA-6xhq-m263-q2gh",
+                "CGA-72j7-5pxj-cq3g",
+                "CGA-72r4-fg5m-j3c2",
+                "CGA-72xj-whh5-5rg7",
+                "CGA-73xv-8jwg-vx99",
+                "CGA-74f9-2w32-x5xg",
+                "CGA-74rc-w39q-rr93",
+                "CGA-757w-qrmq-vg7c",
+                "CGA-75pp-mwj6-w7vv",
+                "CGA-79jm-jx7x-f24q",
+                "CGA-7hv3-j2pm-4mx9",
+                "CGA-7m4g-cwm3-8cx2",
+                "CGA-7q36-r9pr-7f2q",
+                "CGA-7r6g-9w32-8w2r",
+                "CGA-7rpx-vjwc-r8cr",
+                "CGA-7v6r-mp75-h85h",
+                "CGA-8223-52x3-h596",
+                "CGA-82p3-gw4m-v7wv",
+                "CGA-839c-cx2v-q33c",
+                "CGA-8549-q32h-vc2j",
+                "CGA-85f2-pwxh-v2rr",
+                "CGA-85rm-7253-4jgr",
+                "CGA-85wc-4xwp-567q",
+                "CGA-8733-3cqm-ggr3",
+                "CGA-8856-xg3h-fhgq",
+                "CGA-88vx-j7fx-47w3",
+                "CGA-89ff-j2mw-9c6v",
+                "CGA-89qr-m942-f7w9",
+                "CGA-8c8j-vpr7-fqh5",
+                "CGA-8crr-jjxf-hh4x",
+                "CGA-8h47-9w54-8m2f",
+                "CGA-8h7f-wfwc-5g39",
+                "CGA-8m2j-xg5q-4vh8",
+                "CGA-8m7v-rc8j-8hgw",
+                "CGA-8mf4-rv58-jwhm",
+                "CGA-8px9-pr7r-g2qp",
+                "CGA-8qxc-258q-q775",
+                "CGA-8r7f-8f6c-c2f3",
+                "CGA-8v98-5p23-45w6",
+                "CGA-8xf6-wmvf-6xfx",
+                "CGA-8xvg-r2gq-22v3",
+                "CGA-92w4-fpcv-5m8w",
+                "CGA-92wm-g634-g437",
+                "CGA-93v7-8q86-r7x4",
+                "CGA-93wh-cm8v-p58f",
+                "CGA-96vc-j6wj-x65w",
+                "CGA-97r8-q7c7-f76m",
+                "CGA-99p7-8mmr-hx67",
+                "CGA-99w6-7rvm-7vfh",
+                "CGA-9frv-87j6-gpm3",
+                "CGA-9hh3-5qwj-hh48",
+                "CGA-9j55-q89p-prfc",
+                "CGA-9jpp-vpf6-5jrv",
+                "CGA-9jw7-jwwp-5vch",
+                "CGA-9mg8-rch6-x88h",
+                "CGA-9p3c-3ffx-hwr2",
+                "CGA-9ppr-4mfr-c259",
+                "CGA-9qpr-rmrr-9jqp",
+                "CGA-9vq4-4632-2r89",
+                "CGA-9w38-5hvp-8hjw",
+                "CGA-9x44-m7wh-8g26",
+                "CGA-c2r3-x779-gx8m",
+                "CGA-c38f-vq5c-8w8v",
+                "CGA-c4fh-45g3-36h9",
+                "CGA-c5fh-c65v-hrwx",
+                "CGA-c5pq-jmcp-jpfc",
+                "CGA-c6qx-qjj7-942x",
+                "CGA-c85m-fmfw-7rv4",
+                "CGA-c88f-7jw9-pcjj",
+                "CGA-c8mh-2m4f-5g2f",
+                "CGA-c8mp-j7p2-jmcx",
+                "CGA-c9g2-r7mr-f2v3",
+                "CGA-c9q5-99xp-gh5g",
+                "CGA-cfc3-p22h-h8mp",
+                "CGA-cg4m-mqvp-9x48",
+                "CGA-cghx-7238-cf9g",
+                "CGA-cj4h-mmxp-rgwg",
+                "CGA-cjw9-fm8g-r5gx",
+                "CGA-cm9h-x6j6-f665",
+                "CGA-cmj7-7w2c-3f3c",
+                "CGA-cmr3-wq2q-4vx6",
+                "CGA-cp7x-f46c-rprx",
+                "CGA-cpx5-cj9p-qg7q",
+                "CGA-cvhj-52ff-5q2j",
+                "CGA-cxxg-8jc2-h4q6",
+                "CGA-f345-46hc-7cg9",
+                "CGA-f37x-j82f-4qgw",
+                "CGA-f3m5-v4x3-99w4",
+                "CGA-f3m9-gm9x-jgp8",
+                "CGA-f3v7-f7ww-4j44",
+                "CGA-f579-937j-c2rf",
+                "CGA-f5xp-xwm9-j8qw",
+                "CGA-f6gq-cmgc-jcpq",
+                "CGA-f6h6-crwm-cg75",
+                "CGA-f6q4-g8rj-h5fm",
+                "CGA-f6v8-j96g-hhr7",
+                "CGA-f826-gv4q-g8cx",
+                "CGA-f8vw-c33f-jxxq",
+                "CGA-fc39-g2r2-h4cm",
+                "CGA-fg48-65gr-qqr6",
+                "CGA-fgwr-xwcr-5gmv",
+                "CGA-fhp9-9vfm-8mr3",
+                "CGA-fmqj-vc6j-h8g6",
+                "CGA-fphr-w99m-5rjj",
+                "CGA-fqx2-gw9v-9px4",
+                "CGA-frc5-36h7-j6fg",
+                "CGA-frf6-66jj-r5pv",
+                "CGA-fv9x-qxv4-x2jq",
+                "CGA-fwch-5v6f-2583",
+                "CGA-g3h6-6m32-97w2",
+                "CGA-g44x-573v-9gxg",
+                "CGA-g497-vhr2-x8vg",
+                "CGA-g56j-7phc-qv3g",
+                "CGA-g5mx-x3c5-9gxg",
+                "CGA-g5q2-h4jr-h8vj",
+                "CGA-g5xp-mvpf-c7qq",
+                "CGA-g72v-9wvw-7jcf",
+                "CGA-g7fr-p4cx-4j86",
+                "CGA-g7w8-q2h6-4cpx",
+                "CGA-g84w-fmxg-7xf4",
+                "CGA-g887-c7fp-mg67",
+                "CGA-g8j4-v5h3-xhxv",
+                "CGA-g8w9-pr3x-5qwq",
+                "CGA-g924-w87f-2mg3",
+                "CGA-gf6c-334h-798j",
+                "CGA-gf7x-q6hw-c8fg",
+                "CGA-gfgh-23f5-2q64",
+                "CGA-ghjc-23gr-gfwc",
+                "CGA-gm2v-cpp4-j6qq",
+                "CGA-gpqh-ff7f-678f",
+                "CGA-gqcf-3mf9-qx5q",
+                "CGA-gv6v-6h6p-6m2v",
+                "CGA-gvf2-hw6h-cxp6",
+                "CGA-gw3x-rwx3-hc2q",
+                "CGA-gwp9-cmhg-q6gp",
+                "CGA-gwv8-4qc4-55ph",
+                "CGA-h33x-63q6-wvqx",
+                "CGA-h35j-gr52-24fg",
+                "CGA-h3hx-26wg-665c",
+                "CGA-h3rw-vjfw-6hqw",
+                "CGA-h3wf-fj23-q5pg",
+                "CGA-h438-9h4j-p3r6",
+                "CGA-h5m8-2j2p-g27r",
+                "CGA-h7cg-hmjw-2jg4",
+                "CGA-h86r-rp6w-gq5r",
+                "CGA-h8q6-cp72-rp2v",
+                "CGA-hcp5-xcfp-2vq8",
+                "CGA-hfv5-jf5x-vrwh",
+                "CGA-hgc9-433j-3895",
+                "CGA-hh43-82v8-4pf4",
+                "CGA-hj3g-89h3-v4wr",
+                "CGA-hq4w-jv2v-wv2m",
+                "CGA-hq5p-pjwq-6p22",
+                "CGA-hqh3-8vvc-6gh4",
+                "CGA-hqh8-vjx7-f2vp",
+                "CGA-hr4g-j77w-38f9",
+                "CGA-hr5p-qgc9-xj6h",
+                "CGA-hr9j-jr8c-pxcq",
+                "CGA-hrcq-hc3q-2p9c",
+                "CGA-hvwc-92p6-6xf6",
+                "CGA-hw64-q3f8-38x2",
+                "CGA-hw68-pc2p-prr7",
+                "CGA-hwpp-g5vx-77gw",
+                "CGA-hx9x-c4pp-p488",
+                "CGA-hxhv-7c4f-crw5",
+                "CGA-j465-g3m3-7c79",
+                "CGA-j4p6-crfp-rw7m",
+                "CGA-j4p7-c53f-gjjf",
+                "CGA-j6rh-f7wr-9389",
+                "CGA-j7q2-hg48-gqjm",
+                "CGA-j8hv-r4gx-xw67",
+                "CGA-j98x-56mm-5vrr",
+                "CGA-jcgf-crc8-xxg6",
+                "CGA-jfjx-pc35-63qp",
+                "CGA-jg54-vgh9-97f7",
+                "CGA-jgc8-fc54-m54v",
+                "CGA-jgj8-4hjp-p9p4",
+                "CGA-jhfv-wghc-v8rp",
+                "CGA-jjfp-mmch-3v48",
+                "CGA-jp56-w7pf-w2jq",
+                "CGA-jpp2-3grc-q567",
+                "CGA-jqgh-327h-v377",
+                "CGA-jw3m-h94j-w7r2",
+                "CGA-jx8q-7vx3-cvmg",
+                "CGA-jxq5-wr7r-qxhw",
+                "CGA-jxrx-fp8m-w75p",
+                "CGA-jxvq-6vwx-6q2h",
+                "CGA-m246-7hfj-f3p3",
+                "CGA-m2cx-6q44-44ff",
+                "CGA-m3f3-c83q-v34q",
+                "CGA-m428-8vw8-77v4",
+                "CGA-m4r4-2jmp-fg7r",
+                "CGA-m58h-x54x-f9c8",
+                "CGA-m58m-2gww-mpc4",
+                "CGA-m5g7-7q68-fhqr",
+                "CGA-m6pv-rv6m-wmqq",
+                "CGA-m9j2-hm9m-7m9w",
+                "CGA-m9q7-xxhh-9rv5",
+                "CGA-mf26-43v3-hwgf",
+                "CGA-mffx-f5rm-42qm",
+                "CGA-mfm8-4589-wp7j",
+                "CGA-mhx2-7vfv-8264",
+                "CGA-mj4r-cfhv-f7gj",
+                "CGA-mjh7-v2gp-8mh2",
+                "CGA-mm36-4wwx-7w8f",
+                "CGA-mmjp-c9vh-hv88",
+                "CGA-mpw9-hrq7-6384",
+                "CGA-mwf4-wvw6-58w7",
+                "CGA-mwh4-pg89-2rxr",
+                "CGA-p4q9-g47c-f9vx",
+                "CGA-p4vx-7fg6-h88c",
+                "CGA-p4wh-qmv3-3qmv",
+                "CGA-p55p-42jq-vppv",
+                "CGA-p5gp-34j4-5wp9",
+                "CGA-p62g-j4jx-rr7q",
+                "CGA-p6hj-fwmg-8cvm",
+                "CGA-p76g-3ghq-6xq2",
+                "CGA-p79x-2r6c-8vw9",
+                "CGA-p7gr-4r28-6m66",
+                "CGA-p855-qj8h-pprc",
+                "CGA-pcph-6w4h-x94w",
+                "CGA-pf98-62m2-cvrx",
+                "CGA-pff5-vqfq-gq55",
+                "CGA-pfv7-q59c-hx3w",
+                "CGA-pg67-h84j-9mwj",
+                "CGA-pg6g-8rh9-f438",
+                "CGA-ph46-wwx2-qr2x",
+                "CGA-pj7v-5c83-cxj7",
+                "CGA-pm5r-8xmg-56gw",
+                "CGA-pq2x-2rwh-mx5m",
+                "CGA-pqw8-m33q-x7xm",
+                "CGA-pr43-hvwx-3xmg",
+                "CGA-prgx-8cq2-47g5",
+                "CGA-pvhc-r3r9-438q",
+                "CGA-pw8x-qxr6-jj6w",
+                "CGA-q233-qrqx-xhfr",
+                "CGA-q2q9-g2m9-449g",
+                "CGA-q2vp-j5xv-7976",
+                "CGA-q38q-5ppq-h67h",
+                "CGA-q3f4-cj66-54mx",
+                "CGA-q3m5-jgj2-v92g",
+                "CGA-q3pv-gp9g-gpj3",
+                "CGA-q4mw-9xg7-pf34",
+                "CGA-q6pj-mgmp-x7xw",
+                "CGA-q8m3-xmfg-hw4f",
+                "CGA-q8w4-pg4w-6j65",
+                "CGA-q8xx-ph22-89m5",
+                "CGA-q9px-qmgf-rchx",
+                "CGA-q9qc-qrq7-h976",
+                "CGA-qcp6-cw7j-g8xx",
+                "CGA-qgfw-8r3j-rpp2",
+                "CGA-qhf5-r96r-fqwx",
+                "CGA-qhxg-8965-8vpx",
+                "CGA-qjp4-ggm6-r5x8",
+                "CGA-qm2v-7w3x-5cf5",
+                "CGA-qmc5-wjjm-6hpp",
+                "CGA-qmxx-47c6-c9q8",
+                "CGA-qpmf-6q6m-mrpg",
+                "CGA-qpp4-3hvf-x8r9",
+                "CGA-qpw5-27x5-wx9f",
+                "CGA-qq6p-hvf7-8gpf",
+                "CGA-qq79-xj48-mw35",
+                "CGA-qqqw-vpw3-fx7p",
+                "CGA-qqwr-gph6-74pv",
+                "CGA-qrv3-9f95-pcj2",
+                "CGA-qvqg-h33w-2jv3",
+                "CGA-qwj4-v768-qxwm",
+                "CGA-qwq7-6j4q-2wh2",
+                "CGA-qxjw-p352-hq92",
+                "CGA-r34h-r83c-59c2",
+                "CGA-r4fx-8f7c-663j",
+                "CGA-r5vq-q64j-gmm8",
+                "CGA-r5xh-c2c3-7g4h",
+                "CGA-rcr2-hq8r-78rm",
+                "CGA-rpjf-8pqv-cffx",
+                "CGA-rpm9-fjcp-m6qf",
+                "CGA-rpqv-544g-w4hf",
+                "CGA-rqw2-p29c-qrqm",
+                "CGA-rqxq-2q24-rqpv",
+                "CGA-rrjc-vjqv-cppv",
+                "CGA-rv9j-m6wv-xr75",
+                "CGA-rvqj-pwqj-f9fx",
+                "CGA-rwq7-63wv-f4mh",
+                "CGA-rxf4-r3j5-hg75",
+                "CGA-rxpx-g273-j7pm",
+                "CGA-v225-cpcj-q5rr",
+                "CGA-v2g7-q44r-m6gm",
+                "CGA-v2h6-hgpx-4cj8",
+                "CGA-v58c-cxv3-8wxq",
+                "CGA-v5xc-mh99-62gr",
+                "CGA-v63p-xwjc-gmvj",
+                "CGA-v66f-64w4-jhhc",
+                "CGA-v6wq-wfrv-c3qf",
+                "CGA-v8x6-xcf5-32gq",
+                "CGA-v9hr-p987-5x5g",
+                "CGA-vf28-hm47-g7c8",
+                "CGA-vfm4-x947-3432",
+                "CGA-vfwg-cgqx-8qx8",
+                "CGA-vg5p-wjvv-95g5",
+                "CGA-vg7r-gv8h-j54w",
+                "CGA-vg7x-qc2p-jw8m",
+                "CGA-vgrg-j893-mqvf",
+                "CGA-vhr9-jw99-6wvc",
+                "CGA-vj2j-wwhx-wcj9",
+                "CGA-vj5c-jcjw-wcm9",
+                "CGA-vjc6-vp35-mqfh",
+                "CGA-vm5p-3grr-76qm",
+                "CGA-vm6v-3f7q-jg2p",
+                "CGA-vmp5-rp57-j792",
+                "CGA-vp2m-jj4h-xcjq",
+                "CGA-vpgj-8f5x-8qq3",
+                "CGA-vqg7-v4xw-7cxc",
+                "CGA-vqhh-5j66-8m5w",
+                "CGA-vqrr-xw6q-83pr",
+                "CGA-vrv9-7vp8-gf4x",
+                "CGA-w67c-39q4-62q3",
+                "CGA-w6f3-cj6m-9j23",
+                "CGA-w6h7-464c-5hx4",
+                "CGA-w6v2-j3r9-rf3r",
+                "CGA-w89q-v466-fmh8",
+                "CGA-wc34-rq86-hv3h",
+                "CGA-wfh7-p58f-799f",
+                "CGA-wh65-q72w-5p6h",
+                "CGA-wh8j-mhfv-89f7",
+                "CGA-wh8p-rp2w-p5mj",
+                "CGA-whg9-qw5p-58hf",
+                "CGA-wjf5-pmv2-48g3",
+                "CGA-wjrx-pj4m-fh2h",
+                "CGA-wp2p-9qhv-9wxf",
+                "CGA-wpgm-f47m-wp8m",
+                "CGA-wpv5-gf57-5vmq",
+                "CGA-wpxp-p3rq-pfcx",
+                "CGA-wq3c-26pv-h85m",
+                "CGA-wqpx-chm9-5vx9",
+                "CGA-wrgx-gr7x-hpg8",
+                "CGA-wrwp-pq6c-g7jq",
+                "CGA-wvf4-pm2g-9249",
+                "CGA-ww52-jcg3-8rjh",
+                "CGA-wwx9-rv57-p65x",
+                "CGA-wx3f-cprc-w93w",
+                "CGA-wx4v-w73f-63cg",
+                "CGA-x2hr-vhmj-vr83",
+                "CGA-x2m6-9947-w8wr",
+                "CGA-x2pf-prrv-j7fj",
+                "CGA-x398-f4c5-vc8f",
+                "CGA-x52v-f3ff-g7jp",
+                "CGA-x5jj-hr9r-rhrq",
+                "CGA-x6jx-p3g9-w3j8",
+                "CGA-x6wh-8rf6-q29v",
+                "CGA-x723-7jv3-93m7",
+                "CGA-x734-5rpg-68v4",
+                "CGA-x78c-pjvm-89pj",
+                "CGA-x7g3-f5gj-4gf7",
+                "CGA-x7gr-9gg9-gfxm",
+                "CGA-x7q8-q89p-qq2x",
+                "CGA-x84j-2mhx-q84x",
+                "CGA-x86r-rg3w-4fvj",
+                "CGA-x8qw-7fhq-q3c6",
+                "CGA-x8r9-xppj-cww2",
+                "CGA-x9ch-25fq-vx9m",
+                "CGA-xfh7-3m8j-qc8m",
+                "CGA-xfq2-hqvg-gr8x",
+                "CGA-xjcv-86r9-crx3",
+                "CGA-xjh5-h33v-5mx3",
+                "CGA-xjx8-gg33-7x7v",
+                "CGA-xm2j-9p57-fxjp",
+                "CGA-xmxh-729r-6x7g",
+                "CGA-xqqj-pp64-3rh2",
+                "CGA-xqwf-fg9j-vh58",
+                "CGA-xr7w-wxhm-xm5h",
+                "CGA-xw55-cc4x-qq2j",
+                "CGA-xxjh-c3cg-9pfv"
+              ],
+              "summary": "Golang protojson.Unmarshal function infinite loop when unmarshaling certain forms of invalid JSON",
+              "details": "The protojson.Unmarshal function can enter an infinite loop when unmarshaling certain forms of invalid JSON. This condition can occur when unmarshaling into a message which contains a google.protobuf.Any value, or when the UnmarshalOptions.DiscardUnknown option is set.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "google.golang.org/protobuf",
+                    "purl": "pkg:golang/google.golang.org/protobuf"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.33.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-8r3f-844c-mc37/GHSA-8r3f-844c-mc37.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "google.golang.org/protobuf/encoding/protojson",
+                    "purl": "pkg:golang/google.golang.org/protobuf/encoding/protojson"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.33.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-8r3f-844c-mc37/GHSA-8r3f-844c-mc37.json"
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "google.golang.org/protobuf/internal/encoding/json",
+                    "purl": "pkg:golang/google.golang.org/protobuf/internal/encoding/json"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.33.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-8r3f-844c-mc37/GHSA-8r3f-844c-mc37.json"
+                  }
+                }
+              ],
+              "severity": [
+                {
+                  "type": "CVSS_V3",
+                  "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                },
+                {
+                  "type": "CVSS_V4",
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:U"
+                }
+              ],
+              "references": [
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24786"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/protocolbuffers/protobuf-go/commit/f01a588e5810b90996452eec4a28f22a0afae023"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/protocolbuffers/protobuf-go"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.33.0"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://go.dev/cl/569356"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JDMBHAVSDU2FBDZ45U3A2VLSM35OJ2HU"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://pkg.go.dev/vuln/GO-2024-2611"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://security.netapp.com/advisory/ntap-20240517-0002"
+                },
+                {
+                  "type": "WEB",
+                  "url": "http://www.openwall.com/lists/oss-security/2024/03/08/4"
+                }
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-835"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2024-03-13T21:01:28Z",
+                "nvd_published_at": "2024-03-05T23:15:07Z",
+                "severity": "MODERATE"
+              }
+            },
+            {
+              "modified": "2024-10-22T05:29:02Z",
+              "published": "2024-03-05T20:24:05Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2611",
+              "aliases": [
+                "CGA-2vgr-6mqh-4r48",
+                "CGA-v9cm-f6x8-5vj7",
+                "CVE-2024-24786",
+                "GHSA-8r3f-844c-mc37"
+              ],
+              "related": [
+                "RHSA-2024:0043",
+                "RHSA-2024:0045",
+                "RHSA-2024:1456",
+                "RHSA-2024:1461",
+                "RHSA-2024:1563",
+                "RHSA-2024:1574",
+                "RHSA-2024:1874",
+                "RHSA-2024:2548",
+                "RHSA-2024:2549",
+                "RHSA-2024:2550",
+                "RHSA-2024:3254",
+                "RHSA-2024:3634",
+                "RHSA-2024:3635",
+                "RHSA-2024:3636",
+                "RHSA-2024:3715",
+                "RHSA-2024:4246",
+                "RHSA-2024:4597"
+              ],
+              "summary": "Infinite loop in JSON unmarshaling in google.golang.org/protobuf",
+              "details": "The protojson.Unmarshal function can enter an infinite loop when unmarshaling certain forms of invalid JSON. This condition can occur when unmarshaling into a message which contains a google.protobuf.Any value, or when the UnmarshalOptions.DiscardUnknown option is set.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "google.golang.org/protobuf",
+                    "purl": "pkg:golang/google.golang.org/protobuf"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.33.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2611.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "google.golang.org/protobuf/encoding/protojson",
+                        "symbols": [
+                          "Unmarshal",
+                          "UnmarshalOptions.Unmarshal",
+                          "UnmarshalOptions.unmarshal"
+                        ]
+                      },
+                      {
+                        "path": "google.golang.org/protobuf/internal/encoding/json",
+                        "symbols": [
+                          "Decoder.Peek",
+                          "Decoder.Read"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/569356"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2611"
+              }
+            }
+          ],
+          "groups": [
+            {
+              "ids": [
+                "GO-2024-2611",
+                "GHSA-8r3f-844c-mc37"
+              ],
+              "aliases": [
+                "CGA-2vgr-6mqh-4r48",
+                "CGA-v9cm-f6x8-5vj7",
+                "CVE-2024-24786",
+                "GHSA-8r3f-844c-mc37",
+                "GO-2024-2611"
+              ],
+              "max_severity": "7.5"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "stdlib",
+            "version": "1.21",
+            "ecosystem": "Go"
+          },
+          "vulnerabilities": [
+            {
+              "modified": "2024-09-10T08:12:19Z",
+              "published": "2024-09-06T19:15:23Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3105",
+              "aliases": [
+                "BIT-golang-2024-34155",
+                "CVE-2024-34155"
+              ],
+              "related": [
+                "RHSA-2024:6908",
+                "RHSA-2024:6913",
+                "RHSA-2024:8038",
+                "RHSA-2024:8039",
+                "RHSA-2024:8112",
+                "RHSA-2024:8232",
+                "RHSA-2024:8263",
+                "RHSA-2024:8428",
+                "RHSA-2024:8690",
+                "RHSA-2024:8694",
+                "RHSA-2024:8700",
+                "RHSA-2024:9454",
+                "RHSA-2024:9459"
+              ],
+              "summary": "Stack exhaustion in all Parse functions in go/parser",
+              "details": "Calling any of the Parse functions on Go source code which contains deeply nested literals can cause a panic due to stack exhaustion.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.22.7"
+                        },
+                        {
+                          "introduced": "1.23.0-0"
+                        },
+                        {
+                          "fixed": "1.23.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3105.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "go/parser",
+                        "symbols": [
+                          "ParseDir",
+                          "ParseExpr",
+                          "ParseExprFrom",
+                          "ParseFile",
+                          "parser.parseLiteralValue"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/611238"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/69138"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-dev/c/S9POB9NCTdk"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3105"
+              }
+            },
+            {
+              "modified": "2024-09-10T08:12:21Z",
+              "published": "2024-09-06T19:15:23Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3106",
+              "aliases": [
+                "BIT-golang-2024-34156",
+                "CVE-2024-34156"
+              ],
+              "related": [
+                "CVE-2022-30635",
+                "RHSA-2024:11216",
+                "RHSA-2024:11217",
+                "RHSA-2024:6908",
+                "RHSA-2024:6912",
+                "RHSA-2024:6913",
+                "RHSA-2024:6914",
+                "RHSA-2024:6946",
+                "RHSA-2024:6947",
+                "RHSA-2024:7102",
+                "RHSA-2024:7103",
+                "RHSA-2024:7135",
+                "RHSA-2024:7136",
+                "RHSA-2024:7202",
+                "RHSA-2024:7203",
+                "RHSA-2024:7204",
+                "RHSA-2024:7205",
+                "RHSA-2024:7206",
+                "RHSA-2024:7207",
+                "RHSA-2024:7208",
+                "RHSA-2024:7261",
+                "RHSA-2024:7262",
+                "RHSA-2024:7350",
+                "RHSA-2024:7351",
+                "RHSA-2024:7449",
+                "RHSA-2024:7455",
+                "RHSA-2024:7456",
+                "RHSA-2024:7485",
+                "RHSA-2024:7487",
+                "RHSA-2024:7488",
+                "RHSA-2024:7769",
+                "RHSA-2024:7791",
+                "RHSA-2024:7792",
+                "RHSA-2024:7793",
+                "RHSA-2024:7794",
+                "RHSA-2024:7818",
+                "RHSA-2024:7819",
+                "RHSA-2024:7820",
+                "RHSA-2024:7821",
+                "RHSA-2024:7822",
+                "RHSA-2024:7852",
+                "RHSA-2024:8038",
+                "RHSA-2024:8039",
+                "RHSA-2024:8110",
+                "RHSA-2024:8111",
+                "RHSA-2024:8112",
+                "RHSA-2024:8232",
+                "RHSA-2024:8263",
+                "RHSA-2024:8428",
+                "RHSA-2024:8690",
+                "RHSA-2024:8694",
+                "RHSA-2024:8700",
+                "RHSA-2024:9454",
+                "RHSA-2024:9456",
+                "RHSA-2024:9459",
+                "RHSA-2024:9472",
+                "RHSA-2024:9473"
+              ],
+              "summary": "Stack exhaustion in Decoder.Decode in encoding/gob",
+              "details": "Calling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion. This is a follow-up to CVE-2022-30635.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.22.7"
+                        },
+                        {
+                          "introduced": "1.23.0-0"
+                        },
+                        {
+                          "fixed": "1.23.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3106.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "encoding/gob",
+                        "symbols": [
+                          "Decoder.Decode",
+                          "Decoder.DecodeValue",
+                          "Decoder.decIgnoreOpFor"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/611239"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/69139"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-dev/c/S9POB9NCTdk"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Md Sakib Anwar of The Ohio State University (anwar.40@osu.edu)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3106"
+              }
+            },
+            {
+              "modified": "2024-09-10T08:12:21Z",
+              "published": "2024-09-06T19:15:23Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3107",
+              "aliases": [
+                "BIT-golang-2024-34158",
+                "CVE-2024-34158"
+              ],
+              "related": [
+                "RHSA-2024:6908",
+                "RHSA-2024:6913",
+                "RHSA-2024:8038",
+                "RHSA-2024:8039",
+                "RHSA-2024:8112",
+                "RHSA-2024:8232",
+                "RHSA-2024:8263",
+                "RHSA-2024:8428",
+                "RHSA-2024:8690",
+                "RHSA-2024:8694",
+                "RHSA-2024:8700",
+                "RHSA-2024:9454",
+                "RHSA-2024:9459"
+              ],
+              "summary": "Stack exhaustion in Parse in go/build/constraint",
+              "details": "Calling Parse on a \"// +build\" build tag line with deeply nested expressions can cause a panic due to stack exhaustion.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.22.7"
+                        },
+                        {
+                          "introduced": "1.23.0-0"
+                        },
+                        {
+                          "fixed": "1.23.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3107.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "go/build/constraint",
+                        "symbols": [
+                          "Parse",
+                          "exprParser.not",
+                          "parsePlusBuildExpr"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/611240"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/69141"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-dev/c/S9POB9NCTdk"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3107"
+              }
+            }
+          ],
+          "groups": [
+            {
+              "ids": [
+                "GO-2024-3105"
+              ],
+              "aliases": [
+                "BIT-golang-2024-34155",
+                "CVE-2024-34155",
+                "GO-2024-3105"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-3106"
+              ],
+              "aliases": [
+                "BIT-golang-2024-34156",
+                "CVE-2024-34156",
+                "GO-2024-3106"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-3107"
+              ],
+              "aliases": [
+                "BIT-golang-2024-34158",
+                "CVE-2024-34158",
+                "GO-2024-3107"
+              ],
+              "max_severity": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "experimental_config": {
+    "licenses": {
+      "summary": false,
+      "allowlist": null
+    }
+  }
+}

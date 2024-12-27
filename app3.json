@@ -1,0 +1,19 @@
+{
+  "Counts": {
+    "CountOSV": 1,
+    "CountSnyk": 0,
+    "CountTrivy": 1,
+    "Target": "app3",
+    "TotalEntries": 1
+  },
+  "Vuln": [
+    {
+      "CVE-ID": "CVE-2020-26160",
+      "GHSA": "GHSA-w73w-5m7g-f7qc",
+      "GO-ID": "GO-2020-0017",
+      "OSV": true,
+      "Snyk": false,
+      "Trivy": true
+    }
+  ]
+}

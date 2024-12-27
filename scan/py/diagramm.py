@@ -4,13 +4,14 @@ from matplotlib.patches import Patch
 
 # Daten für das Venn-Diagramm
 counts = {
-    "OnlyOSV": 318,
-    "OnlySnyk": 5,
-    "OnlyTrivy": 14,
+
+    "OnlyOSV": 313,
+    "OnlySnyk": 35,
+    "OnlyTrivy": 5,
     "OSV_Snyk": 2,
-    "OSV_Trivy": 61,
-    "Snyk_Trivy": 2,
-    "All": 45
+    "OSV_Trivy": 30,
+    "Snyk_Trivy": 3,
+    "All": 103
 }
 
 # Erstellen des Venn-Diagramms mit Pastellfarben und voller Deckkraft

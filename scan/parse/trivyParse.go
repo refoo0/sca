@@ -1,10 +1,8 @@
 package parse
 
 import (
-	"encoding/json"
 	"fmt"
-	"io"
-	"os"
+	"strings"
 
 	"github.com/refoo0/sca/scan/modul"
 )
@@ -15,106 +13,90 @@ type Vulnerability struct {
 
 type TrivyJson struct {
 	Results []struct {
+		Type            string          `json:"Type"`
 		Vulnerabilities []Vulnerability `json:"Vulnerabilities"`
 	} `json:"Results"`
 }
 
-// Function to read JSON file and unmarshal it
-func readJSONFile(path string, v interface{}) error {
-	file, err := os.Open(path)
-	if err != nil {
-		return fmt.Errorf("failed to open file %s: %v", path, err)
-	}
-	defer file.Close()
-
-	bytes, err := io.ReadAll(file)
-	if err != nil {
-		return fmt.Errorf("failed to read file %s: %v", path, err)
-	}
-
-	err = json.Unmarshal(bytes, v)
-	if err != nil {
-		return fmt.Errorf("failed to unmarshal JSON from file %s: %v", path, err)
-	}
-
-	return nil
-}
-
-// Function to write JSON file
-func writeJSONFile(path string, v interface{}) error {
-	bytes, err := json.MarshalIndent(v, "", "  ")
-	if err != nil {
-		return fmt.Errorf("failed to marshal JSON: %v", err)
-	}
-
-	err = os.WriteFile(path, bytes, 0644)
-	if err != nil {
-		return fmt.Errorf("failed to write file %s: %v", path, err)
-	}
-
-	return nil
-}
-
-func processTrivyJSON(trivy string, vulnInfo string) {
+func processTrivyJSON(trivy string, vulnInfoPath string) error {
 
 	// Read the first JSON file (contains Vulnerabilities)
-	var firstFile TrivyJson
-	err := readJSONFile(trivy, &firstFile)
+	var trivyFile TrivyJson
+	err := readJSONFile(trivy, &trivyFile)
 	if err != nil {
-		fmt.Println(err)
-		return
+		return err
 	}
 
-	// Read the second JSON file (contains Vuln entries)
-	var secondFile modul.VulnInfo
-	err = readJSONFile(vulnInfo, &secondFile)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	// Create a map to store the indexes of existing CVE-IDs in the second file
-	existingVulnIndexMap := make(map[string]int)
-	for i, vuln := range secondFile.Vuln {
-		existingVulnIndexMap[vuln.CVEID] = i
-	}
-
-	fmt.Println("result length: ", len(firstFile.Results), "vuln length: ", len(secondFile.Vuln))
-
-	// Loop through each vulnerability from the first file
-	for _, result := range firstFile.Results {
+	// Create a map to store the vulnerability IDs and avoid duplicates
+	vulnerabilityIDs := make(map[string]string)
+	for _, result := range trivyFile.Results {
+		typ := result.Type
+		var t string
+		if typ == "gomod" {
+			t = "Go"
+		} else if typ == "yarn" || typ == "npm" {
+			t = "Npm"
+		} else if typ == "pip" || typ == "poetry" {
+			t = "Pypi"
+		} else {
+			return fmt.Errorf("unknown Type: %s", typ)
+		}
 		for _, vuln := range result.Vulnerabilities {
-			if index, exists := existingVulnIndexMap[vuln.VulnerabilityID]; exists {
-				// If the vulnerability exists, set Trivy to true
-				secondFile.Vuln[index].Trivy = true
-			} else {
-				// If the vulnerability does not exist, add it to the second file
-				newVuln := struct {
-					CVEID string `json:"CVE-ID"`
-					GHSA  string `json:"GHSA"`
-					GOID  string `json:"GO-ID"`
-					OSV   bool   `json:"OSV"`
-					Trivy bool   `json:"Trivy"`
-					Snyk  bool   `json:"Snyk"`
-				}{
-					CVEID: vuln.VulnerabilityID,
-					GHSA:  "",   // Placeholder, as GHSA is not in the first file
-					GOID:  "",   // Placeholder, as GO-ID is not in the first file
-					Trivy: true, // Trivy is set to true as requested
-				}
-				fmt.Println("New vulnerability found: ", newVuln.CVEID)
-				secondFile.Vuln = append(secondFile.Vuln, newVuln)
-				existingVulnIndexMap[vuln.VulnerabilityID] = len(secondFile.Vuln) - 1
-			}
+			id := vuln.VulnerabilityID + "//" + t
+			vulnerabilityIDs[id] = t
 		}
 	}
 
-	// Write the updated second file
-	err = writeJSONFile(vulnInfo, &secondFile)
+	// Read the second JSON file (contains Vuln entries)
+	var vulnInfo modul.VulnInfo
+	err = readJSONFile(vulnInfoPath, &vulnInfo)
 	if err != nil {
-		fmt.Println(err)
-		return
+		return err
+	}
+	vulnInfo.Counts.CountTrivy = len(vulnerabilityIDs)
+	existingVulns := vulnInfo.Vuln
+
+	newVulns := []modul.Vuln{}
+	// Loop through each vulnerability from the first file
+	for vulnID := range vulnerabilityIDs {
+
+		oldVulnID := vulnID
+		var cveID, ghsaID, goID, id string
+
+		newVuln := modul.Vuln{}
+		newVuln.OthersID = map[string]string{}
+		lowerID := strings.ToLower(vulnID)
+
+		vulnID = strings.Split(vulnID, "//")[0]
+		if strings.HasPrefix(lowerID, "cve") {
+			cveID = vulnID
+			newVuln.CVEID = cveID
+		} else if strings.HasPrefix(lowerID, "ghsa") {
+			ghsaID = vulnID
+			newVuln.GHSA = ghsaID
+		} else if strings.HasPrefix(lowerID, "go") {
+			goID = vulnID
+			newVuln.GOID = goID
+		} else {
+			id = vulnID
+			newVuln.OthersID["Trivy-"+id] = id
+		}
+		newVuln.Trivy = true
+
+		newVuln.System = vulnerabilityIDs[oldVulnID]
+
+		newVulns = append(newVulns, newVuln)
+
 	}
 
-	fmt.Println("The second JSON file has been updated successfully.")
+	// Update the existing vulnerabilities with the new vulnerabilities
+	vulnInfo.Vuln = updateVulns(existingVulns, newVulns, "Trivy")
+
+	// Write the updated second file
+	err = writeJSONFile(vulnInfoPath, &vulnInfo)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

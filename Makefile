@@ -1,13 +1,34 @@
-DIR = app
-SUBDIR = frp
-APP_PATH = $(DIR)/$(SUBDIR)
+SUBDIRS = awesome-go caddy frp fzf gin go hugo kubernetes ollama syncthing
 
+#SUBDIRS = syncthing
+
+RESULT_DIR = results/scanner
+RESULT_DIR_PATH = $(RESULT_DIR)/$(SUBDIR)
+
+SCAN_DIR = app
+SCAN_APP_PATH = $(SCAN_DIR)/$(SUBDIR)
+sbom::
+	./scripts/sbom.sh $(SCAN_APP_PATH) 
 run::
-	./scripts/scan.sh $(APP_PATH)
-	go run ./scan/main.go analysis ./results/scanner/osv.json ./results/scanner/trivy.json ./results/scanner/snyk.json $(SUBDIR) 
+	./scripts/scan.sh $(RESULT_DIR_PATH) $(SCAN_APP_PATH)
 
-t::
-	go run ./scan/main.go analysis ./results/scanner/osv.json ./results/scanner/trivy.json ./results/scanner/snyk.json $(SUBDIR) 
+o::	
+	./scripts/scanner/osv.sh "" $(SCAN_APP_PATH)
 
+s::	
+	./scripts/scanner/snyk.sh "" $(SCAN_APP_PATH)
+
+t::	
+	./scripts/scanner/trivy.sh "" $(SCAN_APP_PATH)
+
+r::
+	@for subdir in $(SUBDIRS); do \
+		echo "Running analysis for $$subdir"; \
+		go run ./scan/main.go analysis \
+			$(RESULT_DIR)/$$subdir/osv.json \
+			$(RESULT_DIR)/$$subdir/trivy.json \
+			$(RESULT_DIR)/$$subdir/snyk.json \
+			$(RESULT_DIR)/$$subdir; \
+	done
 generate::
-	go run ./scan/main.go generate ./results/archiv output.json  
+	go run ./scan/main.go generate ./results/scanner/projectsResults output.json  

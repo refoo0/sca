@@ -1,0 +1,11 @@
+{
+  "Comment": "hier wurde github.com/gorilla/websocket v1.5.3 verwendet und in code main.go importiert",
+  "Counts": {
+    "Target": "",
+    "TotalEntries": 0,
+    "CountOSV": 0,
+    "CountTrivy": 0,
+    "CountSnyk": 0
+  },
+  "Vuln": null
+}
