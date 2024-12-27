@@ -1,219 +1,128 @@
 {
-  "Counts": {
-    "Target": "results/scanner/caddy",
-    "TotalEntries": 8,
-    "CountOSV": 8,
-    "CountTrivy": 2,
-    "CountSnyk": 2,
-    "OnlyOSV": 6,
-    "OnlyTrivy": 0,
-    "OnlySnyk": 0,
-    "OSVTrivy": 0,
-    "OSVSnyk": 0,
-    "TrivySnyk": 0,
-    "AllThree": 2,
-    "VulnOnlyOSV": [
-      {
-        "CVE-ID": "CVE-2024-34156",
-        "GHSA": "",
-        "GO-ID": "GO-2024-3106",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-34158",
-        "GHSA": "",
-        "GO-ID": "GO-2024-3107",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-24790",
-        "GHSA": "GHSA-49gw-vxvf-fc2g",
-        "GO-ID": "GO-2024-2887",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-24789",
-        "GHSA": "GHSA-236w-p7wf-5ph8",
-        "GO-ID": "GO-2024-2888",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-24791",
-        "GHSA": "",
-        "GO-ID": "GO-2024-2963",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-34155",
-        "GHSA": "",
-        "GO-ID": "GO-2024-3105",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      }
-    ],
-    "VulnOnlyTrivy": [],
-    "VulnOnlySnyk": [],
-    "VulnOSVTrivy": [],
-    "VulnOSVSnyk": [],
-    "VulnTrivySnyk": [],
-    "VulnAllThree": [
-      {
-        "CVE-ID": "CVE-2024-45337",
-        "GHSA": "GHSA-v778-237x-gjrc",
-        "GO-ID": "GO-2024-3321",
-        "SnykID": "SNYK-GOLANG-GOLANGORGXCRYPTOSSH-8496611",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-45338",
-        "GHSA": "GHSA-w32m-9786-jp63",
-        "GO-ID": "GO-2024-3333",
-        "SnykID": "SNYK-GOLANG-GOLANGORGXNETHTML-8535262",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      }
-    ]
-  },
+  "Target": "results/scanner/caddy",
+  "TotalEntries": 8,
+  "CountOSV": 8,
+  "CountTrivy": 2,
+  "CountSnyk": 2,
   "Vuln": [
     {
-      "CVE-ID": "CVE-2024-34156",
-      "GHSA": "",
-      "GO-ID": "GO-2024-3106",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
+      "ID": "CVE-2024-34155",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-golang-2024-34155"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": true
+    },
+    {
+      "ID": "CVE-2024-34156",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-golang-2024-34156"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": true
+    },
+    {
+      "ID": "CVE-2024-34158",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-golang-2024-34158"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": true
+    },
+    {
+      "ID": "CVE-2024-45337",
+      "GHSAIDS": [
+        "GHSA-v778-237x-gjrc",
+        "GHSA-v778-237x-gjrc"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2024-34158",
-      "GHSA": "",
-      "GO-ID": "GO-2024-3107",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
+      "ID": "CVE-2024-45338",
+      "GHSAIDS": [
+        "GHSA-w32m-9786-jp63"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2024-45337",
-      "GHSA": "GHSA-v778-237x-gjrc",
-      "GO-ID": "GO-2024-3321",
-      "SnykID": "SNYK-GOLANG-GOLANGORGXCRYPTOSSH-8496611",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
+      "ID": "CVE-2024-24790",
+      "GHSAIDS": [
+        "GHSA-49gw-vxvf-fc2g"
+      ],
+      "OthersIDS": [
+        "BIT-golang-2024-24790",
+        "CGA-2fq6-p83q-pm8x"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
       "System": "Go",
-      "StandardLibOSV": false
+      "StandardLibOSV": true
     },
     {
-      "CVE-ID": "CVE-2024-45338",
-      "GHSA": "GHSA-w32m-9786-jp63",
-      "GO-ID": "GO-2024-3333",
-      "SnykID": "SNYK-GOLANG-GOLANGORGXNETHTML-8535262",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
+      "ID": "CVE-2024-24789",
+      "GHSAIDS": [
+        "GHSA-236w-p7wf-5ph8"
+      ],
+      "OthersIDS": [
+        "BIT-golang-2024-24789",
+        "CGA-4r7q-83hj-9rrp"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
       "System": "Go",
-      "StandardLibOSV": false
+      "StandardLibOSV": true
     },
     {
-      "CVE-ID": "CVE-2024-24790",
-      "GHSA": "GHSA-49gw-vxvf-fc2g",
-      "GO-ID": "GO-2024-2887",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
+      "ID": "CVE-2024-24791",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-golang-2024-24791"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
       "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2024-24789",
-      "GHSA": "GHSA-236w-p7wf-5ph8",
-      "GO-ID": "GO-2024-2888",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2024-24791",
-      "GHSA": "",
-      "GO-ID": "GO-2024-2963",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2024-34155",
-      "GHSA": "",
-      "GO-ID": "GO-2024-3105",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
+      "StandardLibOSV": true
     }
   ]
 }

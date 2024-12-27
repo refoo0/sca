@@ -27,7 +27,13 @@ func processSnykJSON(snykPath string, vulnInfoPath string) error {
 		return err
 	}
 
-	vulnSynk := make(map[string]modul.Vuln)
+	vulnsGo := make(map[string]modul.Vuln)
+	vulnsNpm := make(map[string]modul.Vuln)
+	vulnsPypi := make(map[string]modul.Vuln)
+	vulnsElse := make(map[string]modul.Vuln)
+
+	existVuln := make(map[string]bool)
+
 	for _, snyk := range snykList {
 		typ := snyk.PackageManager
 		var t string
@@ -42,46 +48,52 @@ func processSnykJSON(snykPath string, vulnInfoPath string) error {
 		}
 
 		for _, vuln := range snyk.Vulnerabilities {
-			id := vuln.SnykID
-			if _, exists := vulnSynk[id]; !exists {
-				existVuln := vulnSynk[id]
 
-				existVuln.System = t
+			if !existVuln[vuln.SnykID] {
 
-				existVuln.Snyk = true
-				existVuln.SnykID = id
-				existVuln.OthersID = make(map[string]string)
+				existVuln[vuln.SnykID] = true
 
-				if identifiers, ok := vuln.Identifiers["CVE"]; ok && len(identifiers) > 0 {
+				cveIDS := vuln.Identifiers["CVE"]
+				ghsaIDS := vuln.Identifiers["GHSA"]
 
-					existVuln.CVEID = identifiers[0]
-					if len(identifiers) > 1 {
-						for i := 1; i < len(identifiers)-1; i++ {
-							existVuln.OthersID[fmt.Sprint("Snyk-CVE-", i)] = identifiers[i]
-						}
-					}
+				cveIDsGhsaIDs := make(map[string][]string)
+
+				var uniqueKeys []string
+
+				for _, cveID := range cveIDS {
+					uniqueKeys = append(uniqueKeys, cveID)
+					cveIDsGhsaIDs[cveID] = ghsaIDS
 				}
 
-				if identifiers, ok := vuln.Identifiers["GHSA"]; ok && len(identifiers) > 0 {
-					existVuln.GHSA = identifiers[0]
-
-					if len(identifiers) > 1 {
-						for i := 1; i < len(identifiers)-1; i++ {
-							existVuln.OthersID[fmt.Sprint("Snyk-GHSA-", i)] = identifiers[i]
-						}
-					}
-
+				if len(uniqueKeys) == 0 {
+					uniqueKeys = append(uniqueKeys, ghsaIDS...)
 				}
 
-				if identifiers, ok := vuln.Identifiers["GO"]; ok && len(identifiers) > 0 {
-					existVuln.GOID = identifiers[0]
-					if len(identifiers) > 1 {
-						for i := 1; i < len(identifiers)-1; i++ {
-							existVuln.OthersID[fmt.Sprint("Snyk-GO-", i)] = identifiers[i]
-						}
+				if len(uniqueKeys) == 0 {
+					uniqueKeys = append(uniqueKeys, vuln.SnykID)
+				}
+
+				for _, uniqueKey := range uniqueKeys {
+					newVuln := modul.Vuln{
+						ID:      uniqueKey,
+						GhsaIDs: cveIDsGhsaIDs[uniqueKey],
+						Scanner: modul.Scanner{
+							Snyk: true,
+						},
+						System: t,
+					}
+
+					if t == "Go" {
+						vulnsGo[uniqueKey] = newVuln
+
+					} else if t == "Npm" {
+						vulnsNpm[uniqueKey] = newVuln
+					} else if t == "Pypi" {
+						vulnsPypi[uniqueKey] = newVuln
+					} else {
+						vulnsElse[uniqueKey] = newVuln
 					}
 				}
-				vulnSynk[id] = existVuln
 
 			}
 
@@ -95,15 +107,23 @@ func processSnykJSON(snykPath string, vulnInfoPath string) error {
 	if err != nil {
 		return err
 	}
-	vulnInfo.Counts.CountSnyk = len(vulnSynk)
+	vulnInfo.CountSnyk = len(vulnsGo) + len(vulnsNpm) + len(vulnsPypi) + len(vulnsElse)
 	existingVulns := vulnInfo.Vuln
 
 	newVulns := []modul.Vuln{}
-	for id, vuln := range vulnSynk {
-		vuln.SnykID = id
-		vuln.Snyk = true
-		vuln.System = vulnSynk[id].System
+	for _, vuln := range vulnsGo {
+		newVulns = append(newVulns, vuln)
+	}
 
+	for _, vuln := range vulnsNpm {
+		newVulns = append(newVulns, vuln)
+	}
+
+	for _, vuln := range vulnsPypi {
+		newVulns = append(newVulns, vuln)
+	}
+
+	for _, vuln := range vulnsElse {
 		newVulns = append(newVulns, vuln)
 	}
 

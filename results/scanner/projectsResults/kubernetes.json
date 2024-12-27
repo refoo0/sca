@@ -1,915 +1,216 @@
 {
-  "Counts": {
-    "Target": "results/scanner/kubernetes",
-    "TotalEntries": 37,
-    "CountOSV": 34,
-    "CountTrivy": 5,
-    "CountSnyk": 7,
-    "OnlyOSV": 21,
-    "OnlyTrivy": 0,
-    "OnlySnyk": 3,
-    "OSVTrivy": 1,
-    "OSVSnyk": 0,
-    "TrivySnyk": 0,
-    "AllThree": 12,
-    "VulnOnlyOSV": [
-      {
-        "CVE-ID": "CVE-2023-25151",
-        "GHSA": "GHSA-rcjv-mgp8-qvmr",
-        "GO-ID": "GO-2023-1546",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-34158",
-        "GHSA": "",
-        "GO-ID": "GO-2024-3107",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2022-21698",
-        "GHSA": "GHSA-5r5m-65gx-7vrh",
-        "GO-ID": "GO-2022-0322",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-25151",
-        "GHSA": "GHSA-5r5m-65gx-7vrh",
-        "GO-ID": "GO-2022-0322",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-25151",
-        "GHSA": "GHSA-rcjv-mgp8-qvmr",
-        "GO-ID": "GO-2023-2113",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-34155",
-        "GHSA": "",
-        "GO-ID": "GO-2024-3105",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2022-21698",
-        "GHSA": "GHSA-cg3q-j54f-5p7p",
-        "GO-ID": "GO-2023-1546",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-25151",
-        "GHSA": "GHSA-cg3q-j54f-5p7p",
-        "GO-ID": "GO-2023-1546",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2022-21698",
-        "GHSA": "GHSA-cg3q-j54f-5p7p",
-        "GO-ID": "GO-2023-2113",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2022-21698",
-        "GHSA": "GHSA-rcjv-mgp8-qvmr",
-        "GO-ID": "GO-2022-0322",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-25151",
-        "GHSA": "GHSA-cg3q-j54f-5p7p",
-        "GO-ID": "GO-2023-2113",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2022-21698",
-        "GHSA": "GHSA-5r5m-65gx-7vrh",
-        "GO-ID": "GO-2023-1546",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-25151",
-        "GHSA": "GHSA-5r5m-65gx-7vrh",
-        "GO-ID": "GO-2023-1546",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-34156",
-        "GHSA": "",
-        "GO-ID": "GO-2024-3106",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2022-21698",
-        "GHSA": "GHSA-5r5m-65gx-7vrh",
-        "GO-ID": "GO-2023-2113",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-25151",
-        "GHSA": "GHSA-5r5m-65gx-7vrh",
-        "GO-ID": "GO-2023-2113",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-25151",
-        "GHSA": "GHSA-rcjv-mgp8-qvmr",
-        "GO-ID": "GO-2022-0322",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2022-21698",
-        "GHSA": "GHSA-rcjv-mgp8-qvmr",
-        "GO-ID": "GO-2023-1546",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2022-21698",
-        "GHSA": "GHSA-cg3q-j54f-5p7p",
-        "GO-ID": "GO-2022-0322",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2022-21698",
-        "GHSA": "GHSA-rcjv-mgp8-qvmr",
-        "GO-ID": "GO-2023-2113",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-25151",
-        "GHSA": "GHSA-cg3q-j54f-5p7p",
-        "GO-ID": "GO-2022-0322",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": false,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      }
-    ],
-    "VulnOnlyTrivy": [],
-    "VulnOnlySnyk": [
-      {
-        "CVE-ID": "CVE-2023-44487",
-        "GHSA": "GHSA-2m7v-gc89-fjqf",
-        "GO-ID": "GO-2023-2153",
-        "SnykID": "SNYK-GOLANG-K8SIOAPIMACHINERYPKGUTILRUNTIME-8367153",
-        "OthersID": {},
-        "OSV": false,
-        "Trivy": false,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2019-11250",
-        "GHSA": "",
-        "GO-ID": "GO-2021-0065",
-        "SnykID": "SNYK-GOLANG-K8SIOCLIENTGOTRANSPORT-7538822",
-        "OthersID": {},
-        "OSV": false,
-        "Trivy": false,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2020-8565",
-        "GHSA": "",
-        "GO-ID": "",
-        "SnykID": "SNYK-GOLANG-K8SIOCLIENTGOTRANSPORT-8136227",
-        "OthersID": {},
-        "OSV": false,
-        "Trivy": false,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      }
-    ],
-    "VulnOSVTrivy": [
-      {
-        "CVE-ID": "CVE-2024-28180",
-        "GHSA": "GHSA-c5q2-7r4c-mv6g",
-        "GO-ID": "GO-2024-2631",
-        "SnykID": "",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": false,
-        "System": "Go",
-        "StandardLibOSV": false
-      }
-    ],
-    "VulnOSVSnyk": [],
-    "VulnTrivySnyk": [],
-    "VulnAllThree": [
-      {
-        "CVE-ID": "CVE-2023-45142",
-        "GHSA": "GHSA-5r5m-65gx-7vrh",
-        "GO-ID": "GO-2022-0322",
-        "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-45142",
-        "GHSA": "GHSA-rcjv-mgp8-qvmr",
-        "GO-ID": "GO-2022-0322",
-        "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-51744",
-        "GHSA": "GHSA-29wx-vh33-7x7r",
-        "GO-ID": "GO-2024-3250",
-        "SnykID": "SNYK-GOLANG-GITHUBCOMGOLANGJWTJWTV4-8341242",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-45142",
-        "GHSA": "GHSA-cg3q-j54f-5p7p",
-        "GO-ID": "GO-2022-0322",
-        "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-45142",
-        "GHSA": "GHSA-5r5m-65gx-7vrh",
-        "GO-ID": "GO-2023-2113",
-        "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-45142",
-        "GHSA": "GHSA-rcjv-mgp8-qvmr",
-        "GO-ID": "GO-2023-2113",
-        "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-45338",
-        "GHSA": "GHSA-w32m-9786-jp63",
-        "GO-ID": "GO-2024-3333",
-        "SnykID": "SNYK-GOLANG-GOLANGORGXNETHTML-8535262",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2024-45337",
-        "GHSA": "GHSA-v778-237x-gjrc",
-        "GO-ID": "GO-2024-3321",
-        "SnykID": "SNYK-GOLANG-GOLANGORGXCRYPTOSSH-8496611",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-45142",
-        "GHSA": "GHSA-5r5m-65gx-7vrh",
-        "GO-ID": "GO-2023-1546",
-        "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-45142",
-        "GHSA": "GHSA-rcjv-mgp8-qvmr",
-        "GO-ID": "GO-2023-1546",
-        "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-45142",
-        "GHSA": "GHSA-cg3q-j54f-5p7p",
-        "GO-ID": "GO-2023-2113",
-        "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      },
-      {
-        "CVE-ID": "CVE-2023-45142",
-        "GHSA": "GHSA-cg3q-j54f-5p7p",
-        "GO-ID": "GO-2023-1546",
-        "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-        "OthersID": {},
-        "OSV": true,
-        "Trivy": true,
-        "Snyk": true,
-        "System": "Go",
-        "StandardLibOSV": false
-      }
-    ]
-  },
+  "Target": "results/scanner/kubernetes",
+  "TotalEntries": 13,
+  "CountOSV": 10,
+  "CountTrivy": 5,
+  "CountSnyk": 7,
   "Vuln": [
     {
-      "CVE-ID": "CVE-2023-25151",
-      "GHSA": "GHSA-rcjv-mgp8-qvmr",
-      "GO-ID": "GO-2023-1546",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
+      "ID": "CVE-2024-34158",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-golang-2024-34158"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": true
+    },
+    {
+      "ID": "CVE-2022-21698",
+      "GHSAIDS": [
+        "GHSA-5r5m-65gx-7vrh",
+        "GHSA-cg3q-j54f-5p7p",
+        "GHSA-rcjv-mgp8-qvmr"
+      ],
+      "OthersIDS": [
+        "CGA-93vr-4696-924c",
+        "CGA-h2vq-f2rf-jwrq"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2023-45142",
-      "GHSA": "GHSA-5r5m-65gx-7vrh",
-      "GO-ID": "GO-2022-0322",
-      "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
+      "ID": "CVE-2023-45142",
+      "GHSAIDS": [
+        "GHSA-5r5m-65gx-7vrh",
+        "GHSA-cg3q-j54f-5p7p",
+        "GHSA-rcjv-mgp8-qvmr",
+        "GHSA-rcjv-mgp8-qvmr"
+      ],
+      "OthersIDS": [
+        "CGA-93vr-4696-924c",
+        "CGA-h2vq-f2rf-jwrq"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2023-45142",
-      "GHSA": "GHSA-rcjv-mgp8-qvmr",
-      "GO-ID": "GO-2022-0322",
-      "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
+      "ID": "CVE-2024-28180",
+      "GHSAIDS": [
+        "GHSA-c5q2-7r4c-mv6g"
+      ],
+      "OthersIDS": [
+        "CGA-9vf9-m4f8-6392",
+        "CGA-9vg5-h493-cxr7",
+        "CGA-chh8-vhg4-2qj7",
+        "CGA-g5hx-8r47-pf39",
+        "CGA-hmfp-f3v3-528v",
+        "CGA-hrqx-74pg-5m88",
+        "CGA-m474-c57g-8945",
+        "CGA-r356-23m2-5p37",
+        "CGA-v3wf-pwmr-vcw5",
+        "CGA-w52c-j6q8-cf23",
+        "CGA-w7jq-8v28-882j"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2024-34158",
-      "GHSA": "",
-      "GO-ID": "GO-2024-3107",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
+      "ID": "CVE-2024-34155",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-golang-2024-34155"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": true
+    },
+    {
+      "ID": "CVE-2024-34156",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-golang-2024-34156"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": true
+    },
+    {
+      "ID": "CVE-2024-51744",
+      "GHSAIDS": [
+        "GHSA-29wx-vh33-7x7r",
+        "GHSA-29wx-vh33-7x7r"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2024-51744",
-      "GHSA": "GHSA-29wx-vh33-7x7r",
-      "GO-ID": "GO-2024-3250",
-      "SnykID": "SNYK-GOLANG-GITHUBCOMGOLANGJWTJWTV4-8341242",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
+      "ID": "CVE-2023-25151",
+      "GHSAIDS": [
+        "GHSA-5r5m-65gx-7vrh",
+        "GHSA-cg3q-j54f-5p7p",
+        "GHSA-rcjv-mgp8-qvmr"
+      ],
+      "OthersIDS": [
+        "CGA-93vr-4696-924c",
+        "CGA-h2vq-f2rf-jwrq"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2022-21698",
-      "GHSA": "GHSA-5r5m-65gx-7vrh",
-      "GO-ID": "GO-2022-0322",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
+      "ID": "CVE-2024-45337",
+      "GHSAIDS": [
+        "GHSA-v778-237x-gjrc",
+        "GHSA-v778-237x-gjrc"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2023-25151",
-      "GHSA": "GHSA-5r5m-65gx-7vrh",
-      "GO-ID": "GO-2022-0322",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
+      "ID": "CVE-2024-45338",
+      "GHSAIDS": [
+        "GHSA-w32m-9786-jp63"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2023-25151",
-      "GHSA": "GHSA-rcjv-mgp8-qvmr",
-      "GO-ID": "GO-2023-2113",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
+      "ID": "CVE-2023-44487",
+      "GHSAIDS": [
+        "GHSA-2m7v-gc89-fjqf",
+        "GHSA-jhv4-f7mr-xx76"
+      ],
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2024-34155",
-      "GHSA": "",
-      "GO-ID": "GO-2024-3105",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
+      "ID": "CVE-2019-11250",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
       "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "CVE-ID": "CVE-2022-21698",
-      "GHSA": "GHSA-cg3q-j54f-5p7p",
-      "GO-ID": "GO-2023-1546",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-25151",
-      "GHSA": "GHSA-cg3q-j54f-5p7p",
-      "GO-ID": "GO-2023-1546",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-45142",
-      "GHSA": "GHSA-cg3q-j54f-5p7p",
-      "GO-ID": "GO-2022-0322",
-      "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2022-21698",
-      "GHSA": "GHSA-cg3q-j54f-5p7p",
-      "GO-ID": "GO-2023-2113",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2022-21698",
-      "GHSA": "GHSA-rcjv-mgp8-qvmr",
-      "GO-ID": "GO-2022-0322",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-25151",
-      "GHSA": "GHSA-cg3q-j54f-5p7p",
-      "GO-ID": "GO-2023-2113",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2024-28180",
-      "GHSA": "GHSA-c5q2-7r4c-mv6g",
-      "GO-ID": "GO-2024-2631",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2022-21698",
-      "GHSA": "GHSA-5r5m-65gx-7vrh",
-      "GO-ID": "GO-2023-1546",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-25151",
-      "GHSA": "GHSA-5r5m-65gx-7vrh",
-      "GO-ID": "GO-2023-1546",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-45142",
-      "GHSA": "GHSA-5r5m-65gx-7vrh",
-      "GO-ID": "GO-2023-2113",
-      "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-45142",
-      "GHSA": "GHSA-rcjv-mgp8-qvmr",
-      "GO-ID": "GO-2023-2113",
-      "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2024-45338",
-      "GHSA": "GHSA-w32m-9786-jp63",
-      "GO-ID": "GO-2024-3333",
-      "SnykID": "SNYK-GOLANG-GOLANGORGXNETHTML-8535262",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2024-45337",
-      "GHSA": "GHSA-v778-237x-gjrc",
-      "GO-ID": "GO-2024-3321",
-      "SnykID": "SNYK-GOLANG-GOLANGORGXCRYPTOSSH-8496611",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2024-34156",
-      "GHSA": "",
-      "GO-ID": "GO-2024-3106",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2022-21698",
-      "GHSA": "GHSA-5r5m-65gx-7vrh",
-      "GO-ID": "GO-2023-2113",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-25151",
-      "GHSA": "GHSA-5r5m-65gx-7vrh",
-      "GO-ID": "GO-2023-2113",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-25151",
-      "GHSA": "GHSA-rcjv-mgp8-qvmr",
-      "GO-ID": "GO-2022-0322",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-45142",
-      "GHSA": "GHSA-5r5m-65gx-7vrh",
-      "GO-ID": "GO-2023-1546",
-      "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-45142",
-      "GHSA": "GHSA-rcjv-mgp8-qvmr",
-      "GO-ID": "GO-2023-1546",
-      "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2022-21698",
-      "GHSA": "GHSA-rcjv-mgp8-qvmr",
-      "GO-ID": "GO-2023-1546",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-45142",
-      "GHSA": "GHSA-cg3q-j54f-5p7p",
-      "GO-ID": "GO-2023-2113",
-      "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2022-21698",
-      "GHSA": "GHSA-cg3q-j54f-5p7p",
-      "GO-ID": "GO-2022-0322",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2022-21698",
-      "GHSA": "GHSA-rcjv-mgp8-qvmr",
-      "GO-ID": "GO-2023-2113",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-25151",
-      "GHSA": "GHSA-cg3q-j54f-5p7p",
-      "GO-ID": "GO-2022-0322",
-      "SnykID": "",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": false,
-      "Snyk": false,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-45142",
-      "GHSA": "GHSA-cg3q-j54f-5p7p",
-      "GO-ID": "GO-2023-1546",
-      "SnykID": "SNYK-GOLANG-GOOPENTELEMETRYIOCONTRIBINSTRUMENTATIONGITHUBCOMEMICKLEIGORESTFULOTELRESTFUL-5971115",
-      "OthersID": {},
-      "OSV": true,
-      "Trivy": true,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2023-44487",
-      "GHSA": "GHSA-2m7v-gc89-fjqf",
-      "GO-ID": "GO-2023-2153",
-      "SnykID": "SNYK-GOLANG-K8SIOAPIMACHINERYPKGUTILRUNTIME-8367153",
-      "OthersID": {},
-      "OSV": false,
-      "Trivy": false,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2019-11250",
-      "GHSA": "",
-      "GO-ID": "GO-2021-0065",
-      "SnykID": "SNYK-GOLANG-K8SIOCLIENTGOTRANSPORT-7538822",
-      "OthersID": {},
-      "OSV": false,
-      "Trivy": false,
-      "Snyk": true,
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "CVE-ID": "CVE-2020-8565",
-      "GHSA": "",
-      "GO-ID": "",
-      "SnykID": "SNYK-GOLANG-K8SIOCLIENTGOTRANSPORT-8136227",
-      "OthersID": {},
-      "OSV": false,
-      "Trivy": false,
-      "Snyk": true,
+      "ID": "CVE-2020-8565",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
       "System": "Go",
       "StandardLibOSV": false
     }

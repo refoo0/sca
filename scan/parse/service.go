@@ -47,98 +47,48 @@ func writeJSONFile(path string, v interface{}) error {
 
 func updateVulns(existingVulns []modul.Vuln, newVulns []modul.Vuln, scanType string) []modul.Vuln {
 
-	existingCVEs := make(map[string]bool)
+	existingCVEIDs := make(map[string]bool)
+	existingCVEIDsInt := make(map[string]int)
+	existingCVESGHSAs := make(map[string][]string)
+
 	existingGHSAs := make(map[string]bool)
-	existingGOs := make(map[string]bool)
+	existingGHSAsInt := make(map[string]int)
 
-	for _, vuln := range existingVulns {
+	for i, vuln := range existingVulns {
 
-		if vuln.CVEID != "" {
-			existingCVEs[vuln.CVEID+"//"+vuln.System] = true
+		if vuln.ID[:4] == "CVE-" {
+			existingCVEIDs[vuln.ID] = true
+			existingCVEIDsInt[vuln.ID] = i
+			existingCVESGHSAs[vuln.ID] = vuln.GhsaIDs
+
+		} else if vuln.ID[:4] == "GHSA" {
+			existingGHSAs[vuln.ID] = true
+			existingGHSAsInt[vuln.ID] = i
 		}
-		if vuln.GHSA != "" {
-			existingGHSAs[vuln.GHSA+"//"+vuln.System] = true
-		}
-		if vuln.GOID != "" {
-			existingGOs[vuln.GOID+"//"+vuln.System] = true
-		}
+
 	}
 
 	for _, vuln := range newVulns {
-
-		if vuln.CVEID != "" {
-			if !existingCVEs[vuln.CVEID+"//"+vuln.System] {
+		if vuln.ID[:4] == "CVE-" {
+			if existingCVEIDs[vuln.ID] {
+				existingVulns[existingCVEIDsInt[vuln.ID]].Scanner.SetScanType(scanType)
+				existingVulns[existingCVEIDsInt[vuln.ID]].GhsaIDs = append(existingCVESGHSAs[vuln.ID], vuln.GhsaIDs...)
+			} else {
 				existingVulns = append(existingVulns, vuln)
+			}
+
+		} else if vuln.ID[:4] == "GHSA" {
+			if existingGHSAs[vuln.ID] {
+				existingVulns[existingGHSAsInt[vuln.ID]].Scanner.SetScanType(scanType)
 
 			} else {
-
-				for i, vul := range existingVulns {
-
-					if vul.CVEID == vuln.CVEID {
-						if vul.System == vuln.System {
-							existingVulns[i].SetScanType(scanType, vuln.SnykID)
-
-							for k, v := range vuln.OthersID {
-								existingVulns[i].OthersID[k] = v
-							}
-						}
-
-						//|| existingVulns[i].CVEID == "CVE-2022-24785"
-
-					}
-					/*
-						if existingVulns[i].CVEID == "CVE-2022-25901" && vuln.CVEID == "CVE-2022-25901" {
-							fmt.Println("!!", existingVulns[i].OSV)
-							fmt.Println("scanType", scanType, "system", vuln.System, vul.System)
-						}
-					*/
-
-				}
-			}
-			continue
-		}
-		if vuln.GHSA != "" {
-			if !existingGHSAs[vuln.GHSA+"//"+vuln.System] {
 				existingVulns = append(existingVulns, vuln)
-			} else {
-				for i, vul := range existingVulns {
-					if vul.GHSA == vuln.GHSA {
-						if vul.System == vuln.System {
-							existingVulns[i].SetScanType(scanType, vuln.SnykID)
-							for k, v := range vuln.OthersID {
-								existingVulns[i].OthersID[k] = v
-							}
-						}
-
-					}
-				}
 			}
-			continue
-		}
-		if vuln.GOID != "" {
-			if !existingGOs[vuln.GOID+"//"+vuln.System] {
-				existingVulns = append(existingVulns, vuln)
-			} else {
-				for i, vul := range existingVulns {
-					if vul.GOID == vuln.GOID {
-						if vul.System == vuln.System {
-							existingVulns[i].SetScanType(scanType, vuln.SnykID)
-							for k, v := range vuln.OthersID {
-								existingVulns[i].OthersID[k] = v
-							}
-						}
-
-					}
-				}
-			}
-			continue
-		}
-		if vuln.OthersID != nil {
+		} else {
 			existingVulns = append(existingVulns, vuln)
 		}
 
 	}
 
 	return existingVulns
-
 }

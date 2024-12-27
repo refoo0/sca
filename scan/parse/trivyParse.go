@@ -53,7 +53,7 @@ func processTrivyJSON(trivy string, vulnInfoPath string) error {
 	if err != nil {
 		return err
 	}
-	vulnInfo.Counts.CountTrivy = len(vulnerabilityIDs)
+	vulnInfo.CountTrivy = len(vulnerabilityIDs)
 	existingVulns := vulnInfo.Vuln
 
 	newVulns := []modul.Vuln{}
@@ -61,27 +61,13 @@ func processTrivyJSON(trivy string, vulnInfoPath string) error {
 	for vulnID := range vulnerabilityIDs {
 
 		oldVulnID := vulnID
-		var cveID, ghsaID, goID, id string
 
 		newVuln := modul.Vuln{}
-		newVuln.OthersID = map[string]string{}
-		lowerID := strings.ToLower(vulnID)
 
 		vulnID = strings.Split(vulnID, "//")[0]
-		if strings.HasPrefix(lowerID, "cve") {
-			cveID = vulnID
-			newVuln.CVEID = cveID
-		} else if strings.HasPrefix(lowerID, "ghsa") {
-			ghsaID = vulnID
-			newVuln.GHSA = ghsaID
-		} else if strings.HasPrefix(lowerID, "go") {
-			goID = vulnID
-			newVuln.GOID = goID
-		} else {
-			id = vulnID
-			newVuln.OthersID["Trivy-"+id] = id
-		}
-		newVuln.Trivy = true
+
+		newVuln.ID = vulnID
+		newVuln.Scanner.Trivy = true
 
 		newVuln.System = vulnerabilityIDs[oldVulnID]
 

@@ -2,7 +2,6 @@ package parse
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/refoo0/sca/scan/modul"
 )
@@ -12,6 +11,7 @@ type OSVJSON struct {
 		Packages []struct {
 			Package struct {
 				Ecosystem string `json:"ecosystem"`
+				Name      string `json:"name"`
 			} `json:"package"`
 			Vulnerabilities []struct {
 				ID       string   `json:"id"`
@@ -41,12 +41,11 @@ func processOSVJSON(osvPath string, vulnInfoPath string) error {
 		return err
 	}
 
-	osvVulnsGo := make(map[string]modul.Vuln)
-	osvVulnsNpm := make(map[string]modul.Vuln)
-	osvVulnsPypi := make(map[string]modul.Vuln)
-	osvVulnsElse := make(map[string]modul.Vuln)
+	vulnsGo := make(map[string]modul.Vuln)
+	vulnsNpm := make(map[string]modul.Vuln)
+	vulnsPypi := make(map[string]modul.Vuln)
+	vulnsElse := make(map[string]modul.Vuln)
 
-	// Extract the data for CVE-ID, GHSA, and GO-ID
 	for _, result := range osvJson.Results {
 		for _, pkg := range result.Packages {
 
@@ -65,129 +64,82 @@ func processOSVJSON(osvPath string, vulnInfoPath string) error {
 				return fmt.Errorf("unknown ecosystem: %s", typ)
 			}
 
-			for _, group := range pkg.Groups {
+			for _, vuln := range pkg.Vulnerabilities {
+				var ids []string
+				ids = append(ids, vuln.ID)
+				ids = append(ids, vuln.Aliases...)
 
 				var cveIDs, ghsaIDs, goIDs, uniqueKeys []string
 
-				// Identify CVE-ID, GHSA, and GO-ID from the aliases
-				for _, alias := range group.Aliases {
-					if len(alias) > 3 && alias[:4] == "CVE-" {
-						cveIDs = append(cveIDs, alias)
-					} else if len(alias) > 4 && alias[:4] == "GHSA" {
-						ghsaIDs = append(ghsaIDs, alias)
-					} else if len(alias) > 3 && alias[:3] == "GO-" {
-						goIDs = append(goIDs, alias)
-					}
-				}
-				var cveID, ghsaID, goID string
-				if len(cveIDs) != 0 {
-					for _, cveID := range cveIDs {
-						if len(ghsaIDs) != 0 {
-							for _, ghsaID := range ghsaIDs {
-								if len(goIDs) != 0 {
-									for _, goID := range goIDs {
-										uniqueKeys = append(uniqueKeys, "CVEID:"+cveID+";"+"GHSA:"+ghsaID+";"+"GOID:"+goID)
-									}
-								} else {
-									uniqueKeys = append(uniqueKeys, "CVEID:"+cveID+";"+"GHSA:"+ghsaID+";"+"GOID:"+goID)
-								}
-							}
-						} else {
-							if len(goIDs) != 0 {
-								for _, goID := range goIDs {
-									uniqueKeys = append(uniqueKeys, "CVEID:"+cveID+";"+"GHSA:"+ghsaID+";"+"GOID:"+goID)
-								}
-							} else {
-								uniqueKeys = append(uniqueKeys, "CVEID:"+cveID+";"+"GHSA:"+ghsaID+";"+"GOID:"+goID)
-							}
+				// Identify CVE-ID, GHSA, and GO-ID from the ids
+				cveIDsGhsaIDs := make(map[string][]string)
+
+				othersIDS := []string{}
+
+				for _, id := range ids {
+					if len(id) > 3 && id[:4] == "CVE-" {
+						cveIDs = append(cveIDs, id)
+					} else if len(id) > 4 && id[:4] == "GHSA" {
+						ghsaIDs = append(ghsaIDs, id)
+						for _, cveID := range cveIDs {
+							cveIDsGhsaIDs[cveID] = ghsaIDs
 						}
-					}
-				} else if len(ghsaIDs) != 0 {
-					for _, ghsaID := range ghsaIDs {
-						if len(goIDs) != 0 {
-							for _, goID := range goIDs {
-								uniqueKeys = append(uniqueKeys, "CVEID:"+cveID+";"+"GHSA:"+ghsaID+";"+"GOID:"+goID)
-							}
-						} else {
-							uniqueKeys = append(uniqueKeys, "CVEID:"+cveID+";"+"GHSA:"+ghsaID+";"+"GOID:"+goID)
-						}
-					}
-				} else {
-					if len(goIDs) != 0 {
-						for _, goID := range goIDs {
-							uniqueKeys = append(uniqueKeys, "CVEID:"+cveID+";"+"GHSA:"+ghsaID+";"+"GOID:"+goID)
-						}
+					} else if len(id) > 3 && id[:3] == "GO-" {
+						goIDs = append(goIDs, id)
+					} else {
+						othersIDS = append(othersIDS, id)
 					}
 				}
 
-				// Use a unique key for each combination of CVE-ID, GHSA, and GO-ID to avoid duplicates
-
-				othersIDs := make(map[string]string)
+				uniqueKeys = append(uniqueKeys, cveIDs...)
 				if len(uniqueKeys) == 0 {
-					var uniqueKey string
-					for _, alias := range group.Aliases {
-						uniqueKey += alias
-						othersIDs[fmt.Sprint("OSV-", alias)] = alias
+					uniqueKeys = append(uniqueKeys, ghsaIDs...)
+				}
+				if len(uniqueKeys) == 0 {
+					uniqueKeys = append(uniqueKeys, goIDs...)
+				}
 
+				if len(uniqueKeys) == 0 {
+					if len(othersIDS) > 0 {
+						uniqueKeys = append(uniqueKeys, othersIDS[0])
+						othersIDS = othersIDS[1:]
 					}
-					uniqueKey = "Others:" + uniqueKey
-					uniqueKeys = append(uniqueKeys, uniqueKey)
 				}
 
 				for _, uniqueKey := range uniqueKeys {
-					cveID, ghsaID, goID := ExtractValues(uniqueKey)
+
 					newVuln := modul.Vuln{
-						CVEID:    cveID,
-						GHSA:     ghsaID,
-						GOID:     goID,
-						OthersID: othersIDs,
-						OSV:      true,
-						System:   t,
+						ID:        uniqueKey,
+						GhsaIDs:   cveIDsGhsaIDs[uniqueKey],
+						OthersIDS: othersIDS,
+						Scanner: modul.Scanner{
+							OSV: true,
+						},
+						System: t,
 					}
 
 					if t == "Go" {
-						osvVulnsGo[uniqueKey] = newVuln
-					} else if t == "Npm" {
-						osvVulnsNpm[uniqueKey] = newVuln
-					} else if t == "Pypi" {
-						osvVulnsPypi[uniqueKey] = newVuln
-					} else {
-						osvVulnsElse[uniqueKey] = newVuln
-					}
-
-				}
-			}
-		}
-	}
-
-	//check if the package is standard library
-	for i, v := range osvVulnsGo {
-		for _, result := range osvJson.Results {
-			for _, pkg := range result.Packages {
-				for _, vuln := range pkg.Vulnerabilities {
-					sameID := false
-					if vuln.ID == v.CVEID || vuln.ID == v.GHSA || vuln.ID == v.GOID {
-						sameID = true
-					} else {
-						for _, alias := range vuln.Aliases {
-							if alias == v.CVEID {
-								sameID = true
-							}
-						}
-					}
-					if sameID {
 						for _, affected := range vuln.Affected {
 							if affected.Package.Ecosystem == "Go" {
 								if affected.Package.Name == "stdlib" {
-									v.StandrdLibOSV = true
+									newVuln.StandrdLibOSV = true
 								}
 							}
-							osvVulnsGo[i] = v
-
 						}
+						vulnsGo[uniqueKey] = newVuln
+
+					} else if t == "Npm" {
+						vulnsNpm[uniqueKey] = newVuln
+					} else if t == "Pypi" {
+						vulnsPypi[uniqueKey] = newVuln
+					} else {
+						vulnsElse[uniqueKey] = newVuln
 					}
+
 				}
+
 			}
+
 		}
 	}
 
@@ -197,23 +149,23 @@ func processOSVJSON(osvPath string, vulnInfoPath string) error {
 	if err != nil {
 		return err
 	}
-	vulnInfo.Counts.CountOSV = len(osvVulnsGo) + len(osvVulnsNpm) + len(osvVulnsPypi) + len(osvVulnsElse)
+	vulnInfo.CountOSV = len(vulnsGo) + len(vulnsNpm) + len(vulnsPypi) + len(vulnsElse)
 	existingVulns := vulnInfo.Vuln
 
 	newVulns := []modul.Vuln{}
-	for _, vuln := range osvVulnsGo {
+	for _, vuln := range vulnsGo {
 		newVulns = append(newVulns, vuln)
 	}
 
-	for _, vuln := range osvVulnsNpm {
+	for _, vuln := range vulnsNpm {
 		newVulns = append(newVulns, vuln)
 	}
 
-	for _, vuln := range osvVulnsPypi {
+	for _, vuln := range vulnsPypi {
 		newVulns = append(newVulns, vuln)
 	}
 
-	for _, vuln := range osvVulnsElse {
+	for _, vuln := range vulnsElse {
 		newVulns = append(newVulns, vuln)
 	}
 
@@ -228,24 +180,4 @@ func processOSVJSON(osvPath string, vulnInfoPath string) error {
 
 	return nil
 
-}
-
-func ExtractValues(input string) (string, string, string) {
-	var cveID, ghsa, goID string
-
-	// Zerlegen des Eingabestrings in Teile, getrennt durch Semikolon
-	parts := strings.Split(input, ";")
-	for _, part := range parts {
-		// Trimmen von Leerzeichen um die Teile sauber zu verarbeiten
-		part = strings.TrimSpace(part)
-		if strings.HasPrefix(part, "CVEID:") {
-			cveID = strings.TrimSpace(strings.TrimPrefix(part, "CVEID:"))
-		} else if strings.HasPrefix(part, "GHSA:") {
-			ghsa = strings.TrimSpace(strings.TrimPrefix(part, "GHSA:"))
-		} else if strings.HasPrefix(part, "GOID:") {
-			goID = strings.TrimSpace(strings.TrimPrefix(part, "GOID:"))
-		}
-	}
-
-	return cveID, ghsa, goID
 }
