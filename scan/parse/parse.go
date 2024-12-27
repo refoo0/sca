@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/refoo0/sca/scan/modul"
+	"github.com/refoo0/sca/scan/utils"
 )
 
 func Parse(osvPath string, trivyPath string, snykPath string, target string) error {
@@ -90,7 +91,7 @@ func calculateCounts(vulnInfo string, target string) error {
 
 	existingJso.TotalEntries = totalEntries
 
-	err = writeJSONFile(vulnInfo, existingJso)
+	err = utils.WriteJSONFile(vulnInfo, existingJso)
 	if err != nil {
 		return fmt.Errorf("error writing JSON file: %v", err)
 	}

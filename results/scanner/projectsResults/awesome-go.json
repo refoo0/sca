@@ -6,23 +6,6 @@
   "CountSnyk": 1,
   "Vuln": [
     {
-      "ID": "CVE-2024-24786",
-      "GHSAIDS": [
-        "GHSA-8r3f-844c-mc37"
-      ],
-      "OthersIDS": [
-        "CGA-2vgr-6mqh-4r48",
-        "CGA-v9cm-f6x8-5vj7"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
       "ID": "CVE-2024-34155",
       "GHSAIDS": null,
       "OthersIDS": [
@@ -92,6 +75,23 @@
       "Scanner": {
         "OSV": true,
         "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Go",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-24786",
+      "GHSAIDS": [
+        "GHSA-8r3f-844c-mc37"
+      ],
+      "OthersIDS": [
+        "CGA-2vgr-6mqh-4r48",
+        "CGA-v9cm-f6x8-5vj7"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
         "Trivy": true
       },
       "System": "Go",

@@ -6,6 +6,67 @@
   "CountSnyk": 48,
   "Vuln": [
     {
+      "ID": "CVE-2024-24785",
+      "GHSAIDS": [
+        "GHSA-j6m3-gc37-6r6q"
+      ],
+      "OthersIDS": [
+        "BIT-golang-2024-24785",
+        "CGA-97f2-3j6h-f6fr",
+        "CGA-q7f3-cq9g-gr7f",
+        "CGA-wgjf-hp76-8hxw"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": true
+    },
+    {
+      "ID": "CVE-2024-24788",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-golang-2024-24788"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": true
+    },
+    {
+      "ID": "CVE-2020-8912",
+      "GHSAIDS": [
+        "GHSA-7f33-f4f5-xwgw"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-45338",
+      "GHSAIDS": [
+        "GHSA-w32m-9786-jp63"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Go",
+      "StandardLibOSV": false
+    },
+    {
       "ID": "CVE-2024-24784",
       "GHSAIDS": [
         "GHSA-fgq5-q76c-gx78"
@@ -44,10 +105,13 @@
       "StandardLibOSV": true
     },
     {
-      "ID": "CVE-2024-24788",
-      "GHSAIDS": null,
+      "ID": "CVE-2024-24790",
+      "GHSAIDS": [
+        "GHSA-49gw-vxvf-fc2g"
+      ],
       "OthersIDS": [
-        "BIT-golang-2024-24788"
+        "BIT-golang-2024-24790",
+        "CGA-2fq6-p83q-pm8x"
       ],
       "Scanner": {
         "OSV": true,
@@ -58,13 +122,13 @@
       "StandardLibOSV": true
     },
     {
-      "ID": "CVE-2024-24790",
+      "ID": "CVE-2024-24789",
       "GHSAIDS": [
-        "GHSA-49gw-vxvf-fc2g"
+        "GHSA-236w-p7wf-5ph8"
       ],
       "OthersIDS": [
-        "BIT-golang-2024-24790",
-        "CGA-2fq6-p83q-pm8x"
+        "BIT-golang-2024-24789",
+        "CGA-4r7q-83hj-9rrp"
       ],
       "Scanner": {
         "OSV": true,
@@ -89,20 +153,6 @@
       "StandardLibOSV": true
     },
     {
-      "ID": "CVE-2020-8912",
-      "GHSAIDS": [
-        "GHSA-7f33-f4f5-xwgw"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
       "ID": "CVE-2020-8911",
       "GHSAIDS": [
         "GHSA-f5pg-7wfw-84q9"
@@ -117,15 +167,29 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-24783",
+      "ID": "CVE-2023-45290",
       "GHSAIDS": [
-        "GHSA-3q2c-pvp5-3cqp"
+        "GHSA-rr6r-cfgf-gc6h"
       ],
       "OthersIDS": [
-        "BIT-golang-2024-24783",
-        "CGA-f95r-g332-q2hr",
-        "CGA-pp69-rc8m-x7cv",
-        "CGA-r3f2-xq4j-79w7"
+        "BIT-golang-2023-45290",
+        "CGA-63g6-wrgr-m47w",
+        "CGA-g554-cg74-8rm4",
+        "CGA-xr68-h9cg-49cj"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Go",
+      "StandardLibOSV": true
+    },
+    {
+      "ID": "CVE-2024-34156",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-golang-2024-34156"
       ],
       "Scanner": {
         "OSV": true,
@@ -155,43 +219,10 @@
       "StandardLibOSV": true
     },
     {
-      "ID": "CVE-2024-45337",
-      "GHSAIDS": [
-        "GHSA-v778-237x-gjrc"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-45338",
-      "GHSAIDS": [
-        "GHSA-w32m-9786-jp63"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Go",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-24785",
-      "GHSAIDS": [
-        "GHSA-j6m3-gc37-6r6q"
-      ],
+      "ID": "CVE-2024-24791",
+      "GHSAIDS": null,
       "OthersIDS": [
-        "BIT-golang-2024-24785",
-        "CGA-97f2-3j6h-f6fr",
-        "CGA-q7f3-cq9g-gr7f",
-        "CGA-wgjf-hp76-8hxw"
+        "BIT-golang-2024-24791"
       ],
       "Scanner": {
         "OSV": true,
@@ -216,332 +247,40 @@
       "StandardLibOSV": true
     },
     {
-      "ID": "CVE-2023-45290",
+      "ID": "CVE-2024-45337",
       "GHSAIDS": [
-        "GHSA-rr6r-cfgf-gc6h"
+        "GHSA-v778-237x-gjrc"
       ],
-      "OthersIDS": [
-        "BIT-golang-2023-45290",
-        "CGA-63g6-wrgr-m47w",
-        "CGA-g554-cg74-8rm4",
-        "CGA-xr68-h9cg-49cj"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Go",
-      "StandardLibOSV": true
-    },
-    {
-      "ID": "CVE-2024-24789",
-      "GHSAIDS": [
-        "GHSA-236w-p7wf-5ph8"
-      ],
-      "OthersIDS": [
-        "BIT-golang-2024-24789",
-        "CGA-4r7q-83hj-9rrp"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Go",
-      "StandardLibOSV": true
-    },
-    {
-      "ID": "CVE-2024-24791",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "BIT-golang-2024-24791"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Go",
-      "StandardLibOSV": true
-    },
-    {
-      "ID": "CVE-2024-34156",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "BIT-golang-2024-34156"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Go",
-      "StandardLibOSV": true
-    },
-    {
-      "ID": "CVE-2020-26311",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-37601",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-52798",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-38355",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-28498",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-1069836",
-        "SNYK-JS-ELLIPTIC-1064899"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-23343",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-1279028",
-        "SNYK-JS-PATHPARSE-1077067"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-22467",
-      "GHSAIDS": [
-        "GHSA-wc69-rhjr-hc9g",
-        "GHSA-3xq5-wjfh-ppjc"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-23424",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-45590",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-42461",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-0155",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-3918",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-3517",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-7660",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-29060",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-pc5p-h8pf-mvwp",
-      "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
         "Trivy": true
       },
-      "System": "Npm",
+      "System": "Go",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2020-28500",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGFUJIONWEBJARS-1074896",
-        "SNYK-JAVA-ORGWEBJARS-1074894",
-        "SNYK-JAVA-ORGWEBJARSBOWER-1074892",
-        "SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074895",
-        "SNYK-JAVA-ORGWEBJARSNPM-1074893",
-        "SNYK-JS-LODASH-1018905"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-4067",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-7720",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-609293",
-        "SNYK-JS-NODEFORGE-598677"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2015-8855",
+      "ID": "CVE-2024-24783",
       "GHSAIDS": [
-        "GHSA-x6fg-f45m-jf5q"
+        "GHSA-3q2c-pvp5-3cqp"
       ],
-      "OthersIDS": [],
+      "OthersIDS": [
+        "BIT-golang-2024-24783",
+        "CGA-f95r-g332-q2hr",
+        "CGA-pp69-rc8m-x7cv",
+        "CGA-r3f2-xq4j-79w7"
+      ],
       "Scanner": {
         "OSV": true,
-        "Snyk": true,
-        "Trivy": true
+        "Snyk": false,
+        "Trivy": false
       },
-      "System": "Npm",
-      "StandardLibOSV": false
+      "System": "Go",
+      "StandardLibOSV": true
     },
     {
-      "ID": "CVE-2022-0691",
+      "ID": "GHSA-hxwm-x553-x359",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -565,52 +304,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2018-3739",
-      "GHSAIDS": [
-        "GHSA-8g7p-74h8-hg48",
-        "GHSA-qrg3-f6h6-vq8q"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-23495",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-2412347",
-        "SNYK-JS-KARMA-2396325"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2014-7191",
-      "GHSAIDS": [
-        "GHSA-gqgv-6jq5-jjj9",
-        "GHSA-jjv7-qpx3-h62q"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-43800",
+      "ID": "CVE-2022-37599",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -622,283 +316,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2020-15262",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-32640",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-46234",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-21704",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2016-10540",
-      "GHSAIDS": [
-        "GHSA-hxm2-r34f-qmc5"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-24785",
-      "GHSAIDS": [
-        "GHSA-8hfj-j24r-96c4"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-37701",
-      "GHSAIDS": [
-        "GHSA-9r2w-394v-53qc"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-37890",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-wxgw-qj99-44c2",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-25883",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-28849",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-48285",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2017-16138",
-      "GHSAIDS": [
-        "GHSA-wrvr-8mpx-r7pp"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-3803",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-42459",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-36048",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-42282",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-29418",
-      "GHSAIDS": [
-        "GHSA-pch5-whg9-qr2r",
-        "GHSA-4c7m-wxvm-r7gc",
-        "GHSA-pch5-whg9-qr2r"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2019-10794",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2017-20165",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-25881",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-15366",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-43138",
+      "ID": "CVE-2024-4067",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -924,21 +342,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2019-13173",
-      "GHSAIDS": [
-        "GHSA-xf7w-r453-m56c"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-6x33-pw7p-hmpq",
+      "ID": "CVE-2021-3664",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -950,7 +354,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2020-36049",
+      "ID": "CVE-2024-37890",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -962,7 +366,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-26136",
+      "ID": "CVE-2020-15366",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -974,169 +378,9 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2021-3807",
+      "ID": "CVE-2023-46234",
       "GHSAIDS": null,
       "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-23386",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-1295719",
-        "SNYK-JS-DNSPACKET-1293563"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-29041",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-jmqm-f2gx-4fjv",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-26115",
-      "GHSAIDS": [
-        "GHSA-j8xg-fqg3-53r7"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2017-16137",
-      "GHSAIDS": [
-        "GHSA-gxpj-cx7g-858c"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-43796",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-29059",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-37603",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-8w57-jfpm-945m",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-23413",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARS-1251499",
-        "SNYK-JAVA-ORGWEBJARSNPM-1251498",
-        "SNYK-JS-JSZIP-1251497"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-8203",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-7598",
-      "GHSAIDS": [
-        "GHSA-xvch-5gv4-984h",
-        "GHSA-vh95-rmgr-6w4m"
-      ],
-      "OthersIDS": [
-        "SNYK-JS-MINIMIST-559764"
-      ],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
@@ -1160,7 +404,22 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-48949",
+      "ID": "CVE-2021-23386",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGWEBJARSNPM-1295719",
+        "SNYK-JS-DNSPACKET-1293563"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-48285",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -1172,9 +431,111 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2019-10196",
+      "ID": "CVE-2023-32695",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-3807",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-29060",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2017-20165",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-7788",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JS-INI-1048974"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-37601",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-28481",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGWEBJARSBOWER-1056358",
+        "SNYK-JAVA-ORGWEBJARSNPM-1056357",
+        "SNYK-JS-SOCKETIO-1024859"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-0536",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-37712",
       "GHSAIDS": [
-        "GHSA-8w57-jfpm-945m"
+        "GHSA-qq89-hq3f-393p"
       ],
       "OthersIDS": [],
       "Scanner": {
@@ -1201,99 +562,11 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-47068",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-27290",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-27515",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-31597",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-28092",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-37599",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-24773",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-23337",
+      "ID": "CVE-2022-25858",
       "GHSAIDS": null,
       "OthersIDS": [
-        "SNYK-JAVA-ORGFUJIONWEBJARS-1074932",
-        "SNYK-JAVA-ORGWEBJARS-1074930",
-        "SNYK-JAVA-ORGWEBJARSBOWER-1074928",
-        "SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074931",
-        "SNYK-JAVA-ORGWEBJARSNPM-1074929",
-        "SNYK-JS-LODASH-1040724"
+        "SNYK-JAVA-ORGWEBJARSNPM-2949722",
+        "SNYK-JS-TERSER-2806366"
       ],
       "Scanner": {
         "OSV": true,
@@ -1304,63 +577,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2022-31129",
-      "GHSAIDS": [
-        "GHSA-wc69-rhjr-hc9g",
-        "GHSA-3xq5-wjfh-ppjc",
-        "GHSA-wc69-rhjr-hc9g"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2017-1000048",
-      "GHSAIDS": [
-        "GHSA-gqgv-6jq5-jjj9"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-24999",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2015-8860",
-      "GHSAIDS": [
-        "GHSA-gfjr-3jmm-4g9v"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-47764",
+      "ID": "CVE-2024-21538",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -1372,7 +589,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2022-46175",
+      "ID": "CVE-2022-38900",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -1384,7 +601,84 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2022-0437",
+      "ID": "CVE-2021-23406",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGWEBJARSNPM-1568506",
+        "SNYK-JS-PACRESOLVER-1564857"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-36048",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2018-16492",
+      "GHSAIDS": [
+        "GHSA-qrmc-fj45-qfc2"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "GHSA-gf8q-jrpm-jvxq",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-0691",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-42461",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "GHSA-6x33-pw7p-hmpq",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -1410,23 +704,180 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "GHSA-v2p6-4mp7-3r9v",
+      "ID": "CVE-2024-29180",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
-        "Trivy": true
+        "Trivy": false
       },
       "System": "Npm",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2021-28918",
+      "ID": "CVE-2023-0842",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-0155",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-21536",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-22467",
       "GHSAIDS": [
-        "GHSA-pch5-whg9-qr2r",
-        "GHSA-4c7m-wxvm-r7gc",
-        "GHSA-pch5-whg9-qr2r"
+        "GHSA-wc69-rhjr-hc9g",
+        "GHSA-3xq5-wjfh-ppjc"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-0122",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-36049",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-15262",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-42459",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-46175",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-24773",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-45296",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-28155",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-7660",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2016-10540",
+      "GHSAIDS": [
+        "GHSA-hxm2-r34f-qmc5"
       ],
       "OthersIDS": [],
       "Scanner": {
@@ -1438,38 +889,9 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2020-28502",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-1082937",
-        "SNYK-JAVA-ORGWEBJARSNPM-1082938",
-        "SNYK-JS-XMLHTTPREQUEST-1082935",
-        "SNYK-JS-XMLHTTPREQUESTSSL-1082936"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-hxwm-x553-x359",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-37712",
+      "ID": "CVE-2015-8855",
       "GHSAIDS": [
-        "GHSA-qq89-hq3f-393p"
+        "GHSA-x6fg-f45m-jf5q"
       ],
       "OthersIDS": [],
       "Scanner": {
@@ -1481,38 +903,23 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2022-0639",
-      "GHSAIDS": null,
+      "ID": "CVE-2020-7774",
+      "GHSAIDS": [
+        "GHSA-c4w7-xm78-47vh"
+      ],
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
-        "Snyk": false,
-        "Trivy": false
+        "Snyk": true,
+        "Trivy": true
       },
       "System": "Npm",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2020-7662",
+      "ID": "CVE-2020-26311",
       "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JS-WEBSOCKETEXTENSIONS-570623"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-23364",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-1277182",
-        "SNYK-JS-BROWSERSLIST-1090194"
-      ],
+      "OthersIDS": [],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
@@ -1541,7 +948,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2022-24772",
+      "ID": "CVE-2024-28849",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -1553,43 +960,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-21538",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-0536",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-29180",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-44270",
+      "ID": "CVE-2022-33987",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -1601,7 +972,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-28155",
+      "ID": "CVE-2021-3918",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -1613,20 +984,10 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-32695",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-25901",
-      "GHSAIDS": null,
+      "ID": "CVE-2017-1000048",
+      "GHSAIDS": [
+        "GHSA-gqgv-6jq5-jjj9"
+      ],
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
@@ -1637,7 +998,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-26159",
+      "ID": "CVE-2023-26136",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -1649,19 +1010,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "GHSA-gf8q-jrpm-jvxq",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-38900",
+      "ID": "CVE-2022-0437",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -1687,205 +1036,13 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2022-0122",
+      "ID": "CVE-2019-10794",
       "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-23368",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-1244795",
-        "SNYK-JS-POSTCSS-1090595"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-7774",
-      "GHSAIDS": [
-        "GHSA-c4w7-xm78-47vh"
-      ],
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
         "Snyk": true,
         "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-2421",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2017-16129",
-      "GHSAIDS": [
-        "GHSA-8225-6cvr-8pqp"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-25858",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-2949722",
-        "SNYK-JS-TERSER-2806366"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-3664",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-7608",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JS-YARGSPARSER-560381"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-21536",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-5rrq-pxf6-6jx5",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-43799",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-45296",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2020-7693",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-0686",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-45133",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-48948",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
       },
       "System": "Npm",
       "StandardLibOSV": false
@@ -1903,35 +1060,13 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2021-3777",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2022-33987",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-23362",
+      "ID": "CVE-2020-28469",
       "GHSAIDS": null,
       "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-1088356",
-        "SNYK-JS-HOSTEDGITINFO-1088355"
+        "BIT-gulp-2020-28469",
+        "SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093",
+        "SNYK-JAVA-ORGWEBJARSNPM-1059092",
+        "SNYK-JS-GLOBPARENT-1016905"
       ],
       "Scanner": {
         "OSV": true,
@@ -1966,6 +1101,299 @@
       "StandardLibOSV": false
     },
     {
+      "ID": "CVE-2020-7608",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JS-YARGSPARSER-560381"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-4231",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-42460",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2018-3739",
+      "GHSAIDS": [
+        "GHSA-8g7p-74h8-hg48",
+        "GHSA-qrg3-f6h6-vq8q"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-3517",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-3777",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2017-16137",
+      "GHSAIDS": [
+        "GHSA-gxpj-cx7g-858c"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-25883",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-0686",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-27290",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-23364",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGWEBJARSNPM-1277182",
+        "SNYK-JS-BROWSERSLIST-1090194"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-47764",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-43796",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "GHSA-8w57-jfpm-945m",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-23368",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGWEBJARSNPM-1244795",
+        "SNYK-JS-POSTCSS-1090595"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-2421",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-23495",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGWEBJARSNPM-2412347",
+        "SNYK-JS-KARMA-2396325"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-28500",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGFUJIONWEBJARS-1074896",
+        "SNYK-JAVA-ORGWEBJARS-1074894",
+        "SNYK-JAVA-ORGWEBJARSBOWER-1074892",
+        "SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074895",
+        "SNYK-JAVA-ORGWEBJARSNPM-1074893",
+        "SNYK-JS-LODASH-1018905"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2018-20834",
+      "GHSAIDS": [
+        "GHSA-j44m-qm6p-hp7m"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-28918",
+      "GHSAIDS": [
+        "GHSA-pch5-whg9-qr2r",
+        "GHSA-4c7m-wxvm-r7gc",
+        "GHSA-pch5-whg9-qr2r"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-52798",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-45133",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
       "ID": "CVE-2020-13822",
       "GHSAIDS": null,
       "OthersIDS": [],
@@ -1978,26 +1406,435 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2020-7788",
+      "ID": "CVE-2021-28092",
       "GHSAIDS": null,
-      "OthersIDS": [
-        "SNYK-JS-INI-1048974"
-      ],
+      "OthersIDS": [],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-37603",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-21704",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-31129",
+      "GHSAIDS": [
+        "GHSA-wc69-rhjr-hc9g",
+        "GHSA-3xq5-wjfh-ppjc",
+        "GHSA-wc69-rhjr-hc9g"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
         "Trivy": true
       },
       "System": "Npm",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2020-28481",
+      "ID": "CVE-2024-29041",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "GHSA-jmqm-f2gx-4fjv",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-37713",
+      "GHSAIDS": [
+        "GHSA-5955-9wpr-37jh"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-25901",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-23362",
       "GHSAIDS": null,
       "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSBOWER-1056358",
-        "SNYK-JAVA-ORGWEBJARSNPM-1056357",
-        "SNYK-JS-SOCKETIO-1024859"
+        "SNYK-JAVA-ORGWEBJARSNPM-1088356",
+        "SNYK-JS-HOSTEDGITINFO-1088355"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2019-10196",
+      "GHSAIDS": [
+        "GHSA-8w57-jfpm-945m"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-29059",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2019-13173",
+      "GHSAIDS": [
+        "GHSA-xf7w-r453-m56c"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-25881",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-29418",
+      "GHSAIDS": [
+        "GHSA-pch5-whg9-qr2r",
+        "GHSA-4c7m-wxvm-r7gc",
+        "GHSA-pch5-whg9-qr2r"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-43800",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-43138",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "GHSA-5rrq-pxf6-6jx5",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-3803",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2014-10064",
+      "GHSAIDS": [
+        "GHSA-f9cm-p3w6-xvr3"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2017-16129",
+      "GHSAIDS": [
+        "GHSA-8225-6cvr-8pqp"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2017-16138",
+      "GHSAIDS": [
+        "GHSA-wrvr-8mpx-r7pp"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-24785",
+      "GHSAIDS": [
+        "GHSA-8hfj-j24r-96c4"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-38355",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-26115",
+      "GHSAIDS": [
+        "GHSA-j8xg-fqg3-53r7"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-31597",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-23424",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-4068",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-23413",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGWEBJARS-1251499",
+        "SNYK-JAVA-ORGWEBJARSNPM-1251498",
+        "SNYK-JS-JSZIP-1251497"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-23337",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGFUJIONWEBJARS-1074932",
+        "SNYK-JAVA-ORGWEBJARS-1074930",
+        "SNYK-JAVA-ORGWEBJARSBOWER-1074928",
+        "SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074931",
+        "SNYK-JAVA-ORGWEBJARSNPM-1074929",
+        "SNYK-JS-LODASH-1040724"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-24771",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-7693",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-48949",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-7598",
+      "GHSAIDS": [
+        "GHSA-xvch-5gv4-984h",
+        "GHSA-vh95-rmgr-6w4m"
+      ],
+      "OthersIDS": [
+        "SNYK-JS-MINIMIST-559764"
       ],
       "Scanner": {
         "OSV": true,
@@ -2025,7 +1862,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2022-24771",
+      "ID": "CVE-2024-47068",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -2037,9 +1874,9 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2014-10064",
+      "ID": "CVE-2015-8860",
       "GHSAIDS": [
-        "GHSA-f9cm-p3w6-xvr3"
+        "GHSA-gfjr-3jmm-4g9v"
       ],
       "OthersIDS": [],
       "Scanner": {
@@ -2051,10 +1888,20 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2018-20834",
-      "GHSAIDS": [
-        "GHSA-j44m-qm6p-hp7m"
-      ],
+      "ID": "CVE-2022-0639",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-42282",
+      "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
@@ -2065,42 +1912,112 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2021-23406",
+      "ID": "CVE-2024-48948",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "GHSA-v2p6-4mp7-3r9v",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-27515",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-45590",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-7720",
       "GHSAIDS": null,
       "OthersIDS": [
-        "SNYK-JAVA-ORGWEBJARSNPM-1568506",
-        "SNYK-JS-PACRESOLVER-1564857"
+        "SNYK-JAVA-ORGWEBJARSNPM-609293",
+        "SNYK-JS-NODEFORGE-598677"
       ],
       "Scanner": {
         "OSV": true,
-        "Snyk": true,
-        "Trivy": true
+        "Snyk": false,
+        "Trivy": false
       },
       "System": "Npm",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2018-16492",
-      "GHSAIDS": [
-        "GHSA-qrmc-fj45-qfc2"
-      ],
+      "ID": "GHSA-wxgw-qj99-44c2",
+      "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
-        "Snyk": true,
-        "Trivy": true
+        "Snyk": false,
+        "Trivy": false
       },
       "System": "Npm",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2020-28469",
+      "ID": "CVE-2022-24772",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-43799",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-28502",
       "GHSAIDS": null,
       "OthersIDS": [
-        "BIT-gulp-2020-28469",
-        "SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093",
-        "SNYK-JAVA-ORGWEBJARSNPM-1059092",
-        "SNYK-JS-GLOBPARENT-1016905"
+        "SNYK-JAVA-ORGWEBJARSNPM-1082937",
+        "SNYK-JAVA-ORGWEBJARSNPM-1082938",
+        "SNYK-JS-XMLHTTPREQUEST-1082935",
+        "SNYK-JS-XMLHTTPREQUESTSSL-1082936"
       ],
       "Scanner": {
         "OSV": true,
@@ -2111,7 +2028,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-4068",
+      "ID": "CVE-2020-8203",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -2123,9 +2040,12 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-42460",
+      "ID": "CVE-2021-23343",
       "GHSAIDS": null,
-      "OthersIDS": [],
+      "OthersIDS": [
+        "SNYK-JAVA-ORGWEBJARSNPM-1279028",
+        "SNYK-JS-PATHPARSE-1077067"
+      ],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
@@ -2135,21 +2055,10 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2021-4231",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2021-37713",
+      "ID": "CVE-2014-7191",
       "GHSAIDS": [
-        "GHSA-5955-9wpr-37jh"
+        "GHSA-gqgv-6jq5-jjj9",
+        "GHSA-jjv7-qpx3-h62q"
       ],
       "OthersIDS": [],
       "Scanner": {
@@ -2161,7 +2070,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-0842",
+      "ID": "CVE-2021-32640",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -2173,11 +2082,38 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "NSWG-ECO-388",
+      "ID": "CVE-2020-28498",
       "GHSAIDS": null,
-      "OthersIDS": null,
+      "OthersIDS": [
+        "SNYK-JAVA-ORGWEBJARSNPM-1069836",
+        "SNYK-JS-ELLIPTIC-1064899"
+      ],
       "Scanner": {
-        "OSV": false,
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-26159",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "GHSA-pc5p-h8pf-mvwp",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
         "Snyk": false,
         "Trivy": true
       },
@@ -2185,12 +2121,52 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "NSWG-ECO-28",
+      "ID": "CVE-2023-44270",
       "GHSAIDS": null,
-      "OthersIDS": null,
+      "OthersIDS": [],
       "Scanner": {
-        "OSV": false,
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2021-37701",
+      "GHSAIDS": [
+        "GHSA-9r2w-394v-53qc"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2020-7662",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "SNYK-JS-WEBSOCKETEXTENSIONS-570623"
+      ],
+      "Scanner": {
+        "OSV": true,
         "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2022-24999",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
         "Trivy": true
       },
       "System": "Npm",
@@ -2221,6 +2197,18 @@
       "StandardLibOSV": false
     },
     {
+      "ID": "NSWG-ECO-28",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
       "ID": "NSWG-ECO-402",
       "GHSAIDS": null,
       "OthersIDS": null,
@@ -2228,6 +2216,30 @@
         "OSV": false,
         "Snyk": false,
         "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "NSWG-ECO-388",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "npm:superagent:20181108",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
       },
       "System": "Npm",
       "StandardLibOSV": false
@@ -2245,7 +2257,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "SNYK-JS-TAR-1536758",
+      "ID": "SNYK-JS-ADMZIP-1065796",
       "GHSAIDS": null,
       "OthersIDS": null,
       "Scanner": {
@@ -2281,19 +2293,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "npm:superagent:20181108",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "SNYK-JS-ADMZIP-1065796",
+      "ID": "SNYK-JS-TAR-1536758",
       "GHSAIDS": null,
       "OthersIDS": null,
       "Scanner": {

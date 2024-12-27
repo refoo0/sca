@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/refoo0/sca/scan/modul"
+	"github.com/refoo0/sca/scan/utils"
 )
 
 type Vulnerability struct {
@@ -22,7 +23,7 @@ func processTrivyJSON(trivy string, vulnInfoPath string) error {
 
 	// Read the first JSON file (contains Vulnerabilities)
 	var trivyFile TrivyJson
-	err := readJSONFile(trivy, &trivyFile)
+	err := utils.ReadJSONFile(trivy, &trivyFile)
 	if err != nil {
 		return err
 	}
@@ -49,7 +50,7 @@ func processTrivyJSON(trivy string, vulnInfoPath string) error {
 
 	// Read the second JSON file (contains Vuln entries)
 	var vulnInfo modul.VulnInfo
-	err = readJSONFile(vulnInfoPath, &vulnInfo)
+	err = utils.ReadJSONFile(vulnInfoPath, &vulnInfo)
 	if err != nil {
 		return err
 	}
@@ -76,10 +77,10 @@ func processTrivyJSON(trivy string, vulnInfoPath string) error {
 	}
 
 	// Update the existing vulnerabilities with the new vulnerabilities
-	vulnInfo.Vuln = updateVulns(existingVulns, newVulns, "Trivy")
+	vulnInfo.Vuln = utils.UpdateVulns(existingVulns, newVulns, "Trivy")
 
 	// Write the updated second file
-	err = writeJSONFile(vulnInfoPath, &vulnInfo)
+	err = utils.WriteJSONFile(vulnInfoPath, &vulnInfo)
 	if err != nil {
 		return err
 	}

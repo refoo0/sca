@@ -50,7 +50,6 @@ func processJSONFile(filePath string, outputFilePath string) error {
 	goCount := modul.Counts{}
 	npmCount := modul.Counts{}
 	pythonCount := modul.Counts{}
-	elseCount := modul.Counts{}
 
 	count := modul.Counts{}
 
@@ -62,35 +61,62 @@ func processJSONFile(filePath string, outputFilePath string) error {
 
 		id := vuln.ID
 
+		system := vuln.System
+
+		stdlib := vuln.StandrdLibOSV
+
 		if osv && snyk && trivy {
-			count, goCount, npmCount, pythonCount, elseCount = updateAllCounts(id, osv, snyk, trivy, count, goCount, npmCount, pythonCount, elseCount)
+			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
 
 		} else if osv && snyk && !trivy {
-			count, goCount, npmCount, pythonCount, elseCount = updateAllCounts(id, osv, snyk, trivy, count, goCount, npmCount, pythonCount, elseCount)
+			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
 
 		} else if osv && !snyk && trivy {
-			count, goCount, npmCount, pythonCount, elseCount = updateAllCounts(id, osv, snyk, trivy, count, goCount, npmCount, pythonCount, elseCount)
+			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
 
 		} else if !osv && snyk && trivy {
-			count, goCount, npmCount, pythonCount, elseCount = updateAllCounts(id, osv, snyk, trivy, count, goCount, npmCount, pythonCount, elseCount)
+			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
 
 		} else if osv && !snyk && !trivy {
-			count, goCount, npmCount, pythonCount, elseCount = updateAllCounts(id, osv, snyk, trivy, count, goCount, npmCount, pythonCount, elseCount)
+			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
 
 		} else if !osv && snyk && !trivy {
-			count, goCount, npmCount, pythonCount, elseCount = updateAllCounts(id, osv, snyk, trivy, count, goCount, npmCount, pythonCount, elseCount)
+			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
 
 		} else if !osv && !snyk && trivy {
-			count, goCount, npmCount, pythonCount, elseCount = updateAllCounts(id, osv, snyk, trivy, count, goCount, npmCount, pythonCount, elseCount)
+			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
 
 		}
 
 		if id[:4] == "CVE-" {
 			count.CVEIDsCount++
+			if system == "Go" {
+				goCount.CVEIDsCount++
+			} else if system == "Npm" {
+				npmCount.CVEIDsCount++
+			} else if system == "Pypi" {
+				pythonCount.CVEIDsCount++
+			}
 		} else if id[:4] == "GHSA" {
 			count.GHSAIDsCount++
+			if system == "Go" {
+				goCount.GHSAIDsCount++
+			} else if system == "Npm" {
+				npmCount.GHSAIDsCount++
+			} else if system == "Pypi" {
+				pythonCount.GHSAIDsCount++
+			}
+
 		} else {
 			count.OtherIDsCount++
+			if system == "Go" {
+				goCount.OtherIDsCount++
+			} else if system == "Npm" {
+				npmCount.OtherIDsCount++
+			} else if system == "Pypi" {
+				pythonCount.OtherIDsCount++
+			}
+
 		}
 	}
 
@@ -98,38 +124,16 @@ func processJSONFile(filePath string, outputFilePath string) error {
 
 	outputData.ProjectsVulns[project] = count
 
-	outputData.SystemsVulns = make(map[string]modul.Counts)
+	if outputData.SystemsVulns == nil {
+		outputData.SystemsVulns = make(map[string]modul.Counts)
+	}
 	outputData.SystemsVulns["Go"] = updateCountsModul(outputData.SystemsVulns["Go"], goCount)
 	outputData.SystemsVulns["Npm"] = updateCountsModul(outputData.SystemsVulns["Npm"], npmCount)
 	outputData.SystemsVulns["Pypi"] = updateCountsModul(outputData.SystemsVulns["Pypi"], pythonCount)
-	outputData.SystemsVulns["Others"] = updateCountsModul(outputData.SystemsVulns["Others"], elseCount)
 
-	// Überprüfen, ob die Ausgabedatei existiert
-	if _, err := os.Stat(outputFilePath); err == nil {
-		// Datei existiert, also einlesen
-		existingFileData, err := os.ReadFile(outputFilePath)
-		if err != nil {
-			return fmt.Errorf("Error by reading existing output file: " + err.Error())
-		}
-
-		// Unmarshal der bestehenden Ausgabedaten
-		err = json.Unmarshal(existingFileData, &outputData)
-		if err != nil {
-			return fmt.Errorf("Error by unmarshalling existing output file: " + err.Error())
-		}
-	} else if !os.IsNotExist(err) {
-		return fmt.Errorf("Error checking if output file exists: " + err.Error())
-	}
-
-	// JSON-Daten in die Datei schreiben
-	fileContent, err := json.MarshalIndent(outputData, "", "  ")
+	err = WriteJSONFile(outputFilePath, outputData)
 	if err != nil {
-		return fmt.Errorf("Error by marshalling JSON: " + err.Error())
-	}
-
-	err = os.WriteFile(outputFilePath, fileContent, 0644)
-	if err != nil {
-		return fmt.Errorf("Error by writing file: " + err.Error())
+		return fmt.Errorf("Error by writing output file: " + err.Error())
 	}
 
 	fmt.Printf("Erfolgreich Ausgabedatei aktualisiert: %s\n", outputFilePath)
@@ -162,17 +166,26 @@ func Generate(inputDirPath, outputFilePath string) {
 	}
 }
 
-func updateAllCounts(id string, osv, snyk, trivy bool, count, goCount, npmCount, pythonCount, elseCount modul.Counts) (modul.Counts, modul.Counts, modul.Counts, modul.Counts, modul.Counts) {
-	co := updateCount(id, osv, snyk, trivy, count)
-	goCo := updateCount(id, osv, snyk, trivy, goCount)
-	npmCo := updateCount(id, osv, snyk, trivy, npmCount)
-	pythonCo := updateCount(id, osv, snyk, trivy, pythonCount)
-	elseCo := updateCount(id, osv, snyk, trivy, elseCount)
+func updateAllCounts(id, system string, stdlib, osv, snyk, trivy bool, count, goCount, npmCount, pythonCount modul.Counts) (modul.Counts, modul.Counts, modul.Counts, modul.Counts) {
 
-	return co, goCo, npmCo, pythonCo, elseCo
+	co := updateCount(id, "", stdlib, osv, snyk, trivy, count)
+
+	var goCo, npmCo, pythonCo modul.Counts
+	if system == "Go" {
+		goCo = updateCount(id, system, stdlib, osv, snyk, trivy, goCount)
+	}
+	if system == "Npm" {
+		npmCo = updateCount(id, system, stdlib, osv, snyk, trivy, npmCount)
+	}
+	if system == "Pypi" {
+		pythonCo = updateCount(id, system, stdlib, osv, snyk, trivy, pythonCount)
+	}
+
+	return co, goCo, npmCo, pythonCo
 }
 
-func updateCount(id string, osv bool, snyk bool, trivy bool, count modul.Counts) modul.Counts {
+func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count modul.Counts) modul.Counts {
+
 	if osv && snyk && trivy {
 		count.Sum++
 
@@ -183,6 +196,17 @@ func updateCount(id string, osv bool, snyk bool, trivy bool, count modul.Counts)
 		count.CountTrivy++
 
 		count.IDsAll = append(count.IDsAll, id)
+
+		if system == "Go" {
+			count.IDsAll = append(count.IDsAll, id)
+		} else if system == "Npm" {
+			count.IDsAll = append(count.IDsAll, id)
+		} else if system == "Pypi" {
+			count.IDsAll = append(count.IDsAll, id)
+		} else {
+			count.IDsAll = append(count.IDsAll, id)
+		}
+
 	} else if osv && snyk && !trivy {
 		count.Sum++
 
@@ -192,6 +216,17 @@ func updateCount(id string, osv bool, snyk bool, trivy bool, count modul.Counts)
 		count.CountSnyk++
 
 		count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
+
+		if system == "Go" {
+			count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
+
+		} else if system == "Npm" {
+			count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
+		} else if system == "Pypi" {
+			count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
+		} else {
+			count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
+		}
 	} else if osv && trivy && !snyk {
 		count.Sum++
 
@@ -201,6 +236,17 @@ func updateCount(id string, osv bool, snyk bool, trivy bool, count modul.Counts)
 		count.CountTrivy++
 
 		count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
+
+		if system == "Go" {
+			count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
+
+		} else if system == "Npm" {
+			count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
+		} else if system == "Pypi" {
+			count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
+		} else {
+			count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
+		}
 	} else if snyk && trivy && !osv {
 		count.Sum++
 
@@ -210,6 +256,17 @@ func updateCount(id string, osv bool, snyk bool, trivy bool, count modul.Counts)
 		count.CountTrivy++
 
 		count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
+
+		if system == "Go" {
+			count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
+
+		} else if system == "Npm" {
+			count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
+		} else if system == "Pypi" {
+			count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
+		} else {
+			count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
+		}
 	} else if osv && !snyk && !trivy {
 		count.Sum++
 
@@ -218,6 +275,21 @@ func updateCount(id string, osv bool, snyk bool, trivy bool, count modul.Counts)
 		count.CountOSV++
 
 		count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
+
+		if system == "Go" {
+			count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
+
+			if stdlib {
+				count.StdLibOSVOnly++
+			}
+
+		} else if system == "Npm" {
+			count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
+		} else if system == "Pypi" {
+			count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
+		} else {
+			count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
+		}
 	} else if snyk && !osv && !trivy {
 		count.Sum++
 
@@ -226,6 +298,17 @@ func updateCount(id string, osv bool, snyk bool, trivy bool, count modul.Counts)
 		count.CountSnyk++
 
 		count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
+
+		if system == "Go" {
+			count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
+
+		} else if system == "Npm" {
+			count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
+		} else if system == "Pypi" {
+			count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
+		} else {
+			count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
+		}
 	} else if trivy && !osv && !snyk {
 		count.Sum++
 
@@ -234,23 +317,52 @@ func updateCount(id string, osv bool, snyk bool, trivy bool, count modul.Counts)
 		count.CountTrivy++
 
 		count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
+
+		if system == "Go" {
+			count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
+
+		} else if system == "Npm" {
+			count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
+		} else if system == "Pypi" {
+			count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
+		} else {
+			count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
+		}
 	}
 
 	return count
 }
 
 func updateCountsModul(existing modul.Counts, new modul.Counts) modul.Counts {
-	existing.Sum += new.Sum
-	existing.All += new.All
+
 	existing.CountOSV += new.CountOSV
 	existing.CountSnyk += new.CountSnyk
 	existing.CountTrivy += new.CountTrivy
+
+	existing.Sum += new.Sum
+
 	existing.OnlyOSV += new.OnlyOSV
 	existing.OnlySnyk += new.OnlySnyk
 	existing.OnlyTrivy += new.OnlyTrivy
 	existing.OSV_Snyk += new.OSV_Snyk
 	existing.OSV_Trivy += new.OSV_Trivy
 	existing.Snyk_Trivy += new.Snyk_Trivy
+
+	existing.All += new.All
+
+	existing.IDsOnlyOSV = append(existing.IDsOnlyOSV, new.IDsOnlyOSV...)
+	existing.IDsOnlySnyk = append(existing.IDsOnlySnyk, new.IDsOnlySnyk...)
+	existing.IDsOnlyTrivy = append(existing.IDsOnlyTrivy, new.IDsOnlyTrivy...)
+	existing.IDsOSV_Snyk = append(existing.IDsOSV_Snyk, new.IDsOSV_Snyk...)
+	existing.IDsOSV_Trivy = append(existing.IDsOSV_Trivy, new.IDsOSV_Trivy...)
+	existing.IDsSnyk_Trivy = append(existing.IDsSnyk_Trivy, new.IDsSnyk_Trivy...)
+	existing.IDsAll = append(existing.IDsAll, new.IDsAll...)
+
+	existing.CVEIDsCount += new.CVEIDsCount
+	existing.GHSAIDsCount += new.GHSAIDsCount
+	existing.OtherIDsCount += new.OtherIDsCount
+
+	existing.StdLibOSVOnly += new.StdLibOSVOnly
 
 	return existing
 }

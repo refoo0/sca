@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/refoo0/sca/scan/modul"
+	"github.com/refoo0/sca/scan/utils"
 )
 
 type OSVJSON struct {
@@ -36,7 +37,7 @@ type OSVJSON struct {
 func processOSVJSON(osvPath string, vulnInfoPath string) error {
 	// read the JSON file
 	var osvJson OSVJSON
-	err := readJSONFile(osvPath, &osvJson)
+	err := utils.ReadJSONFile(osvPath, &osvJson)
 	if err != nil {
 		return err
 	}
@@ -57,9 +58,6 @@ func processOSVJSON(osvPath string, vulnInfoPath string) error {
 				t = "Npm"
 			} else if typ == "PyPI" {
 				t = "Pypi"
-			} else if typ == "Maven" || typ == "crates.io" || typ == "NuGet" {
-
-				t = "else"
 			} else {
 				return fmt.Errorf("unknown ecosystem: %s", typ)
 			}
@@ -145,7 +143,7 @@ func processOSVJSON(osvPath string, vulnInfoPath string) error {
 
 	// Read the second JSON file (contains Vuln entries)
 	var vulnInfo modul.VulnInfo
-	err = readJSONFile(vulnInfoPath, &vulnInfo)
+	err = utils.ReadJSONFile(vulnInfoPath, &vulnInfo)
 	if err != nil {
 		return err
 	}
@@ -170,10 +168,10 @@ func processOSVJSON(osvPath string, vulnInfoPath string) error {
 	}
 
 	// Update the existing vulnerabilities with the new ones
-	vulnInfo.Vuln = updateVulns(existingVulns, newVulns, "OSV")
+	vulnInfo.Vuln = utils.UpdateVulns(existingVulns, newVulns, "OSV")
 
 	// Write the updated second file
-	err = writeJSONFile(vulnInfoPath, &vulnInfo)
+	err = utils.WriteJSONFile(vulnInfoPath, &vulnInfo)
 	if err != nil {
 		return err
 	}

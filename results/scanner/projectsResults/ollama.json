@@ -35,30 +35,6 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-21529",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-29041",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
       "ID": "CVE-2024-43796",
       "GHSAIDS": null,
       "OthersIDS": [],
@@ -114,70 +90,6 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-47764",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-21538",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-45812",
-      "GHSAIDS": [
-        "GHSA-4vvj-4cpr-p986",
-        "GHSA-64vr-g452-qvp3",
-        "GHSA-gprj-6m2f-j9hx"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-37890",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-42282",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
       "ID": "CVE-2024-45296",
       "GHSAIDS": null,
       "OthersIDS": [],
@@ -191,114 +103,6 @@
     },
     {
       "ID": "CVE-2024-52798",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-28863",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-29180",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-7774",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-4068",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-21536",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-29415",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-26159",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-28849",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Npm",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-43800",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -326,12 +130,148 @@
       "StandardLibOSV": false
     },
     {
+      "ID": "CVE-2024-4068",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-29041",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-28849",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-21536",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-42282",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
       "ID": "CVE-2024-45389",
       "GHSAIDS": [
         "GHSA-4vvj-4cpr-p986",
         "GHSA-64vr-g452-qvp3",
         "GHSA-gprj-6m2f-j9hx"
       ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-7774",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-4067",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-45812",
+      "GHSAIDS": [
+        "GHSA-4vvj-4cpr-p986",
+        "GHSA-64vr-g452-qvp3",
+        "GHSA-gprj-6m2f-j9hx"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-29415",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-43800",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-28863",
+      "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
@@ -354,7 +294,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-4067",
+      "ID": "CVE-2024-47764",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -366,128 +306,126 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-0243",
+      "ID": "CVE-2024-21538",
       "GHSAIDS": null,
       "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-46455",
-      "GHSAIDS": [
-        "GHSA-32r8-54hf-c9p3"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-45803",
-      "GHSAIDS": [
-        "GHSA-g4mx-q9vg-27p4",
-        "GHSA-g4mx-q9vg-27p4"
-      ],
-      "OthersIDS": [
-        "PYSEC-2023-212"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-pjjw-qhg8-p2p9",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-5129",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "A-299477569",
-        "ASB-A-299477569",
-        "RUSTSEC-2023-0060",
-        "RUSTSEC-2023-0061"
-      ],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
         "Trivy": false
       },
-      "System": "Pypi",
+      "System": "Npm",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-49083",
-      "GHSAIDS": [
-        "GHSA-jfhm-5ghh-2f97",
-        "GHSA-jfhm-5ghh-2f97"
-      ],
-      "OthersIDS": [
-        "PYSEC-2023-254"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-39659",
+      "ID": "CVE-2024-21529",
       "GHSAIDS": null,
-      "OthersIDS": [
-        "PYSEC-2023-147"
-      ],
+      "OthersIDS": [],
       "Scanner": {
         "OSV": true,
         "Snyk": true,
         "Trivy": true
       },
-      "System": "Pypi",
+      "System": "Npm",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-37276",
-      "GHSAIDS": [
-        "GHSA-45c4-8wx5-qw6w",
-        "GHSA-45c4-8wx5-qw6w"
-      ],
-      "OthersIDS": [
-        "PYSEC-2023-120"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-5569",
+      "ID": "CVE-2023-26159",
       "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-29180",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-37890",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Npm",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-39631",
+      "GHSAIDS": [
+        "GHSA-f73w-4m7g-ch9x",
+        "GHSA-f73w-4m7g-ch9x"
+      ],
+      "OthersIDS": [
+        "PYSEC-2023-162",
+        "PYSEC-2023-163"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-39705",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "GHSA-jm77-qphf-c4w8",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-22195",
+      "GHSAIDS": [
+        "GHSA-h5c8-rqwp-cp95"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-30251",
+      "GHSAIDS": [
+        "GHSA-5m98-qgg9-wh84"
+      ],
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
@@ -510,12 +448,20 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-46229",
+      "ID": "CVE-2023-4863",
       "GHSAIDS": [
-        "GHSA-655w-fm8m-m478"
+        "GHSA-54xq-cgqr-rpm3",
+        "GHSA-cxjf-x6jp-p7mc",
+        "GHSA-j7hp-h8jx-5ppr",
+        "GHSA-jh2j-j4j9-crg3",
+        "GHSA-qr4w-53vh-m672",
+        "GHSA-w2pj-9cgh-mq2c"
       ],
       "OthersIDS": [
-        "PYSEC-2023-205"
+        "A-299477569",
+        "ASB-A-299477569",
+        "RUSTSEC-2023-0060",
+        "RUSTSEC-2023-0061"
       ],
       "Scanner": {
         "OSV": true,
@@ -526,117 +472,11 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-37920",
-      "GHSAIDS": [
-        "GHSA-xqr8-7jwr-rhp7",
-        "GHSA-xqr8-7jwr-rhp7"
-      ],
-      "OthersIDS": [
-        "PYSEC-2023-135"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-37365",
-      "GHSAIDS": [
-        "GHSA-xwc8-rf6m-xr86"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-25399",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "PYSEC-2023-102"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-28088",
-      "GHSAIDS": [
-        "GHSA-h59x-p739-982c"
-      ],
-      "OthersIDS": [
-        "PYSEC-2024-43",
-        "PYSEC-2024-45"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-52323",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "PYSEC-2024-3"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-49767",
+      "ID": "CVE-2024-31580",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-22682",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "PYSEC-2024-25"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-5206",
-      "GHSAIDS": [
-        "GHSA-jw8x-6495-233v"
-      ],
-      "OthersIDS": [
-        "PYSEC-2024-110"
-      ],
-      "Scanner": {
-        "OSV": true,
         "Snyk": true,
         "Trivy": true
       },
@@ -644,7 +484,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-31583",
+      "ID": "GHSA-pjjw-qhg8-p2p9",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -672,24 +512,12 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-34062",
+      "ID": "CVE-2023-46229",
       "GHSAIDS": [
-        "GHSA-g7vv-2v7x-gj9p"
+        "GHSA-655w-fm8m-m478"
       ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-50447",
-      "GHSAIDS": null,
       "OthersIDS": [
-        "BIT-pillow-2023-50447"
+        "PYSEC-2023-205"
       ],
       "Scanner": {
         "OSV": true,
@@ -700,71 +528,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-0727",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "CGA-v739-9xhw-5vmf"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-3651",
-      "GHSAIDS": [
-        "GHSA-jjg7-2v4v-x38h",
-        "GHSA-jjg7-2v4v-x38h"
-      ],
-      "OthersIDS": [
-        "PYSEC-2024-60"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-2965",
-      "GHSAIDS": [
-        "GHSA-3hjh-jh2h-vrg6"
-      ],
-      "OthersIDS": [
-        "PYSEC-2024-118"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-43804",
-      "GHSAIDS": [
-        "GHSA-v845-jxx5-vc9f",
-        "GHSA-v845-jxx5-vc9f"
-      ],
-      "OthersIDS": [
-        "PYSEC-2023-192"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-jm77-qphf-c4w8",
+      "ID": "GHSA-56pw-mpj4-fxww",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
@@ -776,136 +540,60 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-6730",
-      "GHSAIDS": [
-        "GHSA-3863-2447-669p",
-        "GHSA-3863-2447-669p"
-      ],
+      "ID": "CVE-2023-5129",
+      "GHSAIDS": null,
       "OthersIDS": [
-        "PYSEC-2023-300"
+        "A-299477569",
+        "ASB-A-299477569",
+        "RUSTSEC-2023-0060",
+        "RUSTSEC-2023-0061"
       ],
       "Scanner": {
         "OSV": true,
-        "Snyk": true,
-        "Trivy": true
+        "Snyk": false,
+        "Trivy": false
       },
       "System": "Pypi",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-23334",
-      "GHSAIDS": [
-        "GHSA-5h86-8mv2-jq9f",
-        "GHSA-5h86-8mv2-jq9f"
-      ],
-      "OthersIDS": [
-        "PYSEC-2024-24"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-23829",
-      "GHSAIDS": [
-        "GHSA-8qpw-xqxj-h4r2",
-        "GHSA-8qpw-xqxj-h4r2"
-      ],
-      "OthersIDS": [
-        "PYSEC-2024-26"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-39689",
-      "GHSAIDS": [
-        "GHSA-248v-346w-9cwc"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-35195",
-      "GHSAIDS": [
-        "GHSA-9wx4-h78v-vm56"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-47627",
-      "GHSAIDS": [
-        "GHSA-gfw2-4jvh-wgfg",
-        "GHSA-gfw2-4jvh-wgfg"
-      ],
-      "OthersIDS": [
-        "PYSEC-2023-246"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-42367",
-      "GHSAIDS": [
-        "GHSA-jwhx-xcg6-8xhj"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-3568",
-      "GHSAIDS": [
-        "GHSA-37q5-v5qm-c9v8"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-52595",
+      "ID": "CVE-2024-49766",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-52304",
+      "GHSAIDS": [
+        "GHSA-8495-4g3g-x7pr"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-49082",
+      "GHSAIDS": [
+        "GHSA-qvrw-v9rv-5rjx",
+        "GHSA-qvrw-v9rv-5rjx"
+      ],
+      "OthersIDS": [
+        "PYSEC-2023-251"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
         "Trivy": true
       },
       "System": "Pypi",
@@ -942,18 +630,139 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-39631",
+      "ID": "CVE-2024-5569",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-34064",
       "GHSAIDS": [
-        "GHSA-f73w-4m7g-ch9x",
-        "GHSA-f73w-4m7g-ch9x"
+        "GHSA-h75v-3vvj-5mfj"
       ],
       "OthersIDS": [
-        "PYSEC-2023-162",
-        "PYSEC-2023-163"
+        "CGA-g5xx-83xq-8g5j"
       ],
       "Scanner": {
         "OSV": true,
         "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-23829",
+      "GHSAIDS": [
+        "GHSA-8qpw-xqxj-h4r2",
+        "GHSA-8qpw-xqxj-h4r2"
+      ],
+      "OthersIDS": [
+        "PYSEC-2024-26"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "GHSA-v8gr-m533-ghj9",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-39659",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "PYSEC-2023-147"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-3571",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-52323",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "PYSEC-2024-3"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-46455",
+      "GHSAIDS": [
+        "GHSA-32r8-54hf-c9p3"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-2965",
+      "GHSAIDS": [
+        "GHSA-3hjh-jh2h-vrg6"
+      ],
+      "OthersIDS": [
+        "PYSEC-2024-118"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-0243",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
         "Trivy": true
       },
       "System": "Pypi",
@@ -971,6 +780,62 @@
         "OSV": true,
         "Snyk": false,
         "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "PYSEC-2023-175",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-35195",
+      "GHSAIDS": [
+        "GHSA-9wx4-h78v-vm56"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-8309",
+      "GHSAIDS": [
+        "GHSA-45pg-36p6-83v9"
+      ],
+      "OthersIDS": [
+        "PYSEC-2024-115"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-47874",
+      "GHSAIDS": [
+        "GHSA-f96h-pmfr-66vw"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
       },
       "System": "Pypi",
       "StandardLibOSV": false
@@ -1007,14 +872,155 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-24762",
+      "ID": "CVE-2023-36281",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "PYSEC-2023-151"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-50447",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-pillow-2023-50447"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-43804",
       "GHSAIDS": [
-        "GHSA-2jv5-9r88-3w3p",
-        "GHSA-qf9m-vfgh-m389",
-        "GHSA-qf9m-vfgh-m389"
+        "GHSA-v845-jxx5-vc9f",
+        "GHSA-v845-jxx5-vc9f"
       ],
       "OthersIDS": [
-        "PYSEC-2024-38"
+        "PYSEC-2023-192"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-34069",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "CGA-4f6v-wx38-68gq"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-31583",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-23334",
+      "GHSAIDS": [
+        "GHSA-5h86-8mv2-jq9f",
+        "GHSA-5h86-8mv2-jq9f"
+      ],
+      "OthersIDS": [
+        "PYSEC-2024-24"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-27306",
+      "GHSAIDS": [
+        "GHSA-7gpw-8wmc-pm8g"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-42367",
+      "GHSAIDS": [
+        "GHSA-jwhx-xcg6-8xhj"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-49083",
+      "GHSAIDS": [
+        "GHSA-jfhm-5ghh-2f97",
+        "GHSA-jfhm-5ghh-2f97"
+      ],
+      "OthersIDS": [
+        "PYSEC-2023-254"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-49767",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-25399",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "PYSEC-2023-102"
       ],
       "Scanner": {
         "OSV": true,
@@ -1025,10 +1031,129 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-47874",
+      "ID": "CVE-2024-3568",
       "GHSAIDS": [
-        "GHSA-f96h-pmfr-66vw"
+        "GHSA-37q5-v5qm-c9v8"
       ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-47627",
+      "GHSAIDS": [
+        "GHSA-gfw2-4jvh-wgfg",
+        "GHSA-gfw2-4jvh-wgfg"
+      ],
+      "OthersIDS": [
+        "PYSEC-2023-246"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-39689",
+      "GHSAIDS": [
+        "GHSA-248v-346w-9cwc"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-0727",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "CGA-v739-9xhw-5vmf"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-28219",
+      "GHSAIDS": null,
+      "OthersIDS": [
+        "BIT-pillow-2024-28219"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-34062",
+      "GHSAIDS": [
+        "GHSA-g7vv-2v7x-gj9p"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-37276",
+      "GHSAIDS": [
+        "GHSA-45c4-8wx5-qw6w",
+        "GHSA-45c4-8wx5-qw6w"
+      ],
+      "OthersIDS": [
+        "PYSEC-2023-120"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-28088",
+      "GHSAIDS": [
+        "GHSA-h59x-p739-982c"
+      ],
+      "OthersIDS": [
+        "PYSEC-2024-43",
+        "PYSEC-2024-45"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": false,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-3772",
+      "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
@@ -1056,90 +1181,69 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-27306",
-      "GHSAIDS": [
-        "GHSA-7gpw-8wmc-pm8g"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-3571",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-4863",
-      "GHSAIDS": [
-        "GHSA-54xq-cgqr-rpm3",
-        "GHSA-cxjf-x6jp-p7mc",
-        "GHSA-j7hp-h8jx-5ppr",
-        "GHSA-jh2j-j4j9-crg3",
-        "GHSA-qr4w-53vh-m672",
-        "GHSA-w2pj-9cgh-mq2c"
-      ],
-      "OthersIDS": [
-        "A-299477569",
-        "ASB-A-299477569",
-        "RUSTSEC-2023-0060",
-        "RUSTSEC-2023-0061"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-34069",
+      "ID": "CVE-2024-22682",
       "GHSAIDS": null,
       "OthersIDS": [
-        "CGA-4f6v-wx38-68gq"
+        "PYSEC-2024-25"
       ],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-37365",
+      "GHSAIDS": [
+        "GHSA-xwc8-rf6m-xr86"
+      ],
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
         "Trivy": true
       },
       "System": "Pypi",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-49766",
+      "ID": "CVE-2023-32786",
+      "GHSAIDS": null,
+      "OthersIDS": [],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-6730",
+      "GHSAIDS": [
+        "GHSA-3863-2447-669p",
+        "GHSA-3863-2447-669p"
+      ],
+      "OthersIDS": [
+        "PYSEC-2023-300"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-52595",
       "GHSAIDS": null,
       "OthersIDS": [],
       "Scanner": {
         "OSV": true,
         "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-22195",
-      "GHSAIDS": [
-        "GHSA-h5c8-rqwp-cp95"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
         "Trivy": true
       },
       "System": "Pypi",
@@ -1163,117 +1267,31 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-39705",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-v8gr-m533-ghj9",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-8309",
+      "ID": "CVE-2024-24762",
       "GHSAIDS": [
-        "GHSA-45pg-36p6-83v9"
+        "GHSA-2jv5-9r88-3w3p",
+        "GHSA-qf9m-vfgh-m389",
+        "GHSA-qf9m-vfgh-m389"
       ],
       "OthersIDS": [
-        "PYSEC-2024-115"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-28219",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "BIT-pillow-2024-28219"
+        "PYSEC-2024-38"
       ],
       "Scanner": {
         "OSV": true,
         "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "GHSA-56pw-mpj4-fxww",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "PYSEC-2023-175",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": false,
         "Trivy": false
       },
       "System": "Pypi",
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-3772",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-30251",
+      "ID": "CVE-2023-45803",
       "GHSAIDS": [
-        "GHSA-5m98-qgg9-wh84"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-49082",
-      "GHSAIDS": [
-        "GHSA-qvrw-v9rv-5rjx",
-        "GHSA-qvrw-v9rv-5rjx"
+        "GHSA-g4mx-q9vg-27p4",
+        "GHSA-g4mx-q9vg-27p4"
       ],
       "OthersIDS": [
-        "PYSEC-2023-251"
+        "PYSEC-2023-212"
       ],
       "Scanner": {
         "OSV": true,
@@ -1284,64 +1302,13 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-32786",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-36281",
-      "GHSAIDS": null,
-      "OthersIDS": [
-        "PYSEC-2023-151"
-      ],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-31580",
-      "GHSAIDS": null,
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-52304",
+      "ID": "CVE-2023-37920",
       "GHSAIDS": [
-        "GHSA-8495-4g3g-x7pr"
-      ],
-      "OthersIDS": [],
-      "Scanner": {
-        "OSV": true,
-        "Snyk": true,
-        "Trivy": true
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-34064",
-      "GHSAIDS": [
-        "GHSA-h75v-3vvj-5mfj"
+        "GHSA-xqr8-7jwr-rhp7",
+        "GHSA-xqr8-7jwr-rhp7"
       ],
       "OthersIDS": [
-        "CGA-g5xx-83xq-8g5j"
+        "PYSEC-2023-135"
       ],
       "Scanner": {
         "OSV": true,
@@ -1352,7 +1319,52 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-5363",
+      "ID": "CVE-2024-5206",
+      "GHSAIDS": [
+        "GHSA-jw8x-6495-233v"
+      ],
+      "OthersIDS": [
+        "PYSEC-2024-110"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-3651",
+      "GHSAIDS": [
+        "GHSA-jjg7-2v4v-x38h",
+        "GHSA-jjg7-2v4v-x38h"
+      ],
+      "OthersIDS": [
+        "PYSEC-2024-60"
+      ],
+      "Scanner": {
+        "OSV": true,
+        "Snyk": true,
+        "Trivy": true
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-6129",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "SNYK-PYTHON-PYDANTIC-5926694",
       "GHSAIDS": null,
       "OthersIDS": null,
       "Scanner": {
@@ -1376,30 +1388,6 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-5678",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "SNYK-PYTHON-TRANSFORMERS-6220003",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
       "ID": "CVE-2023-2975",
       "GHSAIDS": null,
       "OthersIDS": null,
@@ -1412,7 +1400,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-2511",
+      "ID": "CVE-2023-3446",
       "GHSAIDS": null,
       "OthersIDS": null,
       "Scanner": {
@@ -1436,7 +1424,19 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-3817",
+      "ID": "CVE-2023-5678",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-11393",
       "GHSAIDS": null,
       "OthersIDS": null,
       "Scanner": {
@@ -1449,6 +1449,80 @@
     },
     {
       "ID": "CVE-2023-6237",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-44467",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "SNYK-PYTHON-PILLOW-6219986",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "SNYK-PYTHON-ANYIO-7361842",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-32785",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-3095",
+      "GHSAIDS": [
+        "GHSA-q25c-c977-4cmh"
+      ],
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2023-4807",
       "GHSAIDS": null,
       "OthersIDS": null,
       "Scanner": {
@@ -1474,131 +1548,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2024-3095",
-      "GHSAIDS": [
-        "GHSA-q25c-c977-4cmh"
-      ],
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "SNYK-PYTHON-PILLOW-6219984",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-5998",
-      "GHSAIDS": [
-        "GHSA-f2jm-rw3h-6phg"
-      ],
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "SNYK-PYTHON-PILLOW-6219986",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-44467",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-11392",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "SNYK-PYTHON-PYDANTIC-5926694",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "SNYK-PYTHON-ANYIO-7361842",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2024-11393",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-6129",
-      "GHSAIDS": null,
-      "OthersIDS": null,
-      "Scanner": {
-        "OSV": false,
-        "Snyk": true,
-        "Trivy": false
-      },
-      "System": "Pypi",
-      "StandardLibOSV": false
-    },
-    {
-      "ID": "CVE-2023-32785",
+      "ID": "SNYK-PYTHON-TRANSFORMERS-6220003",
       "GHSAIDS": null,
       "OthersIDS": null,
       "Scanner": {
@@ -1622,7 +1572,7 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-3446",
+      "ID": "CVE-2023-3817",
       "GHSAIDS": null,
       "OthersIDS": null,
       "Scanner": {
@@ -1634,8 +1584,58 @@
       "StandardLibOSV": false
     },
     {
-      "ID": "CVE-2023-4807",
+      "ID": "CVE-2023-5363",
       "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-2511",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "SNYK-PYTHON-PILLOW-6219984",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-11392",
+      "GHSAIDS": null,
+      "OthersIDS": null,
+      "Scanner": {
+        "OSV": false,
+        "Snyk": true,
+        "Trivy": false
+      },
+      "System": "Pypi",
+      "StandardLibOSV": false
+    },
+    {
+      "ID": "CVE-2024-5998",
+      "GHSAIDS": [
+        "GHSA-f2jm-rw3h-6phg"
+      ],
       "OthersIDS": null,
       "Scanner": {
         "OSV": false,

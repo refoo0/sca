@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/refoo0/sca/scan/modul"
+	"github.com/refoo0/sca/scan/utils"
 )
 
 type SnykJSON struct {
@@ -103,7 +104,7 @@ func processSnykJSON(snykPath string, vulnInfoPath string) error {
 
 	// Read the second JSON file (contains Vuln entries)
 	var vulnInfo modul.VulnInfo
-	err = readJSONFile(vulnInfoPath, &vulnInfo)
+	err = utils.ReadJSONFile(vulnInfoPath, &vulnInfo)
 	if err != nil {
 		return err
 	}
@@ -127,9 +128,9 @@ func processSnykJSON(snykPath string, vulnInfoPath string) error {
 		newVulns = append(newVulns, vuln)
 	}
 
-	vulnInfo.Vuln = updateVulns(existingVulns, newVulns, "Snyk")
+	vulnInfo.Vuln = utils.UpdateVulns(existingVulns, newVulns, "Snyk")
 
-	err = writeJSONFile(vulnInfoPath, &vulnInfo)
+	err = utils.WriteJSONFile(vulnInfoPath, &vulnInfo)
 	if err != nil {
 		return err
 	}

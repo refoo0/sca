@@ -1,4 +1,4 @@
-package parse
+package utils
 
 import (
 	"encoding/json"
@@ -10,7 +10,7 @@ import (
 )
 
 // Function to read JSON file and unmarshal it
-func readJSONFile(path string, v interface{}) error {
+func ReadJSONFile(path string, v interface{}) error {
 	file, err := os.Open(path)
 	if err != nil {
 		return fmt.Errorf("failed to open file %s: %v", path, err)
@@ -31,7 +31,7 @@ func readJSONFile(path string, v interface{}) error {
 }
 
 // Function to write JSON file
-func writeJSONFile(path string, v interface{}) error {
+func WriteJSONFile(path string, v interface{}) error {
 	bytes, err := json.MarshalIndent(v, "", "  ")
 	if err != nil {
 		return fmt.Errorf("failed to marshal JSON: %v", err)
@@ -45,7 +45,7 @@ func writeJSONFile(path string, v interface{}) error {
 	return nil
 }
 
-func updateVulns(existingVulns []modul.Vuln, newVulns []modul.Vuln, scanType string) []modul.Vuln {
+func UpdateVulns(existingVulns []modul.Vuln, newVulns []modul.Vuln, scanType string) []modul.Vuln {
 
 	existingCVEIDs := make(map[string]bool)
 	existingCVEIDsInt := make(map[string]int)
@@ -55,6 +55,10 @@ func updateVulns(existingVulns []modul.Vuln, newVulns []modul.Vuln, scanType str
 	existingGHSAsInt := make(map[string]int)
 
 	for i, vuln := range existingVulns {
+		system := vuln.System
+		if system != "Go" && system != "Npm" && system != "Pypi" {
+			fmt.Println(system)
+		}
 
 		if vuln.ID[:4] == "CVE-" {
 			existingCVEIDs[vuln.ID] = true

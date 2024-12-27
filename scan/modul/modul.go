@@ -58,6 +58,12 @@ type Counts struct {
 	Snyk_Trivy int `json:"Snyk_Trivy"`
 	All        int `json:"All"`
 
+	CVEIDsCount   int `json:"CVEIDsCount"`
+	GHSAIDsCount  int `json:"GHSAsCount"`
+	OtherIDsCount int `json:"OtherIDsCount"`
+
+	StdLibOSVOnly int `json:"StdLibOSVOnly"`
+
 	IDsOnlyOSV    []string `json:"IDsOnlyOSV"`
 	IDsOnlySnyk   []string `json:"IDsOnlySnyk"`
 	IDsOnlyTrivy  []string `json:"IDsOnlyTrivy"`
@@ -65,8 +71,4 @@ type Counts struct {
 	IDsOSV_Trivy  []string `json:"IDsOSV_Trivy"`
 	IDsSnyk_Trivy []string `json:"IDsSnyk_Trivy"`
 	IDsAll        []string `json:"IDsAll"`
-
-	CVEIDsCount   int `json:"CVEIDsCount"`
-	GHSAIDsCount  int `json:"GHSAsCount"`
-	OtherIDsCount int `json:"OtherIDsCount"`
 }
