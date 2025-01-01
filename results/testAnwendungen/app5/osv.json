@@ -1,0 +1,1650 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "/Users/refaei/dev/sca/app/testAnwendungen/app5/go.mod",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "stdlib",
+            "version": "1.20",
+            "ecosystem": "Go"
+          },
+          "vulnerabilities": [
+            {
+              "modified": "2024-10-22T05:29:10Z",
+              "published": "2024-03-05T22:14:58Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2598",
+              "aliases": [
+                "BIT-golang-2024-24783",
+                "CGA-f95r-g332-q2hr",
+                "CGA-pp69-rc8m-x7cv",
+                "CGA-r3f2-xq4j-79w7",
+                "CVE-2024-24783",
+                "GHSA-3q2c-pvp5-3cqp"
+              ],
+              "related": [
+                "RHSA-2024:0045",
+                "RHSA-2024:2562",
+                "RHSA-2024:2724",
+                "RHSA-2024:3259",
+                "RHSA-2024:3346",
+                "RHSA-2024:3781",
+                "RHSA-2024:4023",
+                "RHSA-2024:4125",
+                "RHSA-2024:4893",
+                "RHSA-2024:5258",
+                "RHSA-2024:6186",
+                "RHSA-2024:6187",
+                "RHSA-2024:6188",
+                "RHSA-2024:6189",
+                "RHSA-2024:6194",
+                "RHSA-2024:6195",
+                "RHSA-2024:6969"
+              ],
+              "summary": "Verify panics on certificates with an unknown public key algorithm in crypto/x509",
+              "details": "Verifying a certificate chain which contains a certificate with an unknown public key algorithm will cause Certificate.Verify to panic.\n\nThis affects all crypto/tls clients, and servers that set Config.ClientAuth to VerifyClientCertIfGiven or RequireAndVerifyClientCert. The default behavior is for TLS servers to not verify client certificates.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.8"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2598.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "crypto/x509",
+                        "symbols": [
+                          "Certificate.Verify",
+                          "Certificate.buildChains"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/65390"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/569339"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "John Howard (Google)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2598"
+              }
+            },
+            {
+              "modified": "2024-10-22T05:29:04Z",
+              "published": "2024-03-05T22:15:00Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2599",
+              "aliases": [
+                "BIT-golang-2023-45290",
+                "CGA-63g6-wrgr-m47w",
+                "CGA-g554-cg74-8rm4",
+                "CGA-xr68-h9cg-49cj",
+                "CVE-2023-45290",
+                "GHSA-rr6r-cfgf-gc6h"
+              ],
+              "related": [
+                "RHSA-2024:0045",
+                "RHSA-2024:2562",
+                "RHSA-2024:2724",
+                "RHSA-2024:3259",
+                "RHSA-2024:3346",
+                "RHSA-2024:3781",
+                "RHSA-2024:3826",
+                "RHSA-2024:3827",
+                "RHSA-2024:3830",
+                "RHSA-2024:3831",
+                "RHSA-2024:4023",
+                "RHSA-2024:4893",
+                "RHSA-2024:5075",
+                "RHSA-2024:5077",
+                "RHSA-2024:5202",
+                "RHSA-2024:5258",
+                "RHSA-2024:5436",
+                "RHSA-2024:5442",
+                "RHSA-2024:5446",
+                "RHSA-2024:5810",
+                "RHSA-2024:6969",
+                "RHSA-2024:8038",
+                "RHSA-2024:9135"
+              ],
+              "summary": "Memory exhaustion in multipart form parsing in net/textproto and net/http",
+              "details": "When parsing a multipart form (either explicitly with Request.ParseMultipartForm or implicitly with Request.FormValue, Request.PostFormValue, or Request.FormFile), limits on the total size of the parsed form were not applied to the memory consumed while reading a single form line. This permits a maliciously crafted input containing very long lines to cause allocation of arbitrarily large amounts of memory, potentially leading to memory exhaustion.\n\nWith fix, the ParseMultipartForm function now correctly limits the maximum size of form lines.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.8"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2599.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "net/textproto",
+                        "symbols": [
+                          "Reader.ReadCodeLine",
+                          "Reader.ReadContinuedLine",
+                          "Reader.ReadContinuedLineBytes",
+                          "Reader.ReadDotLines",
+                          "Reader.ReadLine",
+                          "Reader.ReadLineBytes",
+                          "Reader.ReadMIMEHeader",
+                          "Reader.ReadResponse",
+                          "Reader.readContinuedLineSlice",
+                          "Reader.readLineSlice"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/65383"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/569341"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Bartek Nowotarski"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2599"
+              }
+            },
+            {
+              "modified": "2024-10-22T05:29:00Z",
+              "published": "2024-03-05T22:15:02Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2600",
+              "aliases": [
+                "BIT-golang-2023-45289",
+                "CGA-25gv-3qrh-8g5j",
+                "CGA-3fw9-g448-cq83",
+                "CGA-8rhm-9jx9-j3g6",
+                "CVE-2023-45289",
+                "GHSA-32ch-6x54-q4h9"
+              ],
+              "summary": "Incorrect forwarding of sensitive headers and cookies on HTTP redirect in net/http",
+              "details": "When following an HTTP redirect to a domain which is not a subdomain match or exact match of the initial domain, an http.Client does not forward sensitive headers such as \"Authorization\" or \"Cookie\". For example, a redirect from foo.com to www.foo.com will forward the Authorization header, but a redirect to bar.com will not.\n\nA maliciously crafted HTTP redirect could cause sensitive headers to be unexpectedly forwarded.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.8"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2600.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "net/http",
+                        "symbols": [
+                          "Client.Do",
+                          "Client.Get",
+                          "Client.Head",
+                          "Client.Post",
+                          "Client.PostForm",
+                          "Get",
+                          "Head",
+                          "Post",
+                          "PostForm",
+                          "isDomainOrSubdomain"
+                        ]
+                      },
+                      {
+                        "path": "net/http/cookiejar",
+                        "symbols": [
+                          "Jar.Cookies",
+                          "Jar.SetCookies",
+                          "isIP"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/65065"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/569340"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Juho Nurminen of Mattermost"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2600"
+              }
+            },
+            {
+              "modified": "2024-10-22T05:29:09Z",
+              "published": "2024-03-05T22:15:04Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2609",
+              "aliases": [
+                "BIT-golang-2024-24784",
+                "CGA-mxv9-jf2v-cw75",
+                "CGA-x96w-p6v4-99r6",
+                "CGA-x9h6-wjmw-83hr",
+                "CVE-2024-24784",
+                "GHSA-fgq5-q76c-gx78"
+              ],
+              "summary": "Comments in display names are incorrectly handled in net/mail",
+              "details": "The ParseAddressList function incorrectly handles comments (text within parentheses) within display names. Since this is a misalignment with conforming address parsers, it can result in different trust decisions being made by programs using different parsers.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.8"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2609.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "net/mail",
+                        "symbols": [
+                          "Address.String",
+                          "AddressParser.Parse",
+                          "AddressParser.ParseList",
+                          "Header.AddressList",
+                          "ParseAddress",
+                          "ParseAddressList",
+                          "addrParser.consumeGroupList",
+                          "addrParser.consumePhrase",
+                          "isAtext"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/65083"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/555596"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Juho Nurminen of Mattermost"
+                },
+                {
+                  "name": "Slonser (https://github.com/Slonser)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2609"
+              }
+            },
+            {
+              "modified": "2024-10-22T05:29:02Z",
+              "published": "2024-03-05T22:15:40Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2610",
+              "aliases": [
+                "BIT-golang-2024-24785",
+                "CGA-97f2-3j6h-f6fr",
+                "CGA-q7f3-cq9g-gr7f",
+                "CGA-wgjf-hp76-8hxw",
+                "CVE-2024-24785",
+                "GHSA-j6m3-gc37-6r6q"
+              ],
+              "summary": "Errors returned from JSON marshaling may break template escaping in html/template",
+              "details": "If errors returned from MarshalJSON methods contain user controlled data, they may be used to break the contextual auto-escaping behavior of the html/template package, allowing for subsequent actions to inject unexpected content into templates.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.8"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2610.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "html/template",
+                        "symbols": [
+                          "Template.Execute",
+                          "Template.ExecuteTemplate",
+                          "escaper.commit",
+                          "jsValEscaper"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/65697"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/564196"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "RyotaK (https://ryotak.net)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2610"
+              }
+            },
+            {
+              "modified": "2024-10-22T05:28:58Z",
+              "published": "2024-04-03T21:12:01Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2687",
+              "aliases": [
+                "BIT-golang-2023-45288",
+                "CGA-8q47-wf6v-wqg5",
+                "CGA-c6f9-jh7g-69mj",
+                "CGA-grww-v9jg-rhw2",
+                "CVE-2023-45288",
+                "GHSA-4v7x-pqxf-cx7m"
+              ],
+              "related": [
+                "RHSA-2024:1892",
+                "RHSA-2024:1897",
+                "RHSA-2024:1899",
+                "RHSA-2024:1962",
+                "RHSA-2024:1963",
+                "RHSA-2024:2049",
+                "RHSA-2024:2079",
+                "RHSA-2024:2562",
+                "RHSA-2024:2625",
+                "RHSA-2024:2667",
+                "RHSA-2024:2671",
+                "RHSA-2024:2672",
+                "RHSA-2024:2699",
+                "RHSA-2024:2724",
+                "RHSA-2024:2729",
+                "RHSA-2024:2892",
+                "RHSA-2024:2935",
+                "RHSA-2024:2936",
+                "RHSA-2024:3259",
+                "RHSA-2024:3346",
+                "RHSA-2024:3352",
+                "RHSA-2024:3467",
+                "RHSA-2024:3781",
+                "RHSA-2024:4023",
+                "RHSA-2024:4125",
+                "RHSA-2024:4146",
+                "RHSA-2024:4543",
+                "RHSA-2024:4545",
+                "RHSA-2024:4546",
+                "RHSA-2024:4933",
+                "RHSA-2024:4934"
+              ],
+              "summary": "HTTP/2 CONTINUATION flood in net/http",
+              "details": "An attacker may cause an HTTP/2 endpoint to read arbitrary amounts of header data by sending an excessive number of CONTINUATION frames.\n\nMaintaining HPACK state requires parsing and processing all HEADERS and CONTINUATION frames on a connection. When a request's headers exceed MaxHeaderBytes, no memory is allocated to store the excess headers, but they are still parsed.\n\nThis permits an attacker to cause an HTTP/2 endpoint to read arbitrary amounts of header data, all associated with a request which is going to be rejected. These headers can include Huffman-encoded data which is significantly more expensive for the receiver to decode than for an attacker to send.\n\nThe fix sets a limit on the amount of excess header frames we will process before closing a connection.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.9"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.2"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2687.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "net/http",
+                        "symbols": [
+                          "CanonicalHeaderKey",
+                          "Client.CloseIdleConnections",
+                          "Client.Do",
+                          "Client.Get",
+                          "Client.Head",
+                          "Client.Post",
+                          "Client.PostForm",
+                          "Cookie.String",
+                          "Cookie.Valid",
+                          "Dir.Open",
+                          "Error",
+                          "Get",
+                          "HandlerFunc.ServeHTTP",
+                          "Head",
+                          "Header.Add",
+                          "Header.Del",
+                          "Header.Get",
+                          "Header.Set",
+                          "Header.Values",
+                          "Header.Write",
+                          "Header.WriteSubset",
+                          "ListenAndServe",
+                          "ListenAndServeTLS",
+                          "NewRequest",
+                          "NewRequestWithContext",
+                          "NotFound",
+                          "ParseTime",
+                          "Post",
+                          "PostForm",
+                          "ProxyFromEnvironment",
+                          "ReadRequest",
+                          "ReadResponse",
+                          "Redirect",
+                          "Request.AddCookie",
+                          "Request.BasicAuth",
+                          "Request.FormFile",
+                          "Request.FormValue",
+                          "Request.MultipartReader",
+                          "Request.ParseForm",
+                          "Request.ParseMultipartForm",
+                          "Request.PostFormValue",
+                          "Request.Referer",
+                          "Request.SetBasicAuth",
+                          "Request.UserAgent",
+                          "Request.Write",
+                          "Request.WriteProxy",
+                          "Response.Cookies",
+                          "Response.Location",
+                          "Response.Write",
+                          "ResponseController.EnableFullDuplex",
+                          "ResponseController.Flush",
+                          "ResponseController.Hijack",
+                          "ResponseController.SetReadDeadline",
+                          "ResponseController.SetWriteDeadline",
+                          "Serve",
+                          "ServeContent",
+                          "ServeFile",
+                          "ServeMux.ServeHTTP",
+                          "ServeTLS",
+                          "Server.Close",
+                          "Server.ListenAndServe",
+                          "Server.ListenAndServeTLS",
+                          "Server.Serve",
+                          "Server.ServeTLS",
+                          "Server.SetKeepAlivesEnabled",
+                          "Server.Shutdown",
+                          "SetCookie",
+                          "Transport.CancelRequest",
+                          "Transport.Clone",
+                          "Transport.CloseIdleConnections",
+                          "Transport.RoundTrip",
+                          "body.Close",
+                          "body.Read",
+                          "bodyEOFSignal.Close",
+                          "bodyEOFSignal.Read",
+                          "bodyLocked.Read",
+                          "bufioFlushWriter.Write",
+                          "cancelTimerBody.Close",
+                          "cancelTimerBody.Read",
+                          "checkConnErrorWriter.Write",
+                          "chunkWriter.Write",
+                          "connReader.Read",
+                          "connectMethodKey.String",
+                          "expectContinueReader.Close",
+                          "expectContinueReader.Read",
+                          "extraHeader.Write",
+                          "fileHandler.ServeHTTP",
+                          "fileTransport.RoundTrip",
+                          "globalOptionsHandler.ServeHTTP",
+                          "gzipReader.Close",
+                          "gzipReader.Read",
+                          "http2ClientConn.Close",
+                          "http2ClientConn.Ping",
+                          "http2ClientConn.RoundTrip",
+                          "http2ClientConn.Shutdown",
+                          "http2ConnectionError.Error",
+                          "http2ErrCode.String",
+                          "http2FrameHeader.String",
+                          "http2FrameType.String",
+                          "http2FrameWriteRequest.String",
+                          "http2Framer.ReadFrame",
+                          "http2Framer.WriteContinuation",
+                          "http2Framer.WriteData",
+                          "http2Framer.WriteDataPadded",
+                          "http2Framer.WriteGoAway",
+                          "http2Framer.WriteHeaders",
+                          "http2Framer.WritePing",
+                          "http2Framer.WritePriority",
+                          "http2Framer.WritePushPromise",
+                          "http2Framer.WriteRSTStream",
+                          "http2Framer.WriteRawFrame",
+                          "http2Framer.WriteSettings",
+                          "http2Framer.WriteSettingsAck",
+                          "http2Framer.WriteWindowUpdate",
+                          "http2Framer.readMetaFrame",
+                          "http2GoAwayError.Error",
+                          "http2Server.ServeConn",
+                          "http2Setting.String",
+                          "http2SettingID.String",
+                          "http2SettingsFrame.ForeachSetting",
+                          "http2StreamError.Error",
+                          "http2Transport.CloseIdleConnections",
+                          "http2Transport.NewClientConn",
+                          "http2Transport.RoundTrip",
+                          "http2Transport.RoundTripOpt",
+                          "http2bufferedWriter.Flush",
+                          "http2bufferedWriter.Write",
+                          "http2chunkWriter.Write",
+                          "http2clientConnPool.GetClientConn",
+                          "http2connError.Error",
+                          "http2dataBuffer.Read",
+                          "http2duplicatePseudoHeaderError.Error",
+                          "http2gzipReader.Close",
+                          "http2gzipReader.Read",
+                          "http2headerFieldNameError.Error",
+                          "http2headerFieldValueError.Error",
+                          "http2noDialClientConnPool.GetClientConn",
+                          "http2noDialH2RoundTripper.RoundTrip",
+                          "http2pipe.Read",
+                          "http2priorityWriteScheduler.CloseStream",
+                          "http2priorityWriteScheduler.OpenStream",
+                          "http2pseudoHeaderError.Error",
+                          "http2requestBody.Close",
+                          "http2requestBody.Read",
+                          "http2responseWriter.Flush",
+                          "http2responseWriter.FlushError",
+                          "http2responseWriter.Push",
+                          "http2responseWriter.SetReadDeadline",
+                          "http2responseWriter.SetWriteDeadline",
+                          "http2responseWriter.Write",
+                          "http2responseWriter.WriteHeader",
+                          "http2responseWriter.WriteString",
+                          "http2roundRobinWriteScheduler.OpenStream",
+                          "http2serverConn.CloseConn",
+                          "http2serverConn.Flush",
+                          "http2stickyErrWriter.Write",
+                          "http2transportResponseBody.Close",
+                          "http2transportResponseBody.Read",
+                          "http2writeData.String",
+                          "initALPNRequest.ServeHTTP",
+                          "loggingConn.Close",
+                          "loggingConn.Read",
+                          "loggingConn.Write",
+                          "maxBytesReader.Close",
+                          "maxBytesReader.Read",
+                          "onceCloseListener.Close",
+                          "persistConn.Read",
+                          "persistConnWriter.ReadFrom",
+                          "persistConnWriter.Write",
+                          "populateResponse.Write",
+                          "populateResponse.WriteHeader",
+                          "readTrackingBody.Close",
+                          "readTrackingBody.Read",
+                          "readWriteCloserBody.Read",
+                          "redirectHandler.ServeHTTP",
+                          "response.Flush",
+                          "response.FlushError",
+                          "response.Hijack",
+                          "response.ReadFrom",
+                          "response.Write",
+                          "response.WriteHeader",
+                          "response.WriteString",
+                          "serverHandler.ServeHTTP",
+                          "socksDialer.DialWithConn",
+                          "socksUsernamePassword.Authenticate",
+                          "stringWriter.WriteString",
+                          "timeoutHandler.ServeHTTP",
+                          "timeoutWriter.Write",
+                          "timeoutWriter.WriteHeader",
+                          "transportReadFromServerError.Error"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/net",
+                    "purl": "pkg:golang/golang.org/x/net"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.23.0"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2687.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "golang.org/x/net/http2",
+                        "symbols": [
+                          "ClientConn.Close",
+                          "ClientConn.Ping",
+                          "ClientConn.RoundTrip",
+                          "ClientConn.Shutdown",
+                          "ConfigureServer",
+                          "ConfigureTransport",
+                          "ConfigureTransports",
+                          "ConnectionError.Error",
+                          "ErrCode.String",
+                          "FrameHeader.String",
+                          "FrameType.String",
+                          "FrameWriteRequest.String",
+                          "Framer.ReadFrame",
+                          "Framer.WriteContinuation",
+                          "Framer.WriteData",
+                          "Framer.WriteDataPadded",
+                          "Framer.WriteGoAway",
+                          "Framer.WriteHeaders",
+                          "Framer.WritePing",
+                          "Framer.WritePriority",
+                          "Framer.WritePushPromise",
+                          "Framer.WriteRSTStream",
+                          "Framer.WriteRawFrame",
+                          "Framer.WriteSettings",
+                          "Framer.WriteSettingsAck",
+                          "Framer.WriteWindowUpdate",
+                          "Framer.readMetaFrame",
+                          "GoAwayError.Error",
+                          "ReadFrameHeader",
+                          "Server.ServeConn",
+                          "Setting.String",
+                          "SettingID.String",
+                          "SettingsFrame.ForeachSetting",
+                          "StreamError.Error",
+                          "Transport.CloseIdleConnections",
+                          "Transport.NewClientConn",
+                          "Transport.RoundTrip",
+                          "Transport.RoundTripOpt",
+                          "bufferedWriter.Flush",
+                          "bufferedWriter.Write",
+                          "chunkWriter.Write",
+                          "clientConnPool.GetClientConn",
+                          "connError.Error",
+                          "dataBuffer.Read",
+                          "duplicatePseudoHeaderError.Error",
+                          "gzipReader.Close",
+                          "gzipReader.Read",
+                          "headerFieldNameError.Error",
+                          "headerFieldValueError.Error",
+                          "noDialClientConnPool.GetClientConn",
+                          "noDialH2RoundTripper.RoundTrip",
+                          "pipe.Read",
+                          "priorityWriteScheduler.CloseStream",
+                          "priorityWriteScheduler.OpenStream",
+                          "pseudoHeaderError.Error",
+                          "requestBody.Close",
+                          "requestBody.Read",
+                          "responseWriter.Flush",
+                          "responseWriter.FlushError",
+                          "responseWriter.Push",
+                          "responseWriter.SetReadDeadline",
+                          "responseWriter.SetWriteDeadline",
+                          "responseWriter.Write",
+                          "responseWriter.WriteHeader",
+                          "responseWriter.WriteString",
+                          "roundRobinWriteScheduler.OpenStream",
+                          "serverConn.CloseConn",
+                          "serverConn.Flush",
+                          "stickyErrWriter.Write",
+                          "transportResponseBody.Close",
+                          "transportResponseBody.Read",
+                          "writeData.String"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/65051"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/576155"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/YgW0sx8mN3M"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Bartek Nowotarski (https://nowotarski.info/)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2687"
+              }
+            },
+            {
+              "modified": "2024-10-22T05:28:58Z",
+              "published": "2024-06-04T22:48:55Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2887",
+              "aliases": [
+                "BIT-golang-2024-24790",
+                "CGA-2fq6-p83q-pm8x",
+                "CVE-2024-24790",
+                "GHSA-49gw-vxvf-fc2g"
+              ],
+              "summary": "Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses in net/netip",
+              "details": "The various Is methods (IsPrivate, IsLoopback, etc) did not work as expected for IPv4-mapped IPv6 addresses, returning false for addresses which would return true in their traditional IPv4 forms.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.11"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.4"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2887.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "net/netip",
+                        "symbols": [
+                          "Addr.IsGlobalUnicast",
+                          "Addr.IsInterfaceLocalMulticast",
+                          "Addr.IsLinkLocalMulticast",
+                          "Addr.IsLoopback",
+                          "Addr.IsMulticast",
+                          "Addr.IsPrivate"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/590316"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/67680"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/XbxouI9gY7k/m/TuoGEhxIEwAJ"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Enze Wang of Alioth (@zer0yu)"
+                },
+                {
+                  "name": "Jianjun Chen of Zhongguancun Lab (@chenjj)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2887"
+              }
+            },
+            {
+              "modified": "2024-10-22T05:28:58Z",
+              "published": "2024-06-04T22:48:55Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2888",
+              "aliases": [
+                "BIT-golang-2024-24789",
+                "CGA-4r7q-83hj-9rrp",
+                "CVE-2024-24789",
+                "GHSA-236w-p7wf-5ph8"
+              ],
+              "summary": "Mishandling of corrupt central directory record in archive/zip",
+              "details": "The archive/zip package's handling of certain types of invalid zip files differs from the behavior of most zip implementations. This misalignment could be exploited to create an zip file with contents that vary depending on the implementation reading the file. The archive/zip package now rejects files containing these errors.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.11"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.4"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2888.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "archive/zip",
+                        "symbols": [
+                          "NewReader",
+                          "OpenReader",
+                          "findSignatureInBlock"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/585397"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/66869"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/XbxouI9gY7k/m/TuoGEhxIEwAJ"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Yufan You (@ouuan)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2888"
+              }
+            },
+            {
+              "modified": "2024-07-15T22:26:59Z",
+              "published": "2024-07-02T20:11:00Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-2963",
+              "aliases": [
+                "BIT-golang-2024-24791",
+                "CVE-2024-24791"
+              ],
+              "summary": "Denial of service due to improper 100-continue handling in net/http",
+              "details": "The net/http HTTP/1.1 client mishandled the case where a server responds to a request with an \"Expect: 100-continue\" header with a non-informational (200 or higher) status. This mishandling could leave a client connection in an invalid state, where the next request sent on the connection will fail.\n\nAn attacker sending a request to a net/http/httputil.ReverseProxy proxy can exploit this mishandling to cause a denial of service by sending \"Expect: 100-continue\" requests which elicit a non-informational response from the backend. Each such request leaves the proxy with an invalid connection, and causes one subsequent request using that connection to fail.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.21.12"
+                        },
+                        {
+                          "introduced": "1.22.0-0"
+                        },
+                        {
+                          "fixed": "1.22.5"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-2963.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "net/http",
+                        "symbols": [
+                          "Client.CloseIdleConnections",
+                          "Client.Do",
+                          "Client.Get",
+                          "Client.Head",
+                          "Client.Post",
+                          "Client.PostForm",
+                          "Get",
+                          "Head",
+                          "Post",
+                          "PostForm",
+                          "Transport.CancelRequest",
+                          "Transport.CloseIdleConnections",
+                          "Transport.RoundTrip",
+                          "persistConn.readResponse"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/591255"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/67555"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-dev/c/t0rK-qHBqzY/m/6MMoAZkMAgAJ"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Geoff Franks"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-2963"
+              }
+            },
+            {
+              "modified": "2024-09-10T08:12:19Z",
+              "published": "2024-09-06T19:15:23Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3105",
+              "aliases": [
+                "BIT-golang-2024-34155",
+                "CVE-2024-34155"
+              ],
+              "related": [
+                "RHSA-2024:6908",
+                "RHSA-2024:6913",
+                "RHSA-2024:8038",
+                "RHSA-2024:8039",
+                "RHSA-2024:8112",
+                "RHSA-2024:8232",
+                "RHSA-2024:8263",
+                "RHSA-2024:8428",
+                "RHSA-2024:8690",
+                "RHSA-2024:8694",
+                "RHSA-2024:8700",
+                "RHSA-2024:9454",
+                "RHSA-2024:9459"
+              ],
+              "summary": "Stack exhaustion in all Parse functions in go/parser",
+              "details": "Calling any of the Parse functions on Go source code which contains deeply nested literals can cause a panic due to stack exhaustion.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.22.7"
+                        },
+                        {
+                          "introduced": "1.23.0-0"
+                        },
+                        {
+                          "fixed": "1.23.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3105.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "go/parser",
+                        "symbols": [
+                          "ParseDir",
+                          "ParseExpr",
+                          "ParseExprFrom",
+                          "ParseFile",
+                          "parser.parseLiteralValue"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/611238"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/69138"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-dev/c/S9POB9NCTdk"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3105"
+              }
+            },
+            {
+              "modified": "2024-09-10T08:12:21Z",
+              "published": "2024-09-06T19:15:23Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3106",
+              "aliases": [
+                "BIT-golang-2024-34156",
+                "CVE-2024-34156"
+              ],
+              "related": [
+                "CVE-2022-30635",
+                "RHSA-2024:11216",
+                "RHSA-2024:11217",
+                "RHSA-2024:6908",
+                "RHSA-2024:6912",
+                "RHSA-2024:6913",
+                "RHSA-2024:6914",
+                "RHSA-2024:6946",
+                "RHSA-2024:6947",
+                "RHSA-2024:7102",
+                "RHSA-2024:7103",
+                "RHSA-2024:7135",
+                "RHSA-2024:7136",
+                "RHSA-2024:7202",
+                "RHSA-2024:7203",
+                "RHSA-2024:7204",
+                "RHSA-2024:7205",
+                "RHSA-2024:7206",
+                "RHSA-2024:7207",
+                "RHSA-2024:7208",
+                "RHSA-2024:7261",
+                "RHSA-2024:7262",
+                "RHSA-2024:7350",
+                "RHSA-2024:7351",
+                "RHSA-2024:7449",
+                "RHSA-2024:7455",
+                "RHSA-2024:7456",
+                "RHSA-2024:7485",
+                "RHSA-2024:7487",
+                "RHSA-2024:7488",
+                "RHSA-2024:7769",
+                "RHSA-2024:7791",
+                "RHSA-2024:7792",
+                "RHSA-2024:7793",
+                "RHSA-2024:7794",
+                "RHSA-2024:7818",
+                "RHSA-2024:7819",
+                "RHSA-2024:7820",
+                "RHSA-2024:7821",
+                "RHSA-2024:7822",
+                "RHSA-2024:7852",
+                "RHSA-2024:8038",
+                "RHSA-2024:8039",
+                "RHSA-2024:8110",
+                "RHSA-2024:8111",
+                "RHSA-2024:8112",
+                "RHSA-2024:8232",
+                "RHSA-2024:8263",
+                "RHSA-2024:8428",
+                "RHSA-2024:8690",
+                "RHSA-2024:8694",
+                "RHSA-2024:8700",
+                "RHSA-2024:9454",
+                "RHSA-2024:9456",
+                "RHSA-2024:9459",
+                "RHSA-2024:9472",
+                "RHSA-2024:9473"
+              ],
+              "summary": "Stack exhaustion in Decoder.Decode in encoding/gob",
+              "details": "Calling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion. This is a follow-up to CVE-2022-30635.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.22.7"
+                        },
+                        {
+                          "introduced": "1.23.0-0"
+                        },
+                        {
+                          "fixed": "1.23.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3106.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "encoding/gob",
+                        "symbols": [
+                          "Decoder.Decode",
+                          "Decoder.DecodeValue",
+                          "Decoder.decIgnoreOpFor"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/611239"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/69139"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-dev/c/S9POB9NCTdk"
+                }
+              ],
+              "credits": [
+                {
+                  "name": "Md Sakib Anwar of The Ohio State University (anwar.40@osu.edu)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3106"
+              }
+            },
+            {
+              "modified": "2024-09-10T08:12:21Z",
+              "published": "2024-09-06T19:15:23Z",
+              "schema_version": "1.6.0",
+              "id": "GO-2024-3107",
+              "aliases": [
+                "BIT-golang-2024-34158",
+                "CVE-2024-34158"
+              ],
+              "related": [
+                "RHSA-2024:6908",
+                "RHSA-2024:6913",
+                "RHSA-2024:8038",
+                "RHSA-2024:8039",
+                "RHSA-2024:8112",
+                "RHSA-2024:8232",
+                "RHSA-2024:8263",
+                "RHSA-2024:8428",
+                "RHSA-2024:8690",
+                "RHSA-2024:8694",
+                "RHSA-2024:8700",
+                "RHSA-2024:9454",
+                "RHSA-2024:9459"
+              ],
+              "summary": "Stack exhaustion in Parse in go/build/constraint",
+              "details": "Calling Parse on a \"// +build\" build tag line with deeply nested expressions can cause a panic due to stack exhaustion.",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "stdlib",
+                    "purl": "pkg:golang/stdlib"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.22.7"
+                        },
+                        {
+                          "introduced": "1.23.0-0"
+                        },
+                        {
+                          "fixed": "1.23.1"
+                        }
+                      ]
+                    }
+                  ],
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2024-3107.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "go/build/constraint",
+                        "symbols": [
+                          "Parse",
+                          "exprParser.not",
+                          "parsePlusBuildExpr"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "references": [
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/611240"
+                },
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/69141"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-dev/c/S9POB9NCTdk"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2024-3107"
+              }
+            }
+          ],
+          "groups": [
+            {
+              "ids": [
+                "GO-2024-2598"
+              ],
+              "aliases": [
+                "BIT-golang-2024-24783",
+                "CGA-f95r-g332-q2hr",
+                "CGA-pp69-rc8m-x7cv",
+                "CGA-r3f2-xq4j-79w7",
+                "CVE-2024-24783",
+                "GHSA-3q2c-pvp5-3cqp",
+                "GO-2024-2598"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-2599"
+              ],
+              "aliases": [
+                "BIT-golang-2023-45290",
+                "CGA-63g6-wrgr-m47w",
+                "CGA-g554-cg74-8rm4",
+                "CGA-xr68-h9cg-49cj",
+                "CVE-2023-45290",
+                "GHSA-rr6r-cfgf-gc6h",
+                "GO-2024-2599"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-2600"
+              ],
+              "aliases": [
+                "BIT-golang-2023-45289",
+                "CGA-25gv-3qrh-8g5j",
+                "CGA-3fw9-g448-cq83",
+                "CGA-8rhm-9jx9-j3g6",
+                "CVE-2023-45289",
+                "GHSA-32ch-6x54-q4h9",
+                "GO-2024-2600"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-2609"
+              ],
+              "aliases": [
+                "BIT-golang-2024-24784",
+                "CGA-mxv9-jf2v-cw75",
+                "CGA-x96w-p6v4-99r6",
+                "CGA-x9h6-wjmw-83hr",
+                "CVE-2024-24784",
+                "GHSA-fgq5-q76c-gx78",
+                "GO-2024-2609"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-2610"
+              ],
+              "aliases": [
+                "BIT-golang-2024-24785",
+                "CGA-97f2-3j6h-f6fr",
+                "CGA-q7f3-cq9g-gr7f",
+                "CGA-wgjf-hp76-8hxw",
+                "CVE-2024-24785",
+                "GHSA-j6m3-gc37-6r6q",
+                "GO-2024-2610"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-2687"
+              ],
+              "aliases": [
+                "BIT-golang-2023-45288",
+                "CGA-8q47-wf6v-wqg5",
+                "CGA-c6f9-jh7g-69mj",
+                "CGA-grww-v9jg-rhw2",
+                "CVE-2023-45288",
+                "GHSA-4v7x-pqxf-cx7m",
+                "GO-2024-2687"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-2887"
+              ],
+              "aliases": [
+                "BIT-golang-2024-24790",
+                "CGA-2fq6-p83q-pm8x",
+                "CVE-2024-24790",
+                "GHSA-49gw-vxvf-fc2g",
+                "GO-2024-2887"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-2888"
+              ],
+              "aliases": [
+                "BIT-golang-2024-24789",
+                "CGA-4r7q-83hj-9rrp",
+                "CVE-2024-24789",
+                "GHSA-236w-p7wf-5ph8",
+                "GO-2024-2888"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-2963"
+              ],
+              "aliases": [
+                "BIT-golang-2024-24791",
+                "CVE-2024-24791",
+                "GO-2024-2963"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-3105"
+              ],
+              "aliases": [
+                "BIT-golang-2024-34155",
+                "CVE-2024-34155",
+                "GO-2024-3105"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-3106"
+              ],
+              "aliases": [
+                "BIT-golang-2024-34156",
+                "CVE-2024-34156",
+                "GO-2024-3106"
+              ],
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2024-3107"
+              ],
+              "aliases": [
+                "BIT-golang-2024-34158",
+                "CVE-2024-34158",
+                "GO-2024-3107"
+              ],
+              "max_severity": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "experimental_config": {
+    "licenses": {
+      "summary": false,
+      "allowlist": null
+    }
+  }
+}

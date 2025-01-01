@@ -2,13 +2,16 @@ SUBDIRS = awesome-go caddy frp fzf gin go hugo kubernetes ollama syncthing
 
 #SUBDIRS = syncthing
 
-RESULT_DIR = results/scanner
+SUBDIR = testAnwendungen/app4
+
+RESULT_DIR = results
 RESULT_DIR_PATH = $(RESULT_DIR)/$(SUBDIR)
 
 SCAN_DIR = app
 SCAN_APP_PATH = $(SCAN_DIR)/$(SUBDIR)
-sbom::
-	./scripts/sbom.sh $(SCAN_APP_PATH) 
+
+
+
 run::
 	./scripts/scan.sh $(RESULT_DIR_PATH) $(SCAN_APP_PATH)
 
@@ -32,3 +35,6 @@ r::
 	done
 generate::
 	go run ./scan/main.go generate ./results/scanner/projectsResults output.json  
+
+sbom::
+	./scripts/sbom.sh $(SCAN_APP_PATH) 
