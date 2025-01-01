@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/refoo0/sca-trnsitiv/jwthelper"
-	"github.com/refoo0/sca-trnsitiv/websocketserver"
+	"github.com/refoo0/sca/app/apps/sca-trnsitiv/jwthelper"
+	"github.com/refoo0/sca/app/apps/sca-trnsitiv/websocketserver"
 )
 
 func main() {
