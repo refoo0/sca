@@ -1,4 +1,4 @@
-SUBDIRS = awesome-go caddy frp fzf gin go hugo kubernetes ollama syncthing
+#SUBDIRS = awesome-go caddy frp fzf gin go hugo kubernetes ollama syncthing
 
 SUBDIRS = testfall-1/app1 testfall-1/app2 testfall-2/app1 testfall-2/app2 testfall-3/app1 testfall-3/app2 testfall-4/app1 testfall-4/app2 testfall-5/app1 testfall-5/app2 testfall-6/app1 testfall-6/app2 testfall-7/app1 testfall-7/app2 testfall-8/app1 testfall-9/app1 testfall-10/app1 testfall-11/app1 testfall-12/app3 testfall-13/app3 testfall-14/app3 testfall-15/app3 testfall-16/app3 testfall-17/app3 testfall-18/app3
 
