@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-01-02T12:24:29.511723+01:00",
+  "CreatedAt": "2025-01-02T09:45:19.124908+01:00",
   "ArtifactName": "app/testAnwendungen/testfall-17/app3",
   "ArtifactType": "filesystem",
   "Metadata": {
@@ -19,136 +19,7 @@
     {
       "Target": "go.mod",
       "Class": "lang-pkgs",
-      "Type": "gomod",
-      "Vulnerabilities": [
-        {
-          "VulnerabilityID": "CVE-2020-26160",
-          "PkgID": "github.com/dgrijalva/jwt-go@v3.2.0+incompatible",
-          "PkgName": "github.com/dgrijalva/jwt-go",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/github.com/dgrijalva/jwt-go@v3.2.0%2Bincompatible",
-            "UID": "a759cceb5ce83310"
-          },
-          "InstalledVersion": "v3.2.0+incompatible",
-          "Status": "affected",
-          "Layer": {},
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-26160",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory Go",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
-          },
-          "Title": "jwt-go: access restriction bypass vulnerability",
-          "Description": "jwt-go before 4.0.0-preview1 allows attackers to bypass intended access restrictions in situations with []string{} for m[\"aud\"] (which is allowed by the specification). Because the type assertion fails, \"\" is the value of aud. This is a security problem if the JWT token is presented to a service that lacks its own audience check.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-287",
-            "CWE-755"
-          ],
-          "VendorSeverity": {
-            "azure": 3,
-            "ghsa": 3,
-            "nvd": 3,
-            "redhat": 2
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-              "V3Score": 7.5
-            },
-            "nvd": {
-              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-              "V2Score": 5,
-              "V3Score": 7.5
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-              "V3Score": 7.5
-            }
-          },
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2020-26160",
-            "https://github.com/dgrijalva/jwt-go",
-            "https://github.com/dgrijalva/jwt-go/commit/ec0a89a131e3e8567adcb21254a5cd20a70ea4ab",
-            "https://github.com/dgrijalva/jwt-go/issues/422",
-            "https://github.com/dgrijalva/jwt-go/issues/462",
-            "https://github.com/dgrijalva/jwt-go/pull/426",
-            "https://nvd.nist.gov/vuln/detail/CVE-2020-26160",
-            "https://pkg.go.dev/vuln/GO-2020-0017",
-            "https://snyk.io/vuln/SNYK-GOLANG-GITHUBCOMDGRIJALVAJWTGO-596515",
-            "https://www.cve.org/CVERecord?id=CVE-2020-26160"
-          ],
-          "PublishedDate": "2020-09-30T18:15:27.397Z",
-          "LastModifiedDate": "2021-07-21T11:39:23.747Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2020-27813",
-          "PkgID": "github.com/gorilla/websocket@v1.4.0",
-          "PkgName": "github.com/gorilla/websocket",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/github.com/gorilla/websocket@v1.4.0",
-            "UID": "ec09046e8637b811"
-          },
-          "InstalledVersion": "v1.4.0",
-          "FixedVersion": "1.4.1",
-          "Status": "fixed",
-          "Layer": {},
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-27813",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory Go",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
-          },
-          "Title": "golang-github-gorilla-websocket: integer overflow leads to denial of service",
-          "Description": "An integer overflow vulnerability exists with the length of websocket frames received via a websocket connection. An attacker would use this flaw to cause a denial of service attack on an HTTP Server allowing websocket connections.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-190",
-            "CWE-400"
-          ],
-          "VendorSeverity": {
-            "ghsa": 3,
-            "nvd": 3,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            },
-            "nvd": {
-              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V2Score": 5,
-              "V3Score": 7.5
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            }
-          },
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2020-27813",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=1902111",
-            "https://github.com/gorilla/websocket",
-            "https://github.com/gorilla/websocket/commit/5b740c29263eb386f33f265561c8262522f19d37",
-            "https://github.com/gorilla/websocket/pull/537",
-            "https://github.com/gorilla/websocket/security/advisories/GHSA-jf24-p9p9-4rjh",
-            "https://lists.debian.org/debian-lts-announce/2021/01/msg00008.html",
-            "https://lists.debian.org/debian-lts-announce/2023/05/msg00012.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2020-27813",
-            "https://pkg.go.dev/vuln/GO-2020-0019",
-            "https://ubuntu.com/security/notices/USN-6208-1",
-            "https://www.cve.org/CVERecord?id=CVE-2020-27813"
-          ],
-          "PublishedDate": "2020-12-02T01:15:12.78Z",
-          "LastModifiedDate": "2023-11-07T03:21:01.617Z"
-        }
-      ]
+      "Type": "gomod"
     }
   ]
 }

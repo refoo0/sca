@@ -2,7 +2,7 @@
   "results": [
     {
       "source": {
-        "path": "/Users/refaei/dev/sca/app/testAnwendungen/testfall-10/app1/go.mod",
+        "path": "/Users/refaei/dev/sca/app/testAnwendungen/testfall-11/app1/go.mod",
         "type": "lockfile"
       },
       "packages": [

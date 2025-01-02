@@ -1,5 +1,0 @@
-{
-  "ok": false,
-  "error": "Failed to get dependencies for all 1 potential projects.\nTip: Re-run in debug mode to see more information: DEBUG=*snyk* <COMMAND>\nIf the issue persists contact support@snyk.io",
-  "path": "app/testAnwendungen/testfall-11/app1"
-}
