@@ -1,13 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"log"
-	"time"
-
-	"github.com/dgrijalva/jwt-go"
-)
-
 func main() {
 	/*
 		// secret key used to sign tokens
