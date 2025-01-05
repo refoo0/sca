@@ -1,0 +1,419 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:1649c12f-25c5-4087-9abb-6fc0d4d701ac",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-01-05T10:33:00Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "author": "Snyk",
+          "name": "snyk-cli",
+          "version": "1.1294.3"
+        }
+      ],
+      "services": [
+        {
+          "provider": { "name": "Snyk" },
+          "name": "SBOM Export API",
+          "version": "v1.106.0-2-g65437b6"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "1-github.com/avelino/awesome-go@0.0.0",
+      "type": "application",
+      "name": "github.com/avelino/awesome-go",
+      "version": "0.0.0",
+      "purl": "pkg:golang/github.com/avelino/awesome-go@0.0.0"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "2-github.com/otiai10/copy@1.14.0",
+      "type": "library",
+      "group": "github.com/otiai10",
+      "name": "github.com/otiai10/copy",
+      "version": "1.14.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/otiai10/copy@1.14.0"
+    },
+    {
+      "bom-ref": "3-golang.org/x/sys/unix@0.15.0",
+      "type": "library",
+      "group": "golang.org/x/sys",
+      "name": "golang.org/x/sys/unix",
+      "version": "0.15.0",
+      "licenses": [{ "expression": "BSD-3-Clause" }],
+      "purl": "pkg:golang/golang.org/x/sys/unix@0.15.0"
+    },
+    {
+      "bom-ref": "4-golang.org/x/sync/semaphore@0.3.0",
+      "type": "library",
+      "group": "golang.org/x/sync",
+      "name": "golang.org/x/sync/semaphore",
+      "version": "0.3.0",
+      "licenses": [{ "expression": "BSD-3-Clause" }],
+      "purl": "pkg:golang/golang.org/x/sync/semaphore@0.3.0"
+    },
+    {
+      "bom-ref": "5-golang.org/x/sync/errgroup@0.3.0",
+      "type": "library",
+      "group": "golang.org/x/sync",
+      "name": "golang.org/x/sync/errgroup",
+      "version": "0.3.0",
+      "licenses": [{ "expression": "BSD-3-Clause" }],
+      "purl": "pkg:golang/golang.org/x/sync/errgroup@0.3.0"
+    },
+    {
+      "bom-ref": "6-github.com/PuerkitoBio/goquery@1.8.1",
+      "type": "library",
+      "group": "github.com/puerkitobio",
+      "name": "github.com/PuerkitoBio/goquery",
+      "version": "1.8.1",
+      "purl": "pkg:golang/github.com/puerkitobio/goquery@1.8.1"
+    },
+    {
+      "bom-ref": "7-golang.org/x/net/html@0.19.0",
+      "type": "library",
+      "group": "golang.org/x/net",
+      "name": "golang.org/x/net/html",
+      "version": "0.19.0",
+      "licenses": [{ "expression": "BSD-3-Clause" }],
+      "purl": "pkg:golang/golang.org/x/net/html@0.19.0"
+    },
+    {
+      "bom-ref": "8-golang.org/x/net/html/atom@0.19.0",
+      "type": "library",
+      "group": "golang.org/x/net/html",
+      "name": "golang.org/x/net/html/atom",
+      "version": "0.19.0",
+      "licenses": [{ "expression": "BSD-3-Clause" }],
+      "purl": "pkg:golang/golang.org/x/net/html/atom@0.19.0"
+    },
+    {
+      "bom-ref": "9-github.com/andybalholm/cascadia@1.3.1",
+      "type": "library",
+      "group": "github.com/andybalholm",
+      "name": "github.com/andybalholm/cascadia",
+      "version": "1.3.1",
+      "licenses": [{ "expression": "BSD-2-Clause" }],
+      "purl": "pkg:golang/github.com/andybalholm/cascadia@1.3.1"
+    },
+    {
+      "bom-ref": "10-golang.org/x/net/html/atom@0.19.0",
+      "type": "library",
+      "group": "golang.org/x/net/html",
+      "name": "golang.org/x/net/html/atom",
+      "version": "0.19.0",
+      "licenses": [{ "expression": "BSD-3-Clause" }],
+      "purl": "pkg:golang/golang.org/x/net/html/atom@0.19.0"
+    },
+    {
+      "bom-ref": "11-golang.org/x/net/html@0.19.0",
+      "type": "library",
+      "group": "golang.org/x/net",
+      "name": "golang.org/x/net/html",
+      "version": "0.19.0",
+      "licenses": [{ "expression": "BSD-3-Clause" }],
+      "purl": "pkg:golang/golang.org/x/net/html@0.19.0"
+    },
+    {
+      "bom-ref": "12-github.com/yuin/goldmark/util@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/util",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/util@1.6.0"
+    },
+    {
+      "bom-ref": "13-github.com/yuin/goldmark/renderer/html@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark/renderer",
+      "name": "github.com/yuin/goldmark/renderer/html",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/renderer/html@1.6.0"
+    },
+    {
+      "bom-ref": "14-github.com/yuin/goldmark/renderer@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/renderer",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/renderer@1.6.0"
+    },
+    {
+      "bom-ref": "15-github.com/yuin/goldmark/util@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/util",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/util@1.6.0"
+    },
+    {
+      "bom-ref": "16-github.com/yuin/goldmark/ast@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/ast",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/ast@1.6.0"
+    },
+    {
+      "bom-ref": "17-github.com/yuin/goldmark/text@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/text",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/text@1.6.0"
+    },
+    {
+      "bom-ref": "18-github.com/yuin/goldmark/ast@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/ast",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/ast@1.6.0"
+    },
+    {
+      "bom-ref": "19-github.com/yuin/goldmark/parser@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/parser",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/parser@1.6.0"
+    },
+    {
+      "bom-ref": "20-github.com/yuin/goldmark/extension@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/extension",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/extension@1.6.0"
+    },
+    {
+      "bom-ref": "21-github.com/yuin/goldmark/extension/ast@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark/extension",
+      "name": "github.com/yuin/goldmark/extension/ast",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/extension/ast@1.6.0"
+    },
+    {
+      "bom-ref": "22-github.com/yuin/goldmark@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin",
+      "name": "github.com/yuin/goldmark",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark@1.6.0"
+    },
+    {
+      "bom-ref": "23-github.com/yuin/goldmark/text@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/text",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/text@1.6.0"
+    },
+    {
+      "bom-ref": "24-github.com/yuin/goldmark/renderer/html@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark/renderer",
+      "name": "github.com/yuin/goldmark/renderer/html",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/renderer/html@1.6.0"
+    },
+    {
+      "bom-ref": "25-github.com/yuin/goldmark/renderer@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/renderer",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/renderer@1.6.0"
+    },
+    {
+      "bom-ref": "26-github.com/yuin/goldmark/parser@1.6.0",
+      "type": "library",
+      "group": "github.com/yuin/goldmark",
+      "name": "github.com/yuin/goldmark/parser",
+      "version": "1.6.0",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/yuin/goldmark/parser@1.6.0"
+    },
+    {
+      "bom-ref": "27-github.com/avelino/slugify@#855f152bd774",
+      "type": "library",
+      "group": "github.com/avelino",
+      "name": "github.com/avelino/slugify",
+      "version": "#855f152bd774",
+      "licenses": [{ "expression": "MIT" }],
+      "purl": "pkg:golang/github.com/avelino/slugify@%23855f152bd774"
+    },
+    {
+      "bom-ref": "28-golang.org/x/text/unicode/norm@0.14.0",
+      "type": "library",
+      "group": "golang.org/x/text/unicode",
+      "name": "golang.org/x/text/unicode/norm",
+      "version": "0.14.0",
+      "licenses": [{ "expression": "BSD-3-Clause" }],
+      "purl": "pkg:golang/golang.org/x/text/unicode/norm@0.14.0"
+    },
+    {
+      "bom-ref": "29-golang.org/x/text/transform@0.14.0",
+      "type": "library",
+      "group": "golang.org/x/text",
+      "name": "golang.org/x/text/transform",
+      "version": "0.14.0",
+      "licenses": [{ "expression": "BSD-3-Clause" }],
+      "purl": "pkg:golang/golang.org/x/text/transform@0.14.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "1-github.com/avelino/awesome-go@0.0.0",
+      "dependsOn": [
+        "2-github.com/otiai10/copy@1.14.0",
+        "6-github.com/PuerkitoBio/goquery@1.8.1",
+        "12-github.com/yuin/goldmark/util@1.6.0",
+        "13-github.com/yuin/goldmark/renderer/html@1.6.0",
+        "19-github.com/yuin/goldmark/parser@1.6.0",
+        "20-github.com/yuin/goldmark/extension@1.6.0",
+        "16-github.com/yuin/goldmark/ast@1.6.0",
+        "22-github.com/yuin/goldmark@1.6.0",
+        "27-github.com/avelino/slugify@#855f152bd774"
+      ]
+    },
+    {
+      "ref": "2-github.com/otiai10/copy@1.14.0",
+      "dependsOn": [
+        "3-golang.org/x/sys/unix@0.15.0",
+        "4-golang.org/x/sync/semaphore@0.3.0",
+        "5-golang.org/x/sync/errgroup@0.3.0"
+      ]
+    },
+    { "ref": "3-golang.org/x/sys/unix@0.15.0" },
+    { "ref": "4-golang.org/x/sync/semaphore@0.3.0" },
+    { "ref": "5-golang.org/x/sync/errgroup@0.3.0" },
+    {
+      "ref": "6-github.com/PuerkitoBio/goquery@1.8.1",
+      "dependsOn": [
+        "7-golang.org/x/net/html@0.19.0",
+        "9-github.com/andybalholm/cascadia@1.3.1"
+      ]
+    },
+    {
+      "ref": "7-golang.org/x/net/html@0.19.0",
+      "dependsOn": ["8-golang.org/x/net/html/atom@0.19.0"]
+    },
+    { "ref": "8-golang.org/x/net/html/atom@0.19.0" },
+    {
+      "ref": "9-github.com/andybalholm/cascadia@1.3.1",
+      "dependsOn": [
+        "10-golang.org/x/net/html/atom@0.19.0",
+        "11-golang.org/x/net/html@0.19.0"
+      ]
+    },
+    { "ref": "10-golang.org/x/net/html/atom@0.19.0" },
+    { "ref": "11-golang.org/x/net/html@0.19.0" },
+    { "ref": "12-github.com/yuin/goldmark/util@1.6.0" },
+    {
+      "ref": "13-github.com/yuin/goldmark/renderer/html@1.6.0",
+      "dependsOn": [
+        "12-github.com/yuin/goldmark/util@1.6.0",
+        "14-github.com/yuin/goldmark/renderer@1.6.0",
+        "18-github.com/yuin/goldmark/ast@1.6.0",
+        "16-github.com/yuin/goldmark/ast@1.6.0"
+      ]
+    },
+    {
+      "ref": "14-github.com/yuin/goldmark/renderer@1.6.0",
+      "dependsOn": [
+        "15-github.com/yuin/goldmark/util@1.6.0",
+        "16-github.com/yuin/goldmark/ast@1.6.0"
+      ]
+    },
+    { "ref": "15-github.com/yuin/goldmark/util@1.6.0" },
+    {
+      "ref": "16-github.com/yuin/goldmark/ast@1.6.0",
+      "dependsOn": [
+        "15-github.com/yuin/goldmark/util@1.6.0",
+        "17-github.com/yuin/goldmark/text@1.6.0",
+        "12-github.com/yuin/goldmark/util@1.6.0"
+      ]
+    },
+    {
+      "ref": "17-github.com/yuin/goldmark/text@1.6.0",
+      "dependsOn": ["15-github.com/yuin/goldmark/util@1.6.0"]
+    },
+    { "ref": "18-github.com/yuin/goldmark/ast@1.6.0" },
+    {
+      "ref": "19-github.com/yuin/goldmark/parser@1.6.0",
+      "dependsOn": [
+        "12-github.com/yuin/goldmark/util@1.6.0",
+        "17-github.com/yuin/goldmark/text@1.6.0",
+        "16-github.com/yuin/goldmark/ast@1.6.0"
+      ]
+    },
+    {
+      "ref": "20-github.com/yuin/goldmark/extension@1.6.0",
+      "dependsOn": [
+        "12-github.com/yuin/goldmark/util@1.6.0",
+        "17-github.com/yuin/goldmark/text@1.6.0",
+        "13-github.com/yuin/goldmark/renderer/html@1.6.0",
+        "14-github.com/yuin/goldmark/renderer@1.6.0",
+        "19-github.com/yuin/goldmark/parser@1.6.0",
+        "21-github.com/yuin/goldmark/extension/ast@1.6.0",
+        "18-github.com/yuin/goldmark/ast@1.6.0",
+        "22-github.com/yuin/goldmark@1.6.0"
+      ]
+    },
+    {
+      "ref": "21-github.com/yuin/goldmark/extension/ast@1.6.0",
+      "dependsOn": ["18-github.com/yuin/goldmark/ast@1.6.0"]
+    },
+    {
+      "ref": "22-github.com/yuin/goldmark@1.6.0",
+      "dependsOn": [
+        "15-github.com/yuin/goldmark/util@1.6.0",
+        "23-github.com/yuin/goldmark/text@1.6.0",
+        "24-github.com/yuin/goldmark/renderer/html@1.6.0",
+        "25-github.com/yuin/goldmark/renderer@1.6.0",
+        "26-github.com/yuin/goldmark/parser@1.6.0",
+        "12-github.com/yuin/goldmark/util@1.6.0",
+        "17-github.com/yuin/goldmark/text@1.6.0",
+        "13-github.com/yuin/goldmark/renderer/html@1.6.0",
+        "14-github.com/yuin/goldmark/renderer@1.6.0",
+        "19-github.com/yuin/goldmark/parser@1.6.0"
+      ]
+    },
+    { "ref": "23-github.com/yuin/goldmark/text@1.6.0" },
+    { "ref": "24-github.com/yuin/goldmark/renderer/html@1.6.0" },
+    { "ref": "25-github.com/yuin/goldmark/renderer@1.6.0" },
+    { "ref": "26-github.com/yuin/goldmark/parser@1.6.0" },
+    {
+      "ref": "27-github.com/avelino/slugify@#855f152bd774",
+      "dependsOn": ["28-golang.org/x/text/unicode/norm@0.14.0"]
+    },
+    {
+      "ref": "28-golang.org/x/text/unicode/norm@0.14.0",
+      "dependsOn": ["29-golang.org/x/text/transform@0.14.0"]
+    },
+    { "ref": "29-golang.org/x/text/transform@0.14.0" }
+  ]
+}

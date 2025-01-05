@@ -62,7 +62,20 @@ type Counts struct {
 	GHSAIDsCount  int `json:"GHSAsCount"`
 	OtherIDsCount int `json:"OtherIDsCount"`
 
-	StdLibOSVOnly int `json:"StdLibOSVOnly"`
+	CVEIDsCountOSV   int `json:"CVEIDsCountOSV"`
+	GHSAIDsCountOSV  int `json:"GHSAsCountOSV"`
+	OtherIDsCountOSV int `json:"OtherIDsCountOSV"`
+
+	CVEIDsCountSnyk   int `json:"CVEIDsCountSnyk"`
+	GhsaIDsCountSnyk  int `json:"GHSAsCountSnyk"`
+	OtherIDsCountSnyk int `json:"OtherIDsCountSnyk"`
+
+	CVEIDsCountTrivy   int `json:"CVEIDsCountTrivy"`
+	GhsaIDsCountTrivy  int `json:"GHSAsCountTrivy"`
+	OtherIDsCountTrivy int `json:"OtherIDsCountTrivy"`
+
+	StdLibOSVOnly       int      `json:"StdLibOSVOnly"`
+	IDsOnlyOSVNotStdLib []string `json:"IDsOnlyOSVNotStdLib"`
 
 	IDsOnlyOSV    []string `json:"IDsOnlyOSV"`
 	IDsOnlySnyk   []string `json:"IDsOnlySnyk"`

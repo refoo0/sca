@@ -15,7 +15,7 @@
           "vulnerabilities": [
             {
               "modified": "2024-10-22T05:28:58Z",
-              "published": "2024-04-04T21:30:32Z",
+
               "schema_version": "1.6.0",
               "id": "GHSA-4v7x-pqxf-cx7m",
               "aliases": [
@@ -822,9 +822,7 @@
                 }
               ],
               "database_specific": {
-                "cwe_ids": [
-                  "CWE-400"
-                ],
+                "cwe_ids": ["CWE-400"],
                 "github_reviewed": true,
                 "github_reviewed_at": "2024-04-04T23:02:57Z",
                 "nvd_published_at": "2024-04-04T21:15:16Z",
@@ -1242,10 +1240,7 @@
               "published": "2024-12-18T21:59:48Z",
               "schema_version": "1.6.0",
               "id": "GHSA-w32m-9786-jp63",
-              "aliases": [
-                "CVE-2024-45338",
-                "GO-2024-3333"
-              ],
+              "aliases": ["CVE-2024-45338", "GO-2024-3333"],
               "related": [
                 "CGA-22cc-jwcv-w329",
                 "CGA-23wp-xgcv-fmwc",
@@ -1661,9 +1656,7 @@
                 }
               ],
               "database_specific": {
-                "cwe_ids": [
-                  "CWE-770"
-                ],
+                "cwe_ids": ["CWE-770"],
                 "github_reviewed": true,
                 "github_reviewed_at": "2024-12-18T21:59:48Z",
                 "nvd_published_at": "2024-12-18T21:15:08Z",
@@ -1675,10 +1668,7 @@
               "published": "2024-12-18T20:22:06Z",
               "schema_version": "1.6.0",
               "id": "GO-2024-3333",
-              "aliases": [
-                "CVE-2024-45338",
-                "GHSA-w32m-9786-jp63"
-              ],
+              "aliases": ["CVE-2024-45338", "GHSA-w32m-9786-jp63"],
               "summary": "Non-linear parsing of case-insensitive content in golang.org/x/net/html",
               "details": "An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.",
               "affected": [
@@ -1750,10 +1740,7 @@
           ],
           "groups": [
             {
-              "ids": [
-                "GO-2024-2687",
-                "GHSA-4v7x-pqxf-cx7m"
-              ],
+              "ids": ["GO-2024-2687", "GHSA-4v7x-pqxf-cx7m"],
               "aliases": [
                 "BIT-golang-2023-45288",
                 "CGA-8q47-wf6v-wqg5",
@@ -1766,10 +1753,7 @@
               "max_severity": "5.3"
             },
             {
-              "ids": [
-                "GO-2024-3333",
-                "GHSA-w32m-9786-jp63"
-              ],
+              "ids": ["GO-2024-3333", "GHSA-w32m-9786-jp63"],
               "aliases": [
                 "CVE-2024-45338",
                 "GHSA-w32m-9786-jp63",
@@ -2405,9 +2389,7 @@
                 }
               ],
               "database_specific": {
-                "cwe_ids": [
-                  "CWE-835"
-                ],
+                "cwe_ids": ["CWE-835"],
                 "github_reviewed": true,
                 "github_reviewed_at": "2024-03-13T21:01:28Z",
                 "nvd_published_at": "2024-03-05T23:15:07Z",
@@ -2481,10 +2463,7 @@
                       },
                       {
                         "path": "google.golang.org/protobuf/internal/encoding/json",
-                        "symbols": [
-                          "Decoder.Peek",
-                          "Decoder.Read"
-                        ]
+                        "symbols": ["Decoder.Peek", "Decoder.Read"]
                       }
                     ]
                   }
@@ -2504,10 +2483,7 @@
           ],
           "groups": [
             {
-              "ids": [
-                "GO-2024-2611",
-                "GHSA-8r3f-844c-mc37"
-              ],
+              "ids": ["GO-2024-2611", "GHSA-8r3f-844c-mc37"],
               "aliases": [
                 "CGA-2vgr-6mqh-4r48",
                 "CGA-v9cm-f6x8-5vj7",
@@ -2531,10 +2507,7 @@
               "published": "2024-09-06T19:15:23Z",
               "schema_version": "1.6.0",
               "id": "GO-2024-3105",
-              "aliases": [
-                "BIT-golang-2024-34155",
-                "CVE-2024-34155"
-              ],
+              "aliases": ["BIT-golang-2024-34155", "CVE-2024-34155"],
               "related": [
                 "RHSA-2024:6908",
                 "RHSA-2024:6913",
@@ -2621,10 +2594,7 @@
               "published": "2024-09-06T19:15:23Z",
               "schema_version": "1.6.0",
               "id": "GO-2024-3106",
-              "aliases": [
-                "BIT-golang-2024-34156",
-                "CVE-2024-34156"
-              ],
+              "aliases": ["BIT-golang-2024-34156", "CVE-2024-34156"],
               "related": [
                 "CVE-2022-30635",
                 "RHSA-2024:11216",
@@ -2758,10 +2728,7 @@
               "published": "2024-09-06T19:15:23Z",
               "schema_version": "1.6.0",
               "id": "GO-2024-3107",
-              "aliases": [
-                "BIT-golang-2024-34158",
-                "CVE-2024-34158"
-              ],
+              "aliases": ["BIT-golang-2024-34158", "CVE-2024-34158"],
               "related": [
                 "RHSA-2024:6908",
                 "RHSA-2024:6913",
@@ -2844,9 +2811,7 @@
           ],
           "groups": [
             {
-              "ids": [
-                "GO-2024-3105"
-              ],
+              "ids": ["GO-2024-3105"],
               "aliases": [
                 "BIT-golang-2024-34155",
                 "CVE-2024-34155",
@@ -2855,9 +2820,7 @@
               "max_severity": ""
             },
             {
-              "ids": [
-                "GO-2024-3106"
-              ],
+              "ids": ["GO-2024-3106"],
               "aliases": [
                 "BIT-golang-2024-34156",
                 "CVE-2024-34156",
@@ -2866,9 +2829,7 @@
               "max_severity": ""
             },
             {
-              "ids": [
-                "GO-2024-3107"
-              ],
+              "ids": ["GO-2024-3107"],
               "aliases": [
                 "BIT-golang-2024-34158",
                 "CVE-2024-34158",

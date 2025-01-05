@@ -1,0 +1,465 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:36f14f47-1c96-4c90-860c-ca08ce2eedab",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-01-05T10:32:57+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.57.1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "ff148b34-46b1-4cfc-96d3-d63e5880ee04",
+      "type": "application",
+      "name": "app/projects/awesome-go",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:SchemaVersion",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "00285820-aa7c-4251-83a8-fd30e8c3b61a",
+      "type": "application",
+      "name": "go.mod",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/andybalholm/cascadia@v1.3.1",
+      "type": "library",
+      "name": "github.com/andybalholm/cascadia",
+      "version": "v1.3.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/github.com/andybalholm/cascadia@v1.3.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/andybalholm/cascadia@v1.3.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/avelino/awesome-go",
+      "type": "library",
+      "name": "github.com/avelino/awesome-go",
+      "purl": "pkg:golang/github.com/avelino/awesome-go",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/avelino/awesome-go"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/avelino/slugify@v0.0.0-20180501145920-855f152bd774",
+      "type": "library",
+      "name": "github.com/avelino/slugify",
+      "version": "v0.0.0-20180501145920-855f152bd774",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:golang/github.com/avelino/slugify@v0.0.0-20180501145920-855f152bd774",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/avelino/slugify@v0.0.0-20180501145920-855f152bd774"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/golang/protobuf@v1.5.3",
+      "type": "library",
+      "name": "github.com/golang/protobuf",
+      "version": "v1.5.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/github.com/golang/protobuf@v1.5.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/golang/protobuf@v1.5.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/otiai10/copy@v1.14.0",
+      "type": "library",
+      "name": "github.com/otiai10/copy",
+      "version": "v1.14.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:golang/github.com/otiai10/copy@v1.14.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/otiai10/copy@v1.14.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/puerkitobio/goquery@v1.8.1",
+      "type": "library",
+      "name": "github.com/PuerkitoBio/goquery",
+      "version": "v1.8.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/github.com/puerkitobio/goquery@v1.8.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/PuerkitoBio/goquery@v1.8.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/yuin/goldmark@v1.6.0",
+      "type": "library",
+      "name": "github.com/yuin/goldmark",
+      "version": "v1.6.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:golang/github.com/yuin/goldmark@v1.6.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/yuin/goldmark@v1.6.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/net@v0.19.0",
+      "type": "library",
+      "name": "golang.org/x/net",
+      "version": "v0.19.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/golang.org/x/net@v0.19.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/net@v0.19.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/oauth2@v0.15.0",
+      "type": "library",
+      "name": "golang.org/x/oauth2",
+      "version": "v0.15.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/golang.org/x/oauth2@v0.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/oauth2@v0.15.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/sync@v0.3.0",
+      "type": "library",
+      "name": "golang.org/x/sync",
+      "version": "v0.3.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/golang.org/x/sync@v0.3.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/sync@v0.3.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/sys@v0.15.0",
+      "type": "library",
+      "name": "golang.org/x/sys",
+      "version": "v0.15.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/golang.org/x/sys@v0.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/sys@v0.15.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/text@v0.14.0",
+      "type": "library",
+      "name": "golang.org/x/text",
+      "version": "v0.14.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/golang.org/x/text@v0.14.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/text@v0.14.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/google.golang.org/appengine@v1.6.7",
+      "type": "library",
+      "name": "google.golang.org/appengine",
+      "version": "v1.6.7",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:golang/google.golang.org/appengine@v1.6.7",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "google.golang.org/appengine@v1.6.7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/google.golang.org/protobuf@v1.31.0",
+      "type": "library",
+      "name": "google.golang.org/protobuf",
+      "version": "v1.31.0",
+      "purl": "pkg:golang/google.golang.org/protobuf@v1.31.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "google.golang.org/protobuf@v1.31.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gomod"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "00285820-aa7c-4251-83a8-fd30e8c3b61a",
+      "dependsOn": [
+        "pkg:golang/github.com/avelino/awesome-go"
+      ]
+    },
+    {
+      "ref": "ff148b34-46b1-4cfc-96d3-d63e5880ee04",
+      "dependsOn": [
+        "00285820-aa7c-4251-83a8-fd30e8c3b61a"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/andybalholm/cascadia@v1.3.1",
+      "dependsOn": [
+        "pkg:golang/golang.org/x/net@v0.19.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/avelino/awesome-go",
+      "dependsOn": [
+        "pkg:golang/github.com/avelino/slugify@v0.0.0-20180501145920-855f152bd774",
+        "pkg:golang/github.com/otiai10/copy@v1.14.0",
+        "pkg:golang/github.com/puerkitobio/goquery@v1.8.1",
+        "pkg:golang/github.com/yuin/goldmark@v1.6.0",
+        "pkg:golang/golang.org/x/oauth2@v0.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/avelino/slugify@v0.0.0-20180501145920-855f152bd774",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/golang/protobuf@v1.5.3",
+      "dependsOn": [
+        "pkg:golang/google.golang.org/protobuf@v1.31.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/otiai10/copy@v1.14.0",
+      "dependsOn": [
+        "pkg:golang/golang.org/x/sync@v0.3.0",
+        "pkg:golang/golang.org/x/sys@v0.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/puerkitobio/goquery@v1.8.1",
+      "dependsOn": [
+        "pkg:golang/github.com/andybalholm/cascadia@v1.3.1",
+        "pkg:golang/golang.org/x/net@v0.19.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/yuin/goldmark@v1.6.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/net@v0.19.0",
+      "dependsOn": [
+        "pkg:golang/golang.org/x/sys@v0.15.0",
+        "pkg:golang/golang.org/x/text@v0.14.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/oauth2@v0.15.0",
+      "dependsOn": [
+        "pkg:golang/google.golang.org/appengine@v1.6.7"
+      ]
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/sync@v0.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/sys@v0.15.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/text@v0.14.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/google.golang.org/appengine@v1.6.7",
+      "dependsOn": [
+        "pkg:golang/github.com/golang/protobuf@v1.5.3",
+        "pkg:golang/golang.org/x/net@v0.19.0",
+        "pkg:golang/golang.org/x/text@v0.14.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/google.golang.org/protobuf@v1.31.0",
+      "dependsOn": []
+    }
+  ],
+  "vulnerabilities": []
+}

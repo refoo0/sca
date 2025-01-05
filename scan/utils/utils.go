@@ -66,58 +66,42 @@ func processJSONFile(filePath string, outputFilePath string) error {
 		stdlib := vuln.StandrdLibOSV
 
 		if osv && snyk && trivy {
-			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
-
+			count, goCount, npmCount, pythonCount, err = updateCount(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
+			if err != nil {
+				return fmt.Errorf("Error updating count: " + err.Error())
+			}
 		} else if osv && snyk && !trivy {
-			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
-
+			count, goCount, npmCount, pythonCount, err = updateCount(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
+			if err != nil {
+				return fmt.Errorf("Error updating count: " + err.Error())
+			}
 		} else if osv && !snyk && trivy {
-			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
-
+			count, goCount, npmCount, pythonCount, err = updateCount(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
+			if err != nil {
+				return fmt.Errorf("Error updating count: " + err.Error())
+			}
 		} else if !osv && snyk && trivy {
-			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
-
+			count, goCount, npmCount, pythonCount, err = updateCount(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
+			if err != nil {
+				return fmt.Errorf("Error updating count: " + err.Error())
+			}
 		} else if osv && !snyk && !trivy {
-			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
-
+			count, goCount, npmCount, pythonCount, err = updateCount(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
+			if err != nil {
+				return fmt.Errorf("Error updating count: " + err.Error())
+			}
 		} else if !osv && snyk && !trivy {
-			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
-
+			count, goCount, npmCount, pythonCount, err = updateCount(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
+			if err != nil {
+				return fmt.Errorf("Error updating count: " + err.Error())
+			}
 		} else if !osv && !snyk && trivy {
-			count, goCount, npmCount, pythonCount = updateAllCounts(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
-
+			count, goCount, npmCount, pythonCount, err = updateCount(id, system, stdlib, osv, snyk, trivy, count, goCount, npmCount, pythonCount)
+			if err != nil {
+				return fmt.Errorf("Error updating count: " + err.Error())
+			}
 		}
 
-		if id[:4] == "CVE-" {
-			count.CVEIDsCount++
-			if system == "Go" {
-				goCount.CVEIDsCount++
-			} else if system == "Npm" {
-				npmCount.CVEIDsCount++
-			} else if system == "Pypi" {
-				pythonCount.CVEIDsCount++
-			}
-		} else if id[:4] == "GHSA" {
-			count.GHSAIDsCount++
-			if system == "Go" {
-				goCount.GHSAIDsCount++
-			} else if system == "Npm" {
-				npmCount.GHSAIDsCount++
-			} else if system == "Pypi" {
-				pythonCount.GHSAIDsCount++
-			}
-
-		} else {
-			count.OtherIDsCount++
-			if system == "Go" {
-				goCount.OtherIDsCount++
-			} else if system == "Npm" {
-				npmCount.OtherIDsCount++
-			} else if system == "Pypi" {
-				pythonCount.OtherIDsCount++
-			}
-
-		}
 	}
 
 	outputData.AllVulns = updateCountsModul(outputData.AllVulns, count)
@@ -166,25 +150,9 @@ func Generate(inputDirPath, outputFilePath string) {
 	}
 }
 
-func updateAllCounts(id, system string, stdlib, osv, snyk, trivy bool, count, goCount, npmCount, pythonCount modul.Counts) (modul.Counts, modul.Counts, modul.Counts, modul.Counts) {
+func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count, goCount, npmCount, pythonCount modul.Counts) (modul.Counts, modul.Counts, modul.Counts, modul.Counts, error) {
 
-	co := updateCount(id, "", stdlib, osv, snyk, trivy, count)
-
-	var goCo, npmCo, pythonCo modul.Counts
-	if system == "Go" {
-		goCo = updateCount(id, system, stdlib, osv, snyk, trivy, goCount)
-	}
-	if system == "Npm" {
-		npmCo = updateCount(id, system, stdlib, osv, snyk, trivy, npmCount)
-	}
-	if system == "Pypi" {
-		pythonCo = updateCount(id, system, stdlib, osv, snyk, trivy, pythonCount)
-	}
-
-	return co, goCo, npmCo, pythonCo
-}
-
-func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count modul.Counts) modul.Counts {
+	idPräfix := id[:4]
 
 	if osv && snyk && trivy {
 		count.Sum++
@@ -197,14 +165,120 @@ func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count modul.C
 
 		count.IDsAll = append(count.IDsAll, id)
 
-		if system == "Go" {
-			count.IDsAll = append(count.IDsAll, id)
-		} else if system == "Npm" {
-			count.IDsAll = append(count.IDsAll, id)
-		} else if system == "Pypi" {
-			count.IDsAll = append(count.IDsAll, id)
+		if idPräfix == "CVE-" {
+			count.CVEIDsCount++
+
+			count.CVEIDsCountOSV++
+			count.CVEIDsCountSnyk++
+			count.CVEIDsCountTrivy++
+		} else if idPräfix == "GHSA" {
+			count.GHSAIDsCount++
+
+			count.GHSAIDsCountOSV++
+			count.GhsaIDsCountSnyk++
+			count.GhsaIDsCountTrivy++
 		} else {
-			count.IDsAll = append(count.IDsAll, id)
+			count.OtherIDsCount++
+
+			count.OtherIDsCountOSV++
+			count.OtherIDsCountSnyk++
+			count.OtherIDsCountTrivy++
+		}
+
+		if system == "Go" {
+			goCount.Sum++
+
+			goCount.All++
+
+			goCount.CountOSV++
+			goCount.CountSnyk++
+			goCount.CountTrivy++
+
+			goCount.IDsAll = append(goCount.IDsAll, id)
+
+			if idPräfix == "CVE-" {
+				goCount.CVEIDsCount++
+
+				goCount.CVEIDsCountOSV++
+				goCount.CVEIDsCountSnyk++
+				goCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				goCount.GHSAIDsCount++
+
+				goCount.GHSAIDsCountOSV++
+				goCount.GhsaIDsCountSnyk++
+				goCount.GhsaIDsCountTrivy++
+			} else {
+				goCount.OtherIDsCount++
+
+				goCount.OtherIDsCountOSV++
+				goCount.OtherIDsCountSnyk++
+				goCount.OtherIDsCountTrivy++
+			}
+
+		} else if system == "Npm" {
+			npmCount.Sum++
+
+			npmCount.All++
+
+			npmCount.CountOSV++
+			npmCount.CountSnyk++
+			npmCount.CountTrivy++
+
+			npmCount.IDsAll = append(npmCount.IDsAll, id)
+
+			if idPräfix == "CVE-" {
+				npmCount.CVEIDsCount++
+
+				npmCount.CVEIDsCountOSV++
+				npmCount.CVEIDsCountSnyk++
+				npmCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				npmCount.GHSAIDsCount++
+
+				npmCount.GHSAIDsCountOSV++
+				npmCount.GhsaIDsCountSnyk++
+				npmCount.GhsaIDsCountTrivy++
+			} else {
+				npmCount.OtherIDsCount++
+
+				npmCount.OtherIDsCountOSV++
+				npmCount.OtherIDsCountSnyk++
+				npmCount.OtherIDsCountTrivy++
+			}
+
+		} else if system == "Pypi" {
+			pythonCount.Sum++
+
+			pythonCount.All++
+
+			pythonCount.CountOSV++
+			pythonCount.CountSnyk++
+			pythonCount.CountTrivy++
+
+			pythonCount.IDsAll = append(pythonCount.IDsAll, id)
+
+			if idPräfix == "CVE-" {
+				pythonCount.CVEIDsCount++
+
+				pythonCount.CVEIDsCountOSV++
+				pythonCount.CVEIDsCountSnyk++
+				pythonCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				pythonCount.GHSAIDsCount++
+
+				pythonCount.GHSAIDsCountOSV++
+				pythonCount.GhsaIDsCountSnyk++
+				pythonCount.GhsaIDsCountTrivy++
+			} else {
+				pythonCount.OtherIDsCount++
+
+				pythonCount.OtherIDsCountOSV++
+				pythonCount.OtherIDsCountSnyk++
+				pythonCount.OtherIDsCountTrivy++
+			}
+		} else {
+			return count, goCount, npmCount, pythonCount, fmt.Errorf("system not supported")
 		}
 
 	} else if osv && snyk && !trivy {
@@ -217,15 +291,109 @@ func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count modul.C
 
 		count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
 
+		if idPräfix == "CVE-" {
+			count.CVEIDsCount++
+
+			count.CVEIDsCountOSV++
+			count.CVEIDsCountSnyk++
+		} else if idPräfix == "GHSA" {
+			count.GHSAIDsCount++
+
+			count.GHSAIDsCountOSV++
+			count.GhsaIDsCountSnyk++
+
+		} else {
+			count.OtherIDsCount++
+
+			count.OtherIDsCountOSV++
+			count.OtherIDsCountSnyk++
+
+		}
+
 		if system == "Go" {
-			count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
+			goCount.Sum++
+
+			goCount.OSV_Snyk++
+
+			goCount.CountOSV++
+			goCount.CountSnyk++
+
+			goCount.IDsOSV_Snyk = append(goCount.IDsOSV_Snyk, id)
+
+			if idPräfix == "CVE-" {
+				goCount.CVEIDsCount++
+
+				goCount.CVEIDsCountOSV++
+				goCount.CVEIDsCountSnyk++
+			} else if idPräfix == "GHSA" {
+				goCount.GHSAIDsCount++
+
+				goCount.GHSAIDsCountOSV++
+				goCount.GhsaIDsCountSnyk++
+
+			} else {
+				goCount.OtherIDsCount++
+
+				goCount.OtherIDsCountOSV++
+				goCount.OtherIDsCountSnyk++
+			}
 
 		} else if system == "Npm" {
-			count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
+			npmCount.Sum++
+
+			npmCount.OSV_Snyk++
+
+			npmCount.CountOSV++
+			npmCount.CountSnyk++
+
+			npmCount.IDsOSV_Snyk = append(npmCount.IDsOSV_Snyk, id)
+
+			if idPräfix == "CVE-" {
+				npmCount.CVEIDsCount++
+
+				npmCount.CVEIDsCountOSV++
+				npmCount.CVEIDsCountSnyk++
+			} else if idPräfix == "GHSA" {
+				npmCount.GHSAIDsCount++
+
+				npmCount.GHSAIDsCountOSV++
+				npmCount.GhsaIDsCountSnyk++
+
+			} else {
+				npmCount.OtherIDsCount++
+
+				npmCount.OtherIDsCountOSV++
+				npmCount.OtherIDsCountSnyk++
+			}
 		} else if system == "Pypi" {
-			count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
+			pythonCount.Sum++
+
+			pythonCount.OSV_Snyk++
+
+			pythonCount.CountOSV++
+			pythonCount.CountSnyk++
+
+			pythonCount.IDsOSV_Snyk = append(pythonCount.IDsOSV_Snyk, id)
+
+			if idPräfix == "CVE-" {
+				pythonCount.CVEIDsCount++
+
+				pythonCount.CVEIDsCountOSV++
+				pythonCount.CVEIDsCountSnyk++
+			} else if idPräfix == "GHSA" {
+				pythonCount.GHSAIDsCount++
+
+				pythonCount.GHSAIDsCountOSV++
+				pythonCount.GhsaIDsCountSnyk++
+
+			} else {
+				pythonCount.OtherIDsCount++
+
+				pythonCount.OtherIDsCountOSV++
+				pythonCount.OtherIDsCountSnyk++
+			}
 		} else {
-			count.IDsOSV_Snyk = append(count.IDsOSV_Snyk, id)
+			return count, goCount, npmCount, pythonCount, fmt.Errorf("system not supported")
 		}
 	} else if osv && trivy && !snyk {
 		count.Sum++
@@ -237,15 +405,105 @@ func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count modul.C
 
 		count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
 
+		if idPräfix == "CVE-" {
+			count.CVEIDsCount++
+
+			count.CVEIDsCountOSV++
+			count.CVEIDsCountTrivy++
+		} else if idPräfix == "GHSA" {
+			count.GHSAIDsCount++
+
+			count.GHSAIDsCountOSV++
+			count.GhsaIDsCountTrivy++
+		} else {
+
+			count.OtherIDsCount++
+
+			count.OtherIDsCountOSV++
+			count.OtherIDsCountTrivy++
+		}
+
 		if system == "Go" {
-			count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
+			goCount.Sum++
+
+			goCount.OSV_Trivy++
+
+			goCount.CountOSV++
+			goCount.CountTrivy++
+
+			goCount.IDsOSV_Trivy = append(goCount.IDsOSV_Trivy, id)
+
+			if idPräfix == "CVE-" {
+				goCount.CVEIDsCount++
+
+				goCount.CVEIDsCountOSV++
+				goCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				goCount.GHSAIDsCount++
+
+				goCount.GHSAIDsCountOSV++
+				goCount.GhsaIDsCountTrivy++
+			} else {
+				goCount.OtherIDsCount++
+
+				goCount.OtherIDsCountOSV++
+				goCount.OtherIDsCountTrivy++
+			}
 
 		} else if system == "Npm" {
-			count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
+			npmCount.Sum++
+
+			npmCount.OSV_Trivy++
+
+			npmCount.CountOSV++
+			npmCount.CountTrivy++
+
+			npmCount.IDsOSV_Trivy = append(npmCount.IDsOSV_Trivy, id)
+
+			if idPräfix == "CVE-" {
+				npmCount.CVEIDsCount++
+
+				npmCount.CVEIDsCountOSV++
+				npmCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				npmCount.GHSAIDsCount++
+
+				npmCount.GHSAIDsCountOSV++
+				npmCount.GhsaIDsCountTrivy++
+			} else {
+				npmCount.OtherIDsCount++
+
+				npmCount.OtherIDsCountOSV++
+				npmCount.OtherIDsCountTrivy++
+			}
 		} else if system == "Pypi" {
-			count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
+			pythonCount.Sum++
+
+			pythonCount.OSV_Trivy++
+
+			pythonCount.CountOSV++
+			pythonCount.CountTrivy++
+
+			pythonCount.IDsOSV_Trivy = append(pythonCount.IDsOSV_Trivy, id)
+
+			if idPräfix == "CVE-" {
+				pythonCount.CVEIDsCount++
+
+				pythonCount.CVEIDsCountOSV++
+				pythonCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				pythonCount.GHSAIDsCount++
+
+				pythonCount.GHSAIDsCountOSV++
+				pythonCount.GhsaIDsCountTrivy++
+			} else {
+				pythonCount.OtherIDsCount++
+
+				pythonCount.OtherIDsCountOSV++
+				pythonCount.OtherIDsCountTrivy++
+			}
 		} else {
-			count.IDsOSV_Trivy = append(count.IDsOSV_Trivy, id)
+			return count, goCount, npmCount, pythonCount, fmt.Errorf("system not supported")
 		}
 	} else if snyk && trivy && !osv {
 		count.Sum++
@@ -258,14 +516,86 @@ func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count modul.C
 		count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
 
 		if system == "Go" {
-			count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
+			goCount.Sum++
+
+			goCount.Snyk_Trivy++
+
+			goCount.CountSnyk++
+			goCount.CountTrivy++
+
+			goCount.IDsSnyk_Trivy = append(goCount.IDsSnyk_Trivy, id)
+
+			if idPräfix == "CVE-" {
+				goCount.CVEIDsCount++
+
+				goCount.CVEIDsCountSnyk++
+				goCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				goCount.GHSAIDsCount++
+
+				goCount.GhsaIDsCountSnyk++
+				goCount.GhsaIDsCountTrivy++
+			} else {
+				goCount.OtherIDsCount++
+
+				goCount.OtherIDsCountSnyk++
+				goCount.OtherIDsCountTrivy++
+			}
 
 		} else if system == "Npm" {
-			count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
+			npmCount.Sum++
+
+			npmCount.Snyk_Trivy++
+
+			npmCount.CountSnyk++
+			npmCount.CountTrivy++
+
+			npmCount.IDsSnyk_Trivy = append(npmCount.IDsSnyk_Trivy, id)
+
+			if idPräfix == "CVE-" {
+				npmCount.CVEIDsCount++
+
+				npmCount.CVEIDsCountSnyk++
+				npmCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				npmCount.GHSAIDsCount++
+
+				npmCount.GhsaIDsCountSnyk++
+				npmCount.GhsaIDsCountTrivy++
+			} else {
+				npmCount.OtherIDsCount++
+
+				npmCount.OtherIDsCountSnyk++
+				npmCount.OtherIDsCountTrivy++
+			}
 		} else if system == "Pypi" {
-			count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
+			pythonCount.Sum++
+
+			pythonCount.Snyk_Trivy++
+
+			pythonCount.CountSnyk++
+			pythonCount.CountTrivy++
+
+			pythonCount.IDsSnyk_Trivy = append(pythonCount.IDsSnyk_Trivy, id)
+
+			if idPräfix == "CVE-" {
+				pythonCount.CVEIDsCount++
+
+				pythonCount.CVEIDsCountSnyk++
+				pythonCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				pythonCount.GHSAIDsCount++
+
+				pythonCount.GhsaIDsCountSnyk++
+				pythonCount.GhsaIDsCountTrivy++
+			} else {
+				pythonCount.OtherIDsCount++
+
+				pythonCount.OtherIDsCountSnyk++
+				pythonCount.OtherIDsCountTrivy++
+			}
 		} else {
-			count.IDsSnyk_Trivy = append(count.IDsSnyk_Trivy, id)
+			return count, goCount, npmCount, pythonCount, fmt.Errorf("system not supported")
 		}
 	} else if osv && !snyk && !trivy {
 		count.Sum++
@@ -276,19 +606,95 @@ func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count modul.C
 
 		count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
 
-		if system == "Go" {
-			count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
+		if idPräfix == "CVE-" {
+			count.CVEIDsCount++
 
+			count.CVEIDsCountOSV++
+		} else if idPräfix == "GHSA" {
+			count.GHSAIDsCount++
+
+			count.GHSAIDsCountOSV++
+		} else {
+			count.OtherIDsCount++
+
+			count.OtherIDsCountOSV++
+		}
+
+		if system == "Go" {
 			if stdlib {
-				count.StdLibOSVOnly++
+				goCount.StdLibOSVOnly++
+			} else {
+				goCount.IDsOnlyOSVNotStdLib = append(goCount.IDsOnlyOSVNotStdLib, id)
+			}
+
+			goCount.Sum++
+
+			goCount.CountOSV++
+
+			goCount.OnlyOSV++
+
+			goCount.IDsOnlyOSV = append(goCount.IDsOnlyOSV, id)
+
+			if idPräfix == "CVE-" {
+				goCount.CVEIDsCount++
+
+				goCount.CVEIDsCountOSV++
+			} else if idPräfix == "GHSA" {
+				goCount.GHSAIDsCount++
+
+				goCount.GHSAIDsCountOSV++
+			} else {
+				goCount.OtherIDsCount++
+
+				goCount.OtherIDsCountOSV++
 			}
 
 		} else if system == "Npm" {
-			count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
+			npmCount.Sum++
+
+			npmCount.CountOSV++
+
+			npmCount.OnlyOSV++
+
+			npmCount.IDsOnlyOSV = append(npmCount.IDsOnlyOSV, id)
+
+			if idPräfix == "CVE-" {
+				npmCount.CVEIDsCount++
+
+				npmCount.CVEIDsCountOSV++
+			} else if idPräfix == "GHSA" {
+				npmCount.GHSAIDsCount++
+
+				npmCount.GHSAIDsCountOSV++
+			} else {
+				npmCount.OtherIDsCount++
+
+				npmCount.OtherIDsCountOSV++
+			}
 		} else if system == "Pypi" {
-			count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
+			pythonCount.Sum++
+
+			pythonCount.CountOSV++
+
+			pythonCount.OnlyOSV++
+
+			pythonCount.IDsOnlyOSV = append(pythonCount.IDsOnlyOSV, id)
+
+			if idPräfix == "CVE-" {
+				pythonCount.CVEIDsCount++
+
+				pythonCount.CVEIDsCountOSV++
+			} else if idPräfix == "GHSA" {
+				pythonCount.GHSAIDsCount++
+
+				pythonCount.GHSAIDsCountOSV++
+			} else {
+				pythonCount.OtherIDsCount++
+
+				pythonCount.OtherIDsCountOSV++
+			}
 		} else {
-			count.IDsOnlyOSV = append(count.IDsOnlyOSV, id)
+			return count, goCount, npmCount, pythonCount, fmt.Errorf("system not supported")
 		}
 	} else if snyk && !osv && !trivy {
 		count.Sum++
@@ -299,15 +705,93 @@ func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count modul.C
 
 		count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
 
+		if idPräfix == "CVE-" {
+			count.CVEIDsCount++
+
+			count.CVEIDsCountSnyk++
+		} else if idPräfix == "GHSA" {
+			count.GHSAIDsCount++
+
+			count.GhsaIDsCountSnyk++
+
+		} else {
+			count.OtherIDsCount++
+
+			count.OtherIDsCountSnyk++
+		}
+
 		if system == "Go" {
-			count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
+			goCount.Sum++
+
+			goCount.CountSnyk++
+
+			goCount.OnlySnyk++
+
+			goCount.IDsOnlySnyk = append(goCount.IDsOnlySnyk, id)
+
+			if idPräfix == "CVE-" {
+				goCount.CVEIDsCount++
+
+				goCount.CVEIDsCountSnyk++
+			} else if idPräfix == "GHSA" {
+				goCount.GHSAIDsCount++
+
+				goCount.GhsaIDsCountSnyk++
+
+			} else {
+				goCount.OtherIDsCount++
+
+				goCount.OtherIDsCountSnyk++
+			}
 
 		} else if system == "Npm" {
-			count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
+			npmCount.Sum++
+
+			npmCount.CountSnyk++
+
+			npmCount.OnlySnyk++
+
+			npmCount.IDsOnlySnyk = append(npmCount.IDsOnlySnyk, id)
+
+			if idPräfix == "CVE-" {
+				npmCount.CVEIDsCount++
+
+				npmCount.CVEIDsCountSnyk++
+			} else if idPräfix == "GHSA" {
+				npmCount.GHSAIDsCount++
+
+				npmCount.GhsaIDsCountSnyk++
+
+			} else {
+				npmCount.OtherIDsCount++
+
+				npmCount.OtherIDsCountSnyk++
+			}
 		} else if system == "Pypi" {
-			count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
+			pythonCount.Sum++
+
+			pythonCount.CountSnyk++
+
+			pythonCount.OnlySnyk++
+
+			pythonCount.IDsOnlySnyk = append(pythonCount.IDsOnlySnyk, id)
+
+			if idPräfix == "CVE-" {
+				pythonCount.CVEIDsCount++
+
+				pythonCount.CVEIDsCountSnyk++
+			} else if idPräfix == "GHSA" {
+				pythonCount.GHSAIDsCount++
+
+				pythonCount.GhsaIDsCountSnyk++
+			} else {
+				pythonCount.OtherIDsCount++
+
+				pythonCount.OtherIDsCountSnyk++
+			}
+
 		} else {
-			count.IDsOnlySnyk = append(count.IDsOnlySnyk, id)
+			return count, goCount, npmCount, pythonCount, fmt.Errorf("system not supported")
 		}
 	} else if trivy && !osv && !snyk {
 		count.Sum++
@@ -318,19 +802,93 @@ func updateCount(id, system string, stdlib, osv, snyk, trivy bool, count modul.C
 
 		count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
 
+		if idPräfix == "CVE-" {
+			count.CVEIDsCount++
+
+			count.CVEIDsCountTrivy++
+		} else if idPräfix == "GHSA" {
+			count.GHSAIDsCount++
+
+			count.GhsaIDsCountTrivy++
+		} else {
+			count.OtherIDsCount++
+
+			count.OtherIDsCountTrivy++
+		}
+
 		if system == "Go" {
-			count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
+			goCount.Sum++
+
+			goCount.CountTrivy++
+
+			goCount.OnlyTrivy++
+
+			goCount.IDsOnlyTrivy = append(goCount.IDsOnlyTrivy, id)
+
+			if idPräfix == "CVE-" {
+				goCount.CVEIDsCount++
+
+				goCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				goCount.GHSAIDsCount++
+
+				goCount.GhsaIDsCountTrivy++
+			} else {
+				goCount.OtherIDsCount++
+
+				goCount.OtherIDsCountTrivy++
+			}
 
 		} else if system == "Npm" {
-			count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
+			npmCount.Sum++
+
+			npmCount.CountTrivy++
+
+			npmCount.OnlyTrivy++
+
+			npmCount.IDsOnlyTrivy = append(npmCount.IDsOnlyTrivy, id)
+
+			if idPräfix == "CVE-" {
+				npmCount.CVEIDsCount++
+
+				npmCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				npmCount.GHSAIDsCount++
+
+				npmCount.GhsaIDsCountTrivy++
+			} else {
+				npmCount.OtherIDsCount++
+
+				npmCount.OtherIDsCountTrivy++
+			}
 		} else if system == "Pypi" {
-			count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
+			pythonCount.Sum++
+
+			pythonCount.CountTrivy++
+
+			pythonCount.OnlyTrivy++
+
+			pythonCount.IDsOnlyTrivy = append(pythonCount.IDsOnlyTrivy, id)
+
+			if idPräfix == "CVE-" {
+				pythonCount.CVEIDsCount++
+
+				pythonCount.CVEIDsCountTrivy++
+			} else if idPräfix == "GHSA" {
+				pythonCount.GHSAIDsCount++
+
+				pythonCount.GhsaIDsCountTrivy++
+			} else {
+				pythonCount.OtherIDsCount++
+
+				pythonCount.OtherIDsCountTrivy++
+			}
 		} else {
-			count.IDsOnlyTrivy = append(count.IDsOnlyTrivy, id)
+			return count, goCount, npmCount, pythonCount, fmt.Errorf("system not supported")
 		}
 	}
 
-	return count
+	return count, goCount, npmCount, pythonCount, nil
 }
 
 func updateCountsModul(existing modul.Counts, new modul.Counts) modul.Counts {
@@ -362,7 +920,20 @@ func updateCountsModul(existing modul.Counts, new modul.Counts) modul.Counts {
 	existing.GHSAIDsCount += new.GHSAIDsCount
 	existing.OtherIDsCount += new.OtherIDsCount
 
+	existing.CVEIDsCountOSV += new.CVEIDsCountOSV
+	existing.CVEIDsCountSnyk += new.CVEIDsCountSnyk
+	existing.CVEIDsCountTrivy += new.CVEIDsCountTrivy
+
+	existing.GHSAIDsCountOSV += new.GHSAIDsCountOSV
+	existing.GhsaIDsCountSnyk += new.GhsaIDsCountSnyk
+	existing.GhsaIDsCountTrivy += new.GhsaIDsCountTrivy
+
+	existing.OtherIDsCountOSV += new.OtherIDsCountOSV
+	existing.OtherIDsCountSnyk += new.OtherIDsCountSnyk
+	existing.OtherIDsCountTrivy += new.OtherIDsCountTrivy
+
 	existing.StdLibOSVOnly += new.StdLibOSVOnly
+	existing.IDsOnlyOSVNotStdLib = append(existing.IDsOnlyOSVNotStdLib, new.IDsOnlyOSVNotStdLib...)
 
 	return existing
 }
