@@ -29,10 +29,20 @@ venn = venn3(
     alpha=.8  # Alpha-Wert auf 0.8 setzen, um die Farben leuchtender zu machen
 )
 
-# Entfernen der Zahlen innerhalb der Diagrammbereiche
-for subset in venn.subset_labels:
-    if subset:  # Überprüfen, ob das Label vorhanden ist
-        subset.set_visible(False)
+# Zahlen innerhalb der Diagrammbereiche anzeigen
+labels = {
+    '100': counts["OnlyOSV"],
+    '010': counts["OnlySnyk"],
+    '001': counts["OnlyTrivy"],
+    '110': counts["OSV_Snyk"],
+    '101': counts["OSV_Trivy"],
+    '011': counts["Snyk_Trivy"],
+    '111': counts["All"],
+}
+
+for subset_key, label in labels.items():
+    if venn.get_label_by_id(subset_key):  # Sicherstellen, dass der Bereich existiert
+        venn.get_label_by_id(subset_key).set_text(label)
 
 # Entfernen der Kreisbeschriftungen (A, B, C)
 for label in venn.set_labels:
